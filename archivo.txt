@@ -1,0 +1,10 @@
+<?php $adfghj123dfghj=1;
+$b=2;
+echo $a  / $b;
+?>
+if
+else
+or
+xor
+boolean
+float
