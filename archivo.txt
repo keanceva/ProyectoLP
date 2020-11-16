@@ -1,0 +1,78 @@
+<?php
+$a = True;
+?>
+<?php
+$a = 1234;
+?>
+<?php
+$a = 1.234;
+?>
+<?php
+$a = "MiNombre";
+?>
+<?php
+$a = null;
+?>
+<?php
+$array = array("foo", "bar", "hello", "world");
+?>
+<?php
+class foo(){
+function hacer_algo() {
+echo "Haciendo algo.";
+}
+}
+$bar = new foo;
+$bar->hacer_algo();
+?>
++$a
+-$a
+$a + $b
+$a * $b
+$a - $b
+$a / $b
+$a % $b
+$a ** $b
+$a and $b
+$a or $b
+$a xor $b
+$a == $b
+$a === $b
+$a != $b
+$a <> $b
+$a !== $b
+$a < $b
+$a > $b
+$a <= $b
+$a >= $b
+$a <=> $b
+<?php
+if ($x > $y) {
+echo "$x es mayor que $y";
+}
+<?php
+if ($x > $y) {
+echo "$x es mayor que $y";
+} elseif ($x == $y) {
+echo "$x es igual que $y";
+} else {
+echo "$y es mayor que $x";
+}
+<?php
+if ($x > $y) {
+echo "$x es mayor que $y";
+} else {
+echo "$y es mayor que $x";
+}
+<?php
+echo "Hello world!";
+?>
+<?php
+print("Hola mundo");
+$foo = "foobar";
+print "foo es $foo";
+?>
+<?php
+$a = array(1, 2, array("a", "b", "c"));
+var_dump($a);
+?>
