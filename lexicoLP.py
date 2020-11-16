@@ -1,4 +1,7 @@
-#Kevin Antonio Cevallos Pilay PHP-2
+#Grupo PHP
+#Kevin Cevallos
+#María Camila Navarro
+#Joffre Ramírez
 
 import ply.lex as lex
 reserved = {
@@ -111,10 +114,6 @@ def t_NUMBER(t):
     t.value = int(t.value)
     return t
 
-#def t_ID(t):
-    #r'^$[a-zA-Z][a-zA-Z0-9]*;'
-    #t.type = reserved.get(t.value, 'ID')
-    #return t
 
 def t_IF(t):
     r'if'
@@ -271,30 +270,22 @@ def t_newline(t):
     t.lexer.lineno += len(t.value)
 
 
-#archivo = open("prueba.txt")
 lexer=lex.lex()
 
-data=''' 
-<?php
-$adfghj123dfghj=1 ; 
-$b=2;
-echo $a  / $b;
-?>
-if
-else
-or
-xor
-boolean
-float
-'''
-lexer.input(data)
 
-while True:
-    tok=lexer.token()
-    if not tok:
+def analizar(dato):
+    lexer.input(dato)
+    while True:
+        tok =lexer.token()
+        if not tok:
+            break
+        print(tok)
+
+lexer=lex.lex()
+archivo= open("archivo.txt")
+for linea in archivo:
+    print(">>"+linea)
+    analizar(linea)
+    if len(linea)==0:
         break
-    print(tok)
-#for linea in archivo:
-#    print(">>"+linea)
-
 
