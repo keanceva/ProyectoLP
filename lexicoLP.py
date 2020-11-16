@@ -34,12 +34,8 @@ reserved = {
     'parse_ini_file': 'PARSE_INI_FILE',
     'implode': 'IMPLODE',
     'explode': 'EXPLODE',
-<<<<<<< HEAD
     'new':'NEW',
     'class':'CLASS',
-=======
-
->>>>>>> fea73e935b1231753e3b9ff857e288bd36b52dea
     'count': 'COUNT',
     'sizeof': 'SIZEOF',
     'array_push': 'ARRAYPUSH',
@@ -56,11 +52,8 @@ reserved = {
     'str_split': 'STR_SPLIT',
     'preg_split': 'PREG_SPLIT',
     'array_unique': 'ARRAY_UNIQUE',
-<<<<<<< HEAD
-    'function' : 'FUNCTION'
-=======
->>>>>>> fea73e935b1231753e3b9ff857e288bd36b52dea
-
+    'function' : 'FUNCTION',
+    'separador' : 'SEPARADOR'
 }
 
 
@@ -82,7 +75,6 @@ tokens =(
     'OPEN',
     'CLOSE',
     'END',
-<<<<<<< HEAD
     'ID',
      'TRUE',
      'FALSE',
@@ -93,11 +85,9 @@ tokens =(
      'MODULO',
      'DECIMAL',
      'OBJECT_OPERATOR'] + list(reserved.values()))
-=======
-    'ID'] + list(reserved.values()))
 
 
->>>>>>> fea73e935b1231753e3b9ff857e288bd36b52dea
+
 
 t_OBJECT_OPERATOR=r'->.*\(\)'
 t_DECIMAL=r'[0-9]*\.[0-9]+'
@@ -112,17 +102,13 @@ t_MAYORQUE = r'>'
 t_MENORQUE = r'<'
 t_EQUALS = r'='
 t_ID = r'(\$([a-z]|[A-Z]))([a-zA-Z0-9]+)?'
-<<<<<<< HEAD
+
 t_END = r';'
 t_TRUE = r'True'
 t_FALSE = r'False'
 t_TEXT = r'".*"'
 t_PEIROT = r'\.'
-=======
-t_END=r';'
 
-
->>>>>>> fea73e935b1231753e3b9ff857e288bd36b52dea
 t_OPEN = r'<\?php'
 t_CLOSE = r'\?>'
 t_AND = r'and'
@@ -141,7 +127,6 @@ T_SPACESHIP = r'\<=>'
 
 t_ignore = ' \t'
 
-<<<<<<< HEAD
 def t_CLASS(t):
     r'class .*'
     return t
@@ -149,9 +134,6 @@ def t_CLASS(t):
 def t_NEW(t):
     r'new .*'
     return t
-=======
-
->>>>>>> fea73e935b1231753e3b9ff857e288bd36b52dea
 
 def t_NUMBER(t):
     r'\d+'
@@ -274,19 +256,14 @@ def t_VAR_EXPORT(t):
     r'var_export'
     return t
 def t_FUNCTION(t):
-<<<<<<< HEAD
+
     r'function .*'
     return t
 def t_SHUFFLE(t):
     r'shuffle'
     return t
-=======
-    r'function'
-    return t
-def t_SHUFFLE(t):
-    r'shuffle'
-    return t
->>>>>>> fea73e935b1231753e3b9ff857e288bd36b52dea
+
+
 def t_ARRAY_MERGE(t):
     r'array_merge'
     return t
@@ -307,6 +284,9 @@ def t_PREG_SPLIT(t):
     return t
 def t_ARRAY_UNIQUE(t):
     r'array_unique'
+    return t
+def t_SEPARADOR(t):
+    r','
     return t
 
 
