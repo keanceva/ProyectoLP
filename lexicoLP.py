@@ -132,6 +132,7 @@ t_ignore = ' \t'
 def t_CLASS(t):
     r'class .*'
     return t
+
 def t_ECHO(t):
     r'echo'
     return t
