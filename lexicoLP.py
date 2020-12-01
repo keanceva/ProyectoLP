@@ -58,32 +58,51 @@ reserved = {
 
 
 tokens =(
-    ['NUMBER',
+    [
+
+    #Operadores Matemáticos
     'PLUS',
     'MINUS',
     'TIMES',
     'DIVIDE',
-    'LPAREN',
-    'RPAREN',
-    'MAYORQUE',
-    'MENORQUE',
     'EQUALS',
+    'MODULO',
+
+    #Operadores Lógicos
     'AND',
     'OR',
     'XOR',
     'NOT',
+
+    #Símbolos
+    'LPAREN',
+    'RPAREN',
+    'PEIROT',
+    'RCORCHET',
+    'LCORCHET',
+    'OBJECT_OPERATOR',
+    'COMA',
     'OPEN',
     'CLOSE',
     'END',
+
+    #Variable
     'ID',
-     'TRUE',
-     'FALSE',
+
+    #Número
+    'NUMBER',
+    'DECIMAL',
+
+    #Valor Boolean
+    'TRUE',
+    'FALSE',
+
+    #Cadena de texto
     'TEXT',
-     'PEIROT',
-     'RCORCHET',
-     'LCORCHET',
-     'MODULO',
-     'OBJECT_OPERATOR',
+
+     #Operadores Comparación
+     'MAYORQUE',
+     'MENORQUE',
      'IS_EQUAL',
      'IS_IDENTICAL',
      'IS_NOT_EQUAL',
@@ -91,34 +110,49 @@ tokens =(
      'IS_GREATER_OR_EQUAL',
      'IS_SMALLER_OR_EQUAL',
      'SPACESHIP',
-     'COMA',
-     'FNOMBRE'] + list(reserved.values()))
 
-t_OBJECT_OPERATOR=r'->.*\(\)'
+     #Nombre de Funciones
+     'FNOMBRE'
+        ] + list(reserved.values()))
+
+#Operadores Matemáticos
 t_MODULO=r'%'
 t_PLUS=r'\+'
 t_MINUS=r'-'
 t_TIMES=r'\*'
 t_DIVIDE=r'/'
-t_LPAREN=r'\('
-t_RPAREN=r'\)'
-t_MAYORQUE = r'>'
-t_MENORQUE = r'<'
 t_EQUALS = r'='
-t_ID = r'(\$([a-z]|[A-Z]))([a-zA-Z0-9]+)?'
-t_END = r';'
-t_TRUE = r'TRUE'
-t_FALSE = r'FALSE'
-t_TEXT = r'".*"'
-t_PEIROT = r'\.'
-t_OPEN = r'<\?php'
-t_CLOSE = r'\?>'
+
+#Operadores Lógicos
 t_AND = r'and'
 t_OR = r'or'
 t_XOR = r'xor'
 t_NOT = r'!'
+
+#Símbolos
+t_OBJECT_OPERATOR=r'->'
+t_LPAREN=r'\('
+t_RPAREN=r'\)'
+t_END = r';'
+t_TEXT = r'".*"'
+t_PEIROT = r'\.'
+t_OPEN = r'<\?php'
+t_CLOSE = r'\?>'
 t_RCORCHET=r'\}'
 t_LCORCHET=r'\{'
+t_COMA=r','
+
+#Variable
+t_ID = r'(\$([a-z]|[A-Z]))([a-zA-Z0-9]+)?'
+
+
+#Valor Boolean
+t_TRUE = r'TRUE'
+t_FALSE = r'FALSE'
+
+#Operadores Comparación
+t_MAYORQUE = r'>'
+t_MENORQUE = r'<'
 t_IS_EQUAL = r'=='
 t_IS_IDENTICAL = r'==='
 t_IS_NOT_EQUAL= r'!='
@@ -126,34 +160,32 @@ t_IS_NOT_IDENTICAL= r'!=='
 t_IS_GREATER_OR_EQUAL=r'>='
 t_IS_SMALLER_OR_EQUAL=r'<='
 t_SPACESHIP = r'<=>'
-t_COMA=r','
+
 t_ignore = ' \t'
 
-def t_CLASS(t):
-    r'class .*'
+#Número
+def t_DECIMAL(t):
+    r'\d+\.\d+'
+    t.value = float(t.value)
     return t
-
-def t_ECHO(t):
-    r'echo'
-    return t
-
-def t_NEW(t):
-    r'new .*'
-    return t
-
 def t_NUMBER(t):
     r'\d+'
     t.value = int(t.value)
     return t
 
-def t_IF(t):
-    r'if'
+
+#Cadena de texto
+
+
+#Palabras reservadas
+def t_CLASS(t):
+    r'class'
     return t
-def t_ELSE(t):
-    r'else'
+def t_ECHO(t):
+    r'echo'
     return t
-def t_ELSEIF(t):
-    r'elseif'
+def t_NEW(t):
+    r'new'
     return t
 def t_BOOLEAN(t):
     r'boolean'
@@ -164,16 +196,6 @@ def t_STRING(t):
 def t_NULL(t):
     r'null'
     return t
-def t_ARRAY(t):
-    r'array'
-    return t
-def t_FUNCTION(t):
-    r'function'
-    return t
-def t_FNOMBRE(t):
-    r'([a-z]|[A-Z])([a-zA-Z0-9]+)?'
-    return t
-
 def t_OBJECT(t):
     r'object'
     return t
@@ -186,10 +208,27 @@ def t_CONTINUE(t):
 def t_RETURN(t):
     r'return'
     return t
+def t_FUNCTION(t):
+    r'function'
+    return t
+
+#Sentencia if
+def t_IF(t):
+    r'if'
+    return t
+def t_ELSE(t):
+    r'else'
+    return t
+def t_ELSEIF(t):
+    r'elseif'
+    return t
+
+#Lazo
 def t_FOREACH(t):
     r'foreach'
     return t
 
+#Funciones print
 def t_PRINT(t):
     r'print'
     return t
@@ -200,6 +239,7 @@ def t_VAR_DUMP(t):
     r'var_dump'
     return t
 
+#Funciones
 def t_FGETS(t):
     r'fgets'
     return t
@@ -230,12 +270,14 @@ def t_FILE(t):
 def t_PARSE_INI_FILE(t):
     r'parse_ini_file'
     return t
-
 def t_IMPLODE(t):
     r'implode'
     return t
 def t_EXPLODE(t):
     r'explode'
+    return t
+def t_ARRAY(t):
+    r'array'
     return t
 def t_COUNT(t):
     r'count'
@@ -261,7 +303,6 @@ def t_UNSER(t):
 def t_VAR_EXPORT(t):
     r'var_export'
     return t
-
 def t_SHUFFLE(t):
     r'shuffle'
     return t
@@ -287,6 +328,10 @@ def t_ARRAY_UNIQUE(t):
     r'array_unique'
     return t
 
+#Nombre de funciones
+def t_FNOMBRE(t):
+    r'([a-z]|[A-Z])([a-zA-Z0-9_]+)?'
+    return t
 
 def t_error(t):
     print("No es reconocido '%s'"%t.value[0])
