@@ -354,8 +354,21 @@ def analizar(dato):
 
 archivo= open("archivo.txt")
 for linea in archivo:
-    print(">>"+linea)
-    analizar(linea)
+    #print(">>"+linea)
+    #analizar(linea)
     if len(linea)==0:
         break
-
+def ImprimirAnalizar(dato):
+    texto= dato.split("\n")
+    cadena=""
+    for i in texto:
+        cadena+= "-> "+i
+        lexer.input(i)
+        while True:
+            tok = lexer.token()
+            if not tok:
+                break
+            cadena+="\n"
+            cadena+=str(tok)
+        cadena+="\n"
+    return cadena
