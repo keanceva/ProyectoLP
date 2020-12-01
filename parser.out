@@ -1,0 +1,963 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ARRAYPUSH
+    ARRAY_CHUNK
+    ARRAY_MERGE
+    ARRAY_RAND
+    ARRAY_SEARCH
+    ARRAY_UNIQUE
+    ASORT
+    BOOLEAN
+    BREAK
+    CLASS
+    CONTINUE
+    COUNT
+    ELSE
+    ELSEIF
+    EXPLODE
+    FGETC
+    FGETCSV
+    FILE
+    FILE_GET_CONTENTS
+    FLOAT
+    FOREACH
+    FREAD
+    FSCANF
+    IMPLODE
+    KSORT
+    NEW
+    OBJECT
+    OBJECT_OPERATOR
+    PARSE_INI_FILE
+    PEIROT
+    PREG_SPLIT
+    PRINT_R
+    READFILE
+    SIZEOF
+    SORT
+    STRING
+    STR_SPLIT
+    SUFFLE
+    UNSET
+    VAR_DUMP
+    VAR_EXPORT
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> OPEN declaracion CLOSE
+Rule 2     declaracion -> expression
+Rule 3     declaracion -> expif
+Rule 4     declaracion -> expresionlogica
+Rule 5     declaracion -> declararvariable
+Rule 6     declaracion -> array
+Rule 7     declaracion -> creacionfunciones
+Rule 8     declaracion -> returnvalores
+Rule 9     creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
+Rule 10    argumentos -> ID
+Rule 11    argumentos -> empty
+Rule 12    returnvalores -> RETURN termino END
+Rule 13    returnvalores -> RETURN creacionfunciones
+Rule 14    returnvalores -> empty
+Rule 15    expression -> termino operadores termino
+Rule 16    operadores -> PLUS
+Rule 17    operadores -> MINUS
+Rule 18    operadores -> DIVIDE
+Rule 19    operadores -> TIMES
+Rule 20    operadores -> MODULO
+Rule 21    termino -> NUMBER
+Rule 22    termino -> ID
+Rule 23    expif -> IF LPAREN comparacion RPAREN LCORCHET expression RCORCHET
+Rule 24    comparacion -> termino operadorcomparacion termino
+Rule 25    operadorcomparacion -> IS_EQUAL
+Rule 26    operadorcomparacion -> IS_IDENTICAL
+Rule 27    operadorcomparacion -> IS_NOT_EQUAL
+Rule 28    operadorcomparacion -> IS_NOT_IDENTICAL
+Rule 29    operadorcomparacion -> IS_GREATER_OR_EQUAL
+Rule 30    operadorcomparacion -> IS_SMALLER_OR_EQUAL
+Rule 31    operadorcomparacion -> SPACESHIP
+Rule 32    operadorcomparacion -> MAYORQUE
+Rule 33    operadorcomparacion -> MENORQUE
+Rule 34    funprint -> PRINT LPAREN TEXT RPAREN END
+Rule 35    fpassthru -> FPASSTHRU LPAREN ID COMA NUMBER RPAREN
+Rule 36    fgets -> FGETS LPAREN ID RPAREN
+Rule 37    expresionlogica -> ID operadorlogico ID
+Rule 38    operadorlogico -> AND
+Rule 39    operadorlogico -> OR
+Rule 40    operadorlogico -> XOR
+Rule 41    operadorlogico -> NOT
+Rule 42    declararvariable -> ID EQUALS NUMBER
+Rule 43    declararvariable -> ID EQUALS boolean
+Rule 44    declararvariable -> ID EQUALS TEXT
+Rule 45    declararvariable -> ID EQUALS NULL
+Rule 46    declararvariable -> ID EQUALS DECIMAL
+Rule 47    boolean -> TRUE
+Rule 48    boolean -> FALSE
+Rule 49    array -> ID EQUALS ARRAY LPAREN TEXT RPAREN END
+Rule 50    funecho -> ECHO TEXT END
+Rule 51    empty -> <empty>
+
+Terminals, with rules where they appear
+
+AND                  : 38
+ARRAY                : 49
+ARRAYPUSH            : 
+ARRAY_CHUNK          : 
+ARRAY_MERGE          : 
+ARRAY_RAND           : 
+ARRAY_SEARCH         : 
+ARRAY_UNIQUE         : 
+ASORT                : 
+BOOLEAN              : 
+BREAK                : 
+CLASS                : 
+CLOSE                : 1
+COMA                 : 35
+CONTINUE             : 
+COUNT                : 
+DECIMAL              : 46
+DIVIDE               : 18
+ECHO                 : 50
+ELSE                 : 
+ELSEIF               : 
+END                  : 12 34 49 50
+EQUALS               : 42 43 44 45 46 49
+EXPLODE              : 
+FALSE                : 48
+FGETC                : 
+FGETCSV              : 
+FGETS                : 36
+FILE                 : 
+FILE_GET_CONTENTS    : 
+FLOAT                : 
+FNOMBRE              : 9
+FOREACH              : 
+FPASSTHRU            : 35
+FREAD                : 
+FSCANF               : 
+FUNCTION             : 9
+ID                   : 10 22 35 36 37 37 42 43 44 45 46 49
+IF                   : 23
+IMPLODE              : 
+IS_EQUAL             : 25
+IS_GREATER_OR_EQUAL  : 29
+IS_IDENTICAL         : 26
+IS_NOT_EQUAL         : 27
+IS_NOT_IDENTICAL     : 28
+IS_SMALLER_OR_EQUAL  : 30
+KSORT                : 
+LCORCHET             : 9 23
+LPAREN               : 9 23 34 35 36 49
+MAYORQUE             : 32
+MENORQUE             : 33
+MINUS                : 17
+MODULO               : 20
+NEW                  : 
+NOT                  : 41
+NULL                 : 45
+NUMBER               : 21 35 42
+OBJECT               : 
+OBJECT_OPERATOR      : 
+OPEN                 : 1
+OR                   : 39
+PARSE_INI_FILE       : 
+PEIROT               : 
+PLUS                 : 16
+PREG_SPLIT           : 
+PRINT                : 34
+PRINT_R              : 
+RCORCHET             : 9 23
+READFILE             : 
+RETURN               : 12 13
+RPAREN               : 9 23 34 35 36 49
+SIZEOF               : 
+SORT                 : 
+SPACESHIP            : 31
+STRING               : 
+STR_SPLIT            : 
+SUFFLE               : 
+TEXT                 : 34 44 49 50
+TIMES                : 19
+TRUE                 : 47
+UNSET                : 
+VAR_DUMP             : 
+VAR_EXPORT           : 
+XOR                  : 40
+error                : 
+
+Nonterminals, with rules where they appear
+
+argumentos           : 
+array                : 6
+boolean              : 43
+comparacion          : 23
+creacionfunciones    : 7 13
+declaracion          : 1 9
+declararvariable     : 5
+empty                : 11 14
+expif                : 3
+expresionlogica      : 4
+expression           : 2 23
+fgets                : 
+fpassthru            : 
+funecho              : 
+funprint             : 
+operadorcomparacion  : 24
+operadores           : 15
+operadorlogico       : 37
+programa             : 0
+returnvalores        : 8
+termino              : 12 15 15 24 24
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . programa
+    (1) programa -> . OPEN declaracion CLOSE
+
+    OPEN            shift and go to state 2
+
+    programa                       shift and go to state 1
+
+state 1
+
+    (0) S' -> programa .
+
+
+
+state 2
+
+    (1) programa -> OPEN . declaracion CLOSE
+    (2) declaracion -> . expression
+    (3) declaracion -> . expif
+    (4) declaracion -> . expresionlogica
+    (5) declaracion -> . declararvariable
+    (6) declaracion -> . array
+    (7) declaracion -> . creacionfunciones
+    (8) declaracion -> . returnvalores
+    (15) expression -> . termino operadores termino
+    (23) expif -> . IF LPAREN comparacion RPAREN LCORCHET expression RCORCHET
+    (37) expresionlogica -> . ID operadorlogico ID
+    (42) declararvariable -> . ID EQUALS NUMBER
+    (43) declararvariable -> . ID EQUALS boolean
+    (44) declararvariable -> . ID EQUALS TEXT
+    (45) declararvariable -> . ID EQUALS NULL
+    (46) declararvariable -> . ID EQUALS DECIMAL
+    (49) array -> . ID EQUALS ARRAY LPAREN TEXT RPAREN END
+    (9) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
+    (12) returnvalores -> . RETURN termino END
+    (13) returnvalores -> . RETURN creacionfunciones
+    (14) returnvalores -> . empty
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+    (51) empty -> .
+
+    IF              shift and go to state 12
+    ID              shift and go to state 13
+    FUNCTION        shift and go to state 15
+    RETURN          shift and go to state 16
+    NUMBER          shift and go to state 14
+    CLOSE           reduce using rule 51 (empty -> .)
+
+    declaracion                    shift and go to state 3
+    expression                     shift and go to state 4
+    expif                          shift and go to state 5
+    expresionlogica                shift and go to state 6
+    declararvariable               shift and go to state 7
+    array                          shift and go to state 8
+    creacionfunciones              shift and go to state 9
+    returnvalores                  shift and go to state 10
+    termino                        shift and go to state 11
+    empty                          shift and go to state 17
+
+state 3
+
+    (1) programa -> OPEN declaracion . CLOSE
+
+    CLOSE           shift and go to state 18
+
+
+state 4
+
+    (2) declaracion -> expression .
+
+    CLOSE           reduce using rule 2 (declaracion -> expression .)
+    RCORCHET        reduce using rule 2 (declaracion -> expression .)
+
+
+state 5
+
+    (3) declaracion -> expif .
+
+    CLOSE           reduce using rule 3 (declaracion -> expif .)
+    RCORCHET        reduce using rule 3 (declaracion -> expif .)
+
+
+state 6
+
+    (4) declaracion -> expresionlogica .
+
+    CLOSE           reduce using rule 4 (declaracion -> expresionlogica .)
+    RCORCHET        reduce using rule 4 (declaracion -> expresionlogica .)
+
+
+state 7
+
+    (5) declaracion -> declararvariable .
+
+    CLOSE           reduce using rule 5 (declaracion -> declararvariable .)
+    RCORCHET        reduce using rule 5 (declaracion -> declararvariable .)
+
+
+state 8
+
+    (6) declaracion -> array .
+
+    CLOSE           reduce using rule 6 (declaracion -> array .)
+    RCORCHET        reduce using rule 6 (declaracion -> array .)
+
+
+state 9
+
+    (7) declaracion -> creacionfunciones .
+
+    CLOSE           reduce using rule 7 (declaracion -> creacionfunciones .)
+    RCORCHET        reduce using rule 7 (declaracion -> creacionfunciones .)
+
+
+state 10
+
+    (8) declaracion -> returnvalores .
+
+    CLOSE           reduce using rule 8 (declaracion -> returnvalores .)
+    RCORCHET        reduce using rule 8 (declaracion -> returnvalores .)
+
+
+state 11
+
+    (15) expression -> termino . operadores termino
+    (16) operadores -> . PLUS
+    (17) operadores -> . MINUS
+    (18) operadores -> . DIVIDE
+    (19) operadores -> . TIMES
+    (20) operadores -> . MODULO
+
+    PLUS            shift and go to state 20
+    MINUS           shift and go to state 21
+    DIVIDE          shift and go to state 22
+    TIMES           shift and go to state 23
+    MODULO          shift and go to state 24
+
+    operadores                     shift and go to state 19
+
+state 12
+
+    (23) expif -> IF . LPAREN comparacion RPAREN LCORCHET expression RCORCHET
+
+    LPAREN          shift and go to state 25
+
+
+state 13
+
+    (37) expresionlogica -> ID . operadorlogico ID
+    (42) declararvariable -> ID . EQUALS NUMBER
+    (43) declararvariable -> ID . EQUALS boolean
+    (44) declararvariable -> ID . EQUALS TEXT
+    (45) declararvariable -> ID . EQUALS NULL
+    (46) declararvariable -> ID . EQUALS DECIMAL
+    (49) array -> ID . EQUALS ARRAY LPAREN TEXT RPAREN END
+    (22) termino -> ID .
+    (38) operadorlogico -> . AND
+    (39) operadorlogico -> . OR
+    (40) operadorlogico -> . XOR
+    (41) operadorlogico -> . NOT
+
+    EQUALS          shift and go to state 27
+    PLUS            reduce using rule 22 (termino -> ID .)
+    MINUS           reduce using rule 22 (termino -> ID .)
+    DIVIDE          reduce using rule 22 (termino -> ID .)
+    TIMES           reduce using rule 22 (termino -> ID .)
+    MODULO          reduce using rule 22 (termino -> ID .)
+    AND             shift and go to state 28
+    OR              shift and go to state 29
+    XOR             shift and go to state 30
+    NOT             shift and go to state 31
+
+    operadorlogico                 shift and go to state 26
+
+state 14
+
+    (21) termino -> NUMBER .
+
+    PLUS            reduce using rule 21 (termino -> NUMBER .)
+    MINUS           reduce using rule 21 (termino -> NUMBER .)
+    DIVIDE          reduce using rule 21 (termino -> NUMBER .)
+    TIMES           reduce using rule 21 (termino -> NUMBER .)
+    MODULO          reduce using rule 21 (termino -> NUMBER .)
+    END             reduce using rule 21 (termino -> NUMBER .)
+    CLOSE           reduce using rule 21 (termino -> NUMBER .)
+    RCORCHET        reduce using rule 21 (termino -> NUMBER .)
+    IS_EQUAL        reduce using rule 21 (termino -> NUMBER .)
+    IS_IDENTICAL    reduce using rule 21 (termino -> NUMBER .)
+    IS_NOT_EQUAL    reduce using rule 21 (termino -> NUMBER .)
+    IS_NOT_IDENTICAL reduce using rule 21 (termino -> NUMBER .)
+    IS_GREATER_OR_EQUAL reduce using rule 21 (termino -> NUMBER .)
+    IS_SMALLER_OR_EQUAL reduce using rule 21 (termino -> NUMBER .)
+    SPACESHIP       reduce using rule 21 (termino -> NUMBER .)
+    MAYORQUE        reduce using rule 21 (termino -> NUMBER .)
+    MENORQUE        reduce using rule 21 (termino -> NUMBER .)
+    RPAREN          reduce using rule 21 (termino -> NUMBER .)
+
+
+state 15
+
+    (9) creacionfunciones -> FUNCTION . FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
+
+    FNOMBRE         shift and go to state 32
+
+
+state 16
+
+    (12) returnvalores -> RETURN . termino END
+    (13) returnvalores -> RETURN . creacionfunciones
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+    (9) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
+
+    NUMBER          shift and go to state 14
+    ID              shift and go to state 35
+    FUNCTION        shift and go to state 15
+
+    termino                        shift and go to state 33
+    creacionfunciones              shift and go to state 34
+
+state 17
+
+    (14) returnvalores -> empty .
+
+    CLOSE           reduce using rule 14 (returnvalores -> empty .)
+    RCORCHET        reduce using rule 14 (returnvalores -> empty .)
+
+
+state 18
+
+    (1) programa -> OPEN declaracion CLOSE .
+
+    $end            reduce using rule 1 (programa -> OPEN declaracion CLOSE .)
+
+
+state 19
+
+    (15) expression -> termino operadores . termino
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+
+    NUMBER          shift and go to state 14
+    ID              shift and go to state 35
+
+    termino                        shift and go to state 36
+
+state 20
+
+    (16) operadores -> PLUS .
+
+    NUMBER          reduce using rule 16 (operadores -> PLUS .)
+    ID              reduce using rule 16 (operadores -> PLUS .)
+
+
+state 21
+
+    (17) operadores -> MINUS .
+
+    NUMBER          reduce using rule 17 (operadores -> MINUS .)
+    ID              reduce using rule 17 (operadores -> MINUS .)
+
+
+state 22
+
+    (18) operadores -> DIVIDE .
+
+    NUMBER          reduce using rule 18 (operadores -> DIVIDE .)
+    ID              reduce using rule 18 (operadores -> DIVIDE .)
+
+
+state 23
+
+    (19) operadores -> TIMES .
+
+    NUMBER          reduce using rule 19 (operadores -> TIMES .)
+    ID              reduce using rule 19 (operadores -> TIMES .)
+
+
+state 24
+
+    (20) operadores -> MODULO .
+
+    NUMBER          reduce using rule 20 (operadores -> MODULO .)
+    ID              reduce using rule 20 (operadores -> MODULO .)
+
+
+state 25
+
+    (23) expif -> IF LPAREN . comparacion RPAREN LCORCHET expression RCORCHET
+    (24) comparacion -> . termino operadorcomparacion termino
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+
+    NUMBER          shift and go to state 14
+    ID              shift and go to state 35
+
+    comparacion                    shift and go to state 37
+    termino                        shift and go to state 38
+
+state 26
+
+    (37) expresionlogica -> ID operadorlogico . ID
+
+    ID              shift and go to state 39
+
+
+state 27
+
+    (42) declararvariable -> ID EQUALS . NUMBER
+    (43) declararvariable -> ID EQUALS . boolean
+    (44) declararvariable -> ID EQUALS . TEXT
+    (45) declararvariable -> ID EQUALS . NULL
+    (46) declararvariable -> ID EQUALS . DECIMAL
+    (49) array -> ID EQUALS . ARRAY LPAREN TEXT RPAREN END
+    (47) boolean -> . TRUE
+    (48) boolean -> . FALSE
+
+    NUMBER          shift and go to state 40
+    TEXT            shift and go to state 42
+    NULL            shift and go to state 43
+    DECIMAL         shift and go to state 44
+    ARRAY           shift and go to state 45
+    TRUE            shift and go to state 46
+    FALSE           shift and go to state 47
+
+    boolean                        shift and go to state 41
+
+state 28
+
+    (38) operadorlogico -> AND .
+
+    ID              reduce using rule 38 (operadorlogico -> AND .)
+
+
+state 29
+
+    (39) operadorlogico -> OR .
+
+    ID              reduce using rule 39 (operadorlogico -> OR .)
+
+
+state 30
+
+    (40) operadorlogico -> XOR .
+
+    ID              reduce using rule 40 (operadorlogico -> XOR .)
+
+
+state 31
+
+    (41) operadorlogico -> NOT .
+
+    ID              reduce using rule 41 (operadorlogico -> NOT .)
+
+
+state 32
+
+    (9) creacionfunciones -> FUNCTION FNOMBRE . LPAREN RPAREN LCORCHET declaracion RCORCHET
+
+    LPAREN          shift and go to state 48
+
+
+state 33
+
+    (12) returnvalores -> RETURN termino . END
+
+    END             shift and go to state 49
+
+
+state 34
+
+    (13) returnvalores -> RETURN creacionfunciones .
+
+    CLOSE           reduce using rule 13 (returnvalores -> RETURN creacionfunciones .)
+    RCORCHET        reduce using rule 13 (returnvalores -> RETURN creacionfunciones .)
+
+
+state 35
+
+    (22) termino -> ID .
+
+    END             reduce using rule 22 (termino -> ID .)
+    CLOSE           reduce using rule 22 (termino -> ID .)
+    RCORCHET        reduce using rule 22 (termino -> ID .)
+    IS_EQUAL        reduce using rule 22 (termino -> ID .)
+    IS_IDENTICAL    reduce using rule 22 (termino -> ID .)
+    IS_NOT_EQUAL    reduce using rule 22 (termino -> ID .)
+    IS_NOT_IDENTICAL reduce using rule 22 (termino -> ID .)
+    IS_GREATER_OR_EQUAL reduce using rule 22 (termino -> ID .)
+    IS_SMALLER_OR_EQUAL reduce using rule 22 (termino -> ID .)
+    SPACESHIP       reduce using rule 22 (termino -> ID .)
+    MAYORQUE        reduce using rule 22 (termino -> ID .)
+    MENORQUE        reduce using rule 22 (termino -> ID .)
+    RPAREN          reduce using rule 22 (termino -> ID .)
+    PLUS            reduce using rule 22 (termino -> ID .)
+    MINUS           reduce using rule 22 (termino -> ID .)
+    DIVIDE          reduce using rule 22 (termino -> ID .)
+    TIMES           reduce using rule 22 (termino -> ID .)
+    MODULO          reduce using rule 22 (termino -> ID .)
+
+
+state 36
+
+    (15) expression -> termino operadores termino .
+
+    CLOSE           reduce using rule 15 (expression -> termino operadores termino .)
+    RCORCHET        reduce using rule 15 (expression -> termino operadores termino .)
+
+
+state 37
+
+    (23) expif -> IF LPAREN comparacion . RPAREN LCORCHET expression RCORCHET
+
+    RPAREN          shift and go to state 50
+
+
+state 38
+
+    (24) comparacion -> termino . operadorcomparacion termino
+    (25) operadorcomparacion -> . IS_EQUAL
+    (26) operadorcomparacion -> . IS_IDENTICAL
+    (27) operadorcomparacion -> . IS_NOT_EQUAL
+    (28) operadorcomparacion -> . IS_NOT_IDENTICAL
+    (29) operadorcomparacion -> . IS_GREATER_OR_EQUAL
+    (30) operadorcomparacion -> . IS_SMALLER_OR_EQUAL
+    (31) operadorcomparacion -> . SPACESHIP
+    (32) operadorcomparacion -> . MAYORQUE
+    (33) operadorcomparacion -> . MENORQUE
+
+    IS_EQUAL        shift and go to state 52
+    IS_IDENTICAL    shift and go to state 53
+    IS_NOT_EQUAL    shift and go to state 54
+    IS_NOT_IDENTICAL shift and go to state 55
+    IS_GREATER_OR_EQUAL shift and go to state 56
+    IS_SMALLER_OR_EQUAL shift and go to state 57
+    SPACESHIP       shift and go to state 58
+    MAYORQUE        shift and go to state 59
+    MENORQUE        shift and go to state 60
+
+    operadorcomparacion            shift and go to state 51
+
+state 39
+
+    (37) expresionlogica -> ID operadorlogico ID .
+
+    CLOSE           reduce using rule 37 (expresionlogica -> ID operadorlogico ID .)
+    RCORCHET        reduce using rule 37 (expresionlogica -> ID operadorlogico ID .)
+
+
+state 40
+
+    (42) declararvariable -> ID EQUALS NUMBER .
+
+    CLOSE           reduce using rule 42 (declararvariable -> ID EQUALS NUMBER .)
+    RCORCHET        reduce using rule 42 (declararvariable -> ID EQUALS NUMBER .)
+
+
+state 41
+
+    (43) declararvariable -> ID EQUALS boolean .
+
+    CLOSE           reduce using rule 43 (declararvariable -> ID EQUALS boolean .)
+    RCORCHET        reduce using rule 43 (declararvariable -> ID EQUALS boolean .)
+
+
+state 42
+
+    (44) declararvariable -> ID EQUALS TEXT .
+
+    CLOSE           reduce using rule 44 (declararvariable -> ID EQUALS TEXT .)
+    RCORCHET        reduce using rule 44 (declararvariable -> ID EQUALS TEXT .)
+
+
+state 43
+
+    (45) declararvariable -> ID EQUALS NULL .
+
+    CLOSE           reduce using rule 45 (declararvariable -> ID EQUALS NULL .)
+    RCORCHET        reduce using rule 45 (declararvariable -> ID EQUALS NULL .)
+
+
+state 44
+
+    (46) declararvariable -> ID EQUALS DECIMAL .
+
+    CLOSE           reduce using rule 46 (declararvariable -> ID EQUALS DECIMAL .)
+    RCORCHET        reduce using rule 46 (declararvariable -> ID EQUALS DECIMAL .)
+
+
+state 45
+
+    (49) array -> ID EQUALS ARRAY . LPAREN TEXT RPAREN END
+
+    LPAREN          shift and go to state 61
+
+
+state 46
+
+    (47) boolean -> TRUE .
+
+    CLOSE           reduce using rule 47 (boolean -> TRUE .)
+    RCORCHET        reduce using rule 47 (boolean -> TRUE .)
+
+
+state 47
+
+    (48) boolean -> FALSE .
+
+    CLOSE           reduce using rule 48 (boolean -> FALSE .)
+    RCORCHET        reduce using rule 48 (boolean -> FALSE .)
+
+
+state 48
+
+    (9) creacionfunciones -> FUNCTION FNOMBRE LPAREN . RPAREN LCORCHET declaracion RCORCHET
+
+    RPAREN          shift and go to state 62
+
+
+state 49
+
+    (12) returnvalores -> RETURN termino END .
+
+    CLOSE           reduce using rule 12 (returnvalores -> RETURN termino END .)
+    RCORCHET        reduce using rule 12 (returnvalores -> RETURN termino END .)
+
+
+state 50
+
+    (23) expif -> IF LPAREN comparacion RPAREN . LCORCHET expression RCORCHET
+
+    LCORCHET        shift and go to state 63
+
+
+state 51
+
+    (24) comparacion -> termino operadorcomparacion . termino
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+
+    NUMBER          shift and go to state 14
+    ID              shift and go to state 35
+
+    termino                        shift and go to state 64
+
+state 52
+
+    (25) operadorcomparacion -> IS_EQUAL .
+
+    NUMBER          reduce using rule 25 (operadorcomparacion -> IS_EQUAL .)
+    ID              reduce using rule 25 (operadorcomparacion -> IS_EQUAL .)
+
+
+state 53
+
+    (26) operadorcomparacion -> IS_IDENTICAL .
+
+    NUMBER          reduce using rule 26 (operadorcomparacion -> IS_IDENTICAL .)
+    ID              reduce using rule 26 (operadorcomparacion -> IS_IDENTICAL .)
+
+
+state 54
+
+    (27) operadorcomparacion -> IS_NOT_EQUAL .
+
+    NUMBER          reduce using rule 27 (operadorcomparacion -> IS_NOT_EQUAL .)
+    ID              reduce using rule 27 (operadorcomparacion -> IS_NOT_EQUAL .)
+
+
+state 55
+
+    (28) operadorcomparacion -> IS_NOT_IDENTICAL .
+
+    NUMBER          reduce using rule 28 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+    ID              reduce using rule 28 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+
+
+state 56
+
+    (29) operadorcomparacion -> IS_GREATER_OR_EQUAL .
+
+    NUMBER          reduce using rule 29 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+    ID              reduce using rule 29 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+
+
+state 57
+
+    (30) operadorcomparacion -> IS_SMALLER_OR_EQUAL .
+
+    NUMBER          reduce using rule 30 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+    ID              reduce using rule 30 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+
+
+state 58
+
+    (31) operadorcomparacion -> SPACESHIP .
+
+    NUMBER          reduce using rule 31 (operadorcomparacion -> SPACESHIP .)
+    ID              reduce using rule 31 (operadorcomparacion -> SPACESHIP .)
+
+
+state 59
+
+    (32) operadorcomparacion -> MAYORQUE .
+
+    NUMBER          reduce using rule 32 (operadorcomparacion -> MAYORQUE .)
+    ID              reduce using rule 32 (operadorcomparacion -> MAYORQUE .)
+
+
+state 60
+
+    (33) operadorcomparacion -> MENORQUE .
+
+    NUMBER          reduce using rule 33 (operadorcomparacion -> MENORQUE .)
+    ID              reduce using rule 33 (operadorcomparacion -> MENORQUE .)
+
+
+state 61
+
+    (49) array -> ID EQUALS ARRAY LPAREN . TEXT RPAREN END
+
+    TEXT            shift and go to state 65
+
+
+state 62
+
+    (9) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN . LCORCHET declaracion RCORCHET
+
+    LCORCHET        shift and go to state 66
+
+
+state 63
+
+    (23) expif -> IF LPAREN comparacion RPAREN LCORCHET . expression RCORCHET
+    (15) expression -> . termino operadores termino
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+
+    NUMBER          shift and go to state 14
+    ID              shift and go to state 35
+
+    expression                     shift and go to state 67
+    termino                        shift and go to state 11
+
+state 64
+
+    (24) comparacion -> termino operadorcomparacion termino .
+
+    RPAREN          reduce using rule 24 (comparacion -> termino operadorcomparacion termino .)
+
+
+state 65
+
+    (49) array -> ID EQUALS ARRAY LPAREN TEXT . RPAREN END
+
+    RPAREN          shift and go to state 68
+
+
+state 66
+
+    (9) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET . declaracion RCORCHET
+    (2) declaracion -> . expression
+    (3) declaracion -> . expif
+    (4) declaracion -> . expresionlogica
+    (5) declaracion -> . declararvariable
+    (6) declaracion -> . array
+    (7) declaracion -> . creacionfunciones
+    (8) declaracion -> . returnvalores
+    (15) expression -> . termino operadores termino
+    (23) expif -> . IF LPAREN comparacion RPAREN LCORCHET expression RCORCHET
+    (37) expresionlogica -> . ID operadorlogico ID
+    (42) declararvariable -> . ID EQUALS NUMBER
+    (43) declararvariable -> . ID EQUALS boolean
+    (44) declararvariable -> . ID EQUALS TEXT
+    (45) declararvariable -> . ID EQUALS NULL
+    (46) declararvariable -> . ID EQUALS DECIMAL
+    (49) array -> . ID EQUALS ARRAY LPAREN TEXT RPAREN END
+    (9) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
+    (12) returnvalores -> . RETURN termino END
+    (13) returnvalores -> . RETURN creacionfunciones
+    (14) returnvalores -> . empty
+    (21) termino -> . NUMBER
+    (22) termino -> . ID
+    (51) empty -> .
+
+    IF              shift and go to state 12
+    ID              shift and go to state 13
+    FUNCTION        shift and go to state 15
+    RETURN          shift and go to state 16
+    NUMBER          shift and go to state 14
+    RCORCHET        reduce using rule 51 (empty -> .)
+
+    declaracion                    shift and go to state 69
+    expression                     shift and go to state 4
+    expif                          shift and go to state 5
+    expresionlogica                shift and go to state 6
+    declararvariable               shift and go to state 7
+    array                          shift and go to state 8
+    creacionfunciones              shift and go to state 9
+    returnvalores                  shift and go to state 10
+    termino                        shift and go to state 11
+    empty                          shift and go to state 17
+
+state 67
+
+    (23) expif -> IF LPAREN comparacion RPAREN LCORCHET expression . RCORCHET
+
+    RCORCHET        shift and go to state 70
+
+
+state 68
+
+    (49) array -> ID EQUALS ARRAY LPAREN TEXT RPAREN . END
+
+    END             shift and go to state 71
+
+
+state 69
+
+    (9) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion . RCORCHET
+
+    RCORCHET        shift and go to state 72
+
+
+state 70
+
+    (23) expif -> IF LPAREN comparacion RPAREN LCORCHET expression RCORCHET .
+
+    CLOSE           reduce using rule 23 (expif -> IF LPAREN comparacion RPAREN LCORCHET expression RCORCHET .)
+    RCORCHET        reduce using rule 23 (expif -> IF LPAREN comparacion RPAREN LCORCHET expression RCORCHET .)
+
+
+state 71
+
+    (49) array -> ID EQUALS ARRAY LPAREN TEXT RPAREN END .
+
+    CLOSE           reduce using rule 49 (array -> ID EQUALS ARRAY LPAREN TEXT RPAREN END .)
+    RCORCHET        reduce using rule 49 (array -> ID EQUALS ARRAY LPAREN TEXT RPAREN END .)
+
+
+state 72
+
+    (9) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET .
+
+    CLOSE           reduce using rule 9 (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET .)
+    RCORCHET        reduce using rule 9 (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET .)
+
