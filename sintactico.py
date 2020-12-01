@@ -107,6 +107,7 @@ def p_boolean(p):
     '''boolean : TRUE
                 | FALSE'''
 
+
 #JOFFRE RAMIREZ
 def p_array(p):
     'array : ID EQUALS ARRAY LPAREN TEXT RPAREN END'
