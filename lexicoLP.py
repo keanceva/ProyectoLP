@@ -8,12 +8,12 @@ reserved = {
     'if': 'IF',
     'else': 'ELSE',
     'elseif': 'ELSEIF',
-    'boolean': 'BOOLEAN',
-    'float': 'FLOAT',
-    'string': 'STRING',
+    #'boolean': 'BOOLEAN',
+    #'float': 'FLOAT',
+    #'string': 'STRING',
     'null': 'NULL',
     'array': 'ARRAY',
-    'object': 'OBJECT',
+    #'object': 'OBJECT',
     'break': 'BREAK',
     'continue': 'CONTINUE',
     'return': 'RETURN',
@@ -38,7 +38,7 @@ reserved = {
     'class':'CLASS',
     'count': 'COUNT',
     'sizeof': 'SIZEOF',
-    'array_push': 'ARRAYPUSH',
+    'array_push': 'ARRAY_PUSH',
     'sort': 'SORT',
     'asort': 'ASORT',
     'ksort': 'KSORT',
@@ -52,8 +52,9 @@ reserved = {
     'str_split': 'STR_SPLIT',
     'preg_split': 'PREG_SPLIT',
     'array_unique': 'ARRAY_UNIQUE',
-    'function' : 'FUNCTION'
-
+    'function' : 'FUNCTION',
+    'while' : 'WHILE',
+    'as' : 'AS'
 }
 
 
@@ -77,7 +78,7 @@ tokens =(
     #Símbolos
     'LPAREN',
     'RPAREN',
-    'PEIROT',
+    #'PEIROT',
     'RCORCHET',
     'LCORCHET',
     'OBJECT_OPERATOR',
@@ -135,7 +136,7 @@ t_LPAREN=r'\('
 t_RPAREN=r'\)'
 t_END = r';'
 t_TEXT = r'".*"'
-t_PEIROT = r'\.'
+#t_PEIROT = r'\.'
 t_OPEN = r'<\?php'
 t_CLOSE = r'\?>'
 t_RCORCHET=r'\}'
@@ -187,18 +188,22 @@ def t_ECHO(t):
 def t_NEW(t):
     r'new'
     return t
+'''
 def t_BOOLEAN(t):
     r'boolean'
     return t
 def t_STRING(t):
     r'string'
     return t
+'''
 def t_NULL(t):
     r'null'
     return t
+'''
 def t_OBJECT(t):
     r'object'
     return t
+'''
 def t_BREAK(t):
     r'break'
     return t
@@ -211,7 +216,9 @@ def t_RETURN(t):
 def t_FUNCTION(t):
     r'function'
     return t
-
+def t_AS(t):
+    r'as'
+    return t
 #Sentencia if
 def t_IF(t):
     r'if'
@@ -226,6 +233,10 @@ def t_ELSEIF(t):
 #Lazo
 def t_FOREACH(t):
     r'foreach'
+    return t
+
+def t_WHILE(t):
+    r'while'
     return t
 
 #Funciones print
