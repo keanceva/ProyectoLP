@@ -14,7 +14,6 @@ def p_declaracion(p):
                         | expelse
                         | expresionlogica
                         | declararvariable
-                        | definir_array
                         | creacionfunciones
                         | returnvalores
                         | operador_object
@@ -43,7 +42,7 @@ def p_returnvalores(p):
 
 #KEVIN CEVALLOS
 def p_expression_math(p):
-    'expression : termino operadores termino'
+    'expression : ID EQUALS termino operadores termino END'
 
 
 #KEVIN CEVALLOS
@@ -80,7 +79,7 @@ def p_while(p):
     'while : WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET'
 
 def p_foreach(p):
-    'foreach : FOREACH LPAREN array AS ID RPAREN LCORCHET control_bucle RCORCHET'
+    'foreach : FOREACH LPAREN ID AS ID RPAREN LCORCHET control_bucle RCORCHET'
 
 #MARIA CAMILA NAVARRO
 def p_comparacion(p):
@@ -115,13 +114,17 @@ def p_operadorlogico(p):
 
 
 def p_declararvariable(p):
-    ''' declararvariable : ID EQUALS NUMBER
-                                    | boolean
-                                    | TEXT
-                                    | NULL
-                                    | archivos
-                                    | array
-                                    | new'''
+    'declararvariable : ID EQUALS tipo END '
+
+
+def p_tipo(p):
+    '''tipo : boolean
+            | NUMBER
+            | TEXT
+            | NULL
+            | archivos
+            | array
+            | new '''
 #JOFFRE RAMIREZ
 def p_boolean(p):
     '''boolean : TRUE
@@ -130,14 +133,11 @@ def p_boolean(p):
 def p_operador_object(p):
     'operador_object : ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END'
 
-def p_definir_array(p):
-    'definir_array : array END'
-
 def p_array(p):
-    'array : ARRAY LPAREN termino RPAREN'
+    'array : ARRAY LPAREN termino RPAREN '
 
 def p_new(p):
-    'new : NEW FNOMBRE END'
+    'new : NEW FNOMBRE '
 
 '''
 #JOFFRE RAMIREZ
@@ -152,7 +152,11 @@ def p_funprint(p):
 '''
 
 def p_print(p):
-    'print : funcion_print LPAREN ID RPAREN END'
+    'print : funcion_print LPAREN argument RPAREN END'
+
+def p_argument(p):
+    '''argument : ID
+                    | TEXT'''
 
 def p_funcion_print(p):
     '''funcion_print : VAR_EXPORT
@@ -205,6 +209,8 @@ def p_clase(p):
 VERBOSE = 1
 
 def p_error(p):
+    print("Syntax error in input!")
+    '''
 	if VERBOSE:
 		if p is not None:
 			print ("ERROR SINTACTICO EN LA LINEA " + str(p.lexer.lineno) + " NO SE ESPERABA EL Token  " + str(p.value))
@@ -212,7 +218,7 @@ def p_error(p):
 			print ("ERROR SINTACTICO EN LA LINEA: " + str(lexicoLP.lexer.lineno))
 	else:
 		raise Exception('syntax', 'error')
-
+'''
 
 # Build the parser
 parser = yacc.yacc()
@@ -226,7 +232,27 @@ while True:
     result = parser.parse(s)
     print(result)
 
-def ImprimirSintactico(texto):
-        s = texto
-        result = parser.parse(s)
-        print(result)
+def ImprimirSintactico(dato):
+    while True:
+        try:
+            s = dato.split("\n")
+        except EOFError:
+            break
+        if not s: continue
+        result = str(parser.parse(s))
+        return(result)
+
+#<?php $var = 1+3; ?>
+#<?php $var = new foo; ?>
+#<?php echo("Hello wordl"); ?>
+#<?php echo($var); ?>
+#<?php $a = array(1);?>
+#<?php function nombre_de_la_funcion(){ echo ("Hola mundo");}?>
+#<?php if ($x > $y) { echo ("$x es mayor que $y"); } ?>
+#<?php if ($x > $y) { echo ("$x es mayor que $y");} else {echo ("$y es mayor que $x");} ?>
+#<?php foreach ($array as $valor) { $valor = $valor * 2;} ?>
+#<?php while ($array == $valor) { $valor = $valor * 2;} ?>
+#<?php $a = array(class);?>
+#<?php class Foo { $aMemberVar = "aMemberVar Member Variable";} ?>
+#<?php $a= array("metodo"); ?>
+

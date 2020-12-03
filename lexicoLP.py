@@ -148,8 +148,8 @@ t_ID = r'(\$([a-z]|[A-Z]))([a-zA-Z0-9]+)?'
 
 
 #Valor Boolean
-t_TRUE = r'TRUE'
-t_FALSE = r'FALSE'
+t_TRUE = r'true'
+t_FALSE = r'false'
 
 #Operadores Comparación
 t_MAYORQUE = r'>'
@@ -308,7 +308,7 @@ def t_ASORT(t):
 def t_KSORT(t):
     r'ksort'
     return t
-def t_UNSER(t):
+def t_UNSET(t):
     r'unset'
     return t
 def t_VAR_EXPORT(t):
