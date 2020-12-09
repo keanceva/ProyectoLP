@@ -178,11 +178,19 @@ def p_funprint(p):
 '''
 
 def p_print(p):
-    'print : funcion_print LPAREN argument RPAREN END'
+    '''print : funcion_print LPAREN argument RPAREN END
+                | funcion_print argument END
+                | ECHO LPAREN valores_echo RPAREN END
+                | ECHO valores_echo END'''
 
 def p_argument(p):
     '''argument : ID
                     | TEXT'''
+
+def p_valores_echo(p):
+    ''' valores_echo : argument COMA valores_echo
+                        | argument
+                        '''
 
 def p_funcion_print(p):
     '''funcion_print : VAR_EXPORT
