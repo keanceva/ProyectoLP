@@ -4,6 +4,8 @@ import lexicoLP
 
 from lexicoLP import tokens
 
+resultado_gramatica = []
+
 def p_programa(p):
     'programa : OPEN declaracion CLOSE'
 
@@ -206,23 +208,20 @@ def p_funcion_archivo(p):
 def p_clase(p):
     'clase : CLASS FNOMBRE LCORCHET declaracion RCORCHET'
 
-VERBOSE = 1
 
 def p_error(p):
-    print("Syntax error in input!")
-    '''
-	if VERBOSE:
-		if p is not None:
-			print ("ERROR SINTACTICO EN LA LINEA " + str(p.lexer.lineno) + " NO SE ESPERABA EL Token  " + str(p.value))
-		else:
-			print ("ERROR SINTACTICO EN LA LINEA: " + str(lexicoLP.lexer.lineno))
-	else:
-		raise Exception('syntax', 'error')
-'''
+    global resultado_gramatica
+    if p:
+        resultado = "Error sintactico de tipo {} en el valor {}".format(str(p.type), str(p.value))
+        print(resultado)
+    else:
+        resultado = "Error sintactico {}".format(p)
+        print(resultado)
+    resultado_gramatica.append(resultado)
 
 # Build the parser
 parser = yacc.yacc()
-
+'''
 while True:
     try:
         s = raw_input('calc > ')
@@ -231,16 +230,29 @@ while True:
     if not s: continue
     result = parser.parse(s)
     print(result)
-
+'''
 def ImprimirSintactico(dato):
     while True:
         try:
-            s = dato.split("\n")
+            s = dato
         except EOFError:
             break
         if not s: continue
         result = str(parser.parse(s))
         return(result)
+
+def prueba_sintactica(data):
+    global resultado_gramatica
+    resultado_gramatica.clear()
+    for item in data.split("\n"):
+        if item:
+            gram = parser.parse(item)
+            if gram:
+                resultado_gramatica.append(str(gram))
+        else: print("Dato vacío")
+
+    print("Resultado: ", resultado_gramatica)
+    return resultado_gramatica
 
 #<?php $var = 1+3; ?>
 #<?php $var = new foo; ?>
