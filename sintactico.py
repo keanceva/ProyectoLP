@@ -144,11 +144,20 @@ def p_operador_object(p):
     'operador_object : ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END'
 
 def p_array(p):
-    '''array : ARRAY LPAREN termino RPAREN
-                | LPAREN NUMERPLUS COMA PALAPLUS RPAREN
-                | LPAREN PALAPLUS COMA NUMERPLUS RPAREN
-                | LPAREN NUMERPLUS RPAREN
-                | LPAREN PALAPLUS RPAREN'''
+    'array : ARRAY LPAREN valores_array RPAREN '
+
+def p_valores_array(p):
+      '''valores_array : elementos_array COMA valores_array
+                          | elementos_array
+                          | empty
+      '''
+def p_elementos_array(p):
+    '''elementos_array : NUMBER
+                          | TEXT
+                          | empty
+                          | boolean
+                          | array
+    '''
 
 def p_new(p):
     'new : NEW FNOMBRE '

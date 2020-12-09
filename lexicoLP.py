@@ -100,9 +100,6 @@ tokens =(
 
     #Cadena de texto
     'TEXT',
-    'SLINEA',
-    'NUMERPLUS',
-    'PALAPLUS',
 
 
      #Operadores Comparación
@@ -140,9 +137,6 @@ t_LPAREN=r'\('
 t_RPAREN=r'\)'
 t_END = r';'
 t_TEXT = r'".*"'
-t_SLINEA= r'\n'
-t_NUMERPLUS=r'\d(, \d)*'
-t_PALAPLUS=r'".*"(, ".*")*'
 
 
 #t_PEIROT = r'\.'
@@ -157,8 +151,8 @@ t_ID = r'(\$([a-z]|[A-Z]))([a-zA-Z0-9]+)?'
 
 
 #Valor Boolean
-t_TRUE = r'true'
-t_FALSE = r'false'
+#t_TRUE = r'true'
+#t_FALSE = r'false'
 
 #Operadores Comparación
 t_MAYORQUE = r'>'
@@ -205,6 +199,12 @@ def t_STRING(t):
     r'string'
     return t
 '''
+def t_TRUE(t):
+    r'true'
+    return t
+def t_FALSE(t):
+    r'false'
+    return t
 def t_NULL(t):
     r'null'
     return t
