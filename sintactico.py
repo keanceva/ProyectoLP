@@ -74,7 +74,11 @@ def p_termino(p):
 
 #KEVIN CEVALLOS
 def p_expif(p):
-    'expif : funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET'
+    '''expif : funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET
+                | funcion_condicion LPAREN comparacion RPAREN LCORCHET
+                | declaracion RCORCHET
+                | declaracion
+                | RCORCHET'''
 
 def p_expelse(p):
     'expelse : expif ELSE LCORCHET declaracion RCORCHET'
