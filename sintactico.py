@@ -216,7 +216,8 @@ def p_print(p):
 def p_argument(p):
     '''argument : ID
                     | TEXT
-                    | operacion_matematica'''
+                    | operacion_matematica
+                    | comparacion'''
 
 def p_valores_echo(p):
     ''' valores_echo : argument COMA valores_echo
