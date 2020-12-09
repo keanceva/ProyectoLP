@@ -57,6 +57,7 @@ def p_expression_math(p):
 def p_operacion_matematica(p):
     '''operacion_matematica :  termino operadores operacion_matematica
                                 | termino operadores termino
+                                
     '''
 #KEVIN CEVALLOS
 def p_operadores(p):
@@ -81,22 +82,36 @@ def p_expif(p):
                 | RCORCHET'''
 
 def p_expelse(p):
-    'expelse : expif ELSE LCORCHET declaracion RCORCHET'
+    '''expelse : expif ELSE LCORCHET declaracion RCORCHET
+                | expif ELSE LCORCHET declaracion
+                | expif ELSE LCORCHET
+                | declaracion
+                | declaracion RCORCHET
+                | RCORCHET'''
 
 def p_funcion_condicion(p):
     '''funcion_condicion : IF
                           | ELSEIF'''
 
 def p_control_bucle(p):
-    '''control_bucle : BREAK
+    '''control_bucle : declaracion
+                        | BREAK
                         | CONTINUE
-                        | declaracion'''
+                        '''
 
 def p_while(p):
-    'while : WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET'
+    '''while : WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
+                | WHILE LPAREN comparacion RPAREN LCORCHET
+                | control_bucle RCORCHET
+                | control_bucle
+                | RCORCHET'''
 
 def p_foreach(p):
-    'foreach : FOREACH LPAREN ID AS ID RPAREN LCORCHET control_bucle RCORCHET'
+    '''foreach : FOREACH LPAREN ID AS ID RPAREN LCORCHET declaracion RCORCHET
+                | FOREACH LPAREN ID AS ID RPAREN LCORCHET
+                | control_bucle RCORCHET
+                | control_bucle
+                | RCORCHET '''
 
 #MARIA CAMILA NAVARRO
 def p_comparacion(p):
@@ -223,7 +238,7 @@ def p_funcion_arreglo(p):
                          | KSORT
                          | UNSET
                          | IMPLODE
-                        | EXPLODE '''
+                        | EXPLODE'''
 
 def p_archivos(p):
     'archivos : funcion_archivo LPAREN TEXT COMA TEXT RPAREN'
@@ -242,7 +257,11 @@ def p_funcion_archivo(p):
                     '''
 
 def p_clase(p):
-    'clase : CLASS FNOMBRE LCORCHET declaracion RCORCHET'
+    '''clase : CLASS FNOMBRE LCORCHET declaracion RCORCHET
+                | CLASS FNOMBRE LCORCHET
+                | declaracion RCORCHET
+                | declaracion
+                | RCORCHET '''
 
 
 def p_error(p):
@@ -282,6 +301,8 @@ def prueba_sintactica(data):
     resultado_gramatica.clear()
     linea=1
     contador=len(resultado_gramatica)
+    #gram = parser.parse(data)
+
     for item in data.split("\n"):
 
         if item:
