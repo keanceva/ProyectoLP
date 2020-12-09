@@ -1,5 +1,5 @@
 import ply.yacc as yacc
-from past.builtins import raw_input
+#from past.builtins import raw_input
 import lexicoLP
 
 from lexicoLP import tokens
@@ -7,11 +7,16 @@ from lexicoLP import tokens
 resultado_gramatica = []
 
 def p_programa(p):
-    'programa : OPEN declaracion CLOSE'
+    '''programa : OPEN  declaracion CLOSE
+                    | OPEN declaracion
+                    | declaracion CLOSE
+                    | declaracion
+                    | CLOSE
+                    | OPEN'''
 
 #KEVIN CEVALLOS
 def p_declaracion(p):
-    '''declaracion : expression
+    '''declaracion :  expression
                         | expif
                         | expelse
                         | expresionlogica
@@ -23,9 +28,11 @@ def p_declaracion(p):
                         | arreglos
                         | while
                         | foreach
-                        | clase'''
+                        | clase
+                        '''
 
 #JOFFRE RAMIREZ
+
 def p_creacionfunciones(p):
     '''creacionfunciones : FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET '''
 
@@ -244,6 +251,7 @@ def ImprimirSintactico(dato):
 def prueba_sintactica(data):
     global resultado_gramatica
     resultado_gramatica.clear()
+    print(data.split("\n"))
     for item in data.split("\n"):
         if item:
             gram = parser.parse(item)
