@@ -30,7 +30,7 @@ def p_declaracion(p):
                         | while
                         | foreach
                         | clase
-                        '''
+                        | declaracion'''
 
 #JOFFRE RAMIREZ
 
@@ -52,9 +52,12 @@ def p_returnvalores(p):
 
 #KEVIN CEVALLOS
 def p_expression_math(p):
-    'expression : ID EQUALS termino operadores termino END'
+    'expression : ID EQUALS operacion_matematica END'
 
-
+def p_operacion_matematica(p):
+    '''operacion_matematica :  termino operadores operacion_matematica
+                                | termino operadores termino
+    '''
 #KEVIN CEVALLOS
 def p_operadores(p):
     '''operadores : PLUS
