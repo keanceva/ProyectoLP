@@ -68,228 +68,230 @@ Rule 62    foreach -> control_bucle RCORCHET
 Rule 63    foreach -> control_bucle
 Rule 64    foreach -> RCORCHET
 Rule 65    comparacion -> valor_comparado operadorcomparacion valor_comparado
-Rule 66    valor_comparado -> NUMBER
-Rule 67    valor_comparado -> boolean
-Rule 68    valor_comparado -> operacion_matematica
-Rule 69    valor_comparado -> ID
-Rule 70    operadorcomparacion -> IS_EQUAL
-Rule 71    operadorcomparacion -> IS_IDENTICAL
-Rule 72    operadorcomparacion -> IS_NOT_EQUAL
-Rule 73    operadorcomparacion -> IS_NOT_IDENTICAL
-Rule 74    operadorcomparacion -> IS_GREATER_OR_EQUAL
-Rule 75    operadorcomparacion -> IS_SMALLER_OR_EQUAL
-Rule 76    operadorcomparacion -> SPACESHIP
-Rule 77    operadorcomparacion -> MAYORQUE
-Rule 78    operadorcomparacion -> MENORQUE
-Rule 79    expresionlogica -> ID operadorlogico ID
-Rule 80    operadorlogico -> AND
-Rule 81    operadorlogico -> OR
-Rule 82    operadorlogico -> XOR
-Rule 83    operadorlogico -> NOT
-Rule 84    declararvariable -> ID EQUALS tipo END
-Rule 85    tipo -> boolean
-Rule 86    tipo -> NUMBER
-Rule 87    tipo -> TEXT
-Rule 88    tipo -> NULL
-Rule 89    tipo -> archivos
-Rule 90    tipo -> array
-Rule 91    tipo -> new
-Rule 92    boolean -> TRUE
-Rule 93    boolean -> FALSE
-Rule 94    boolean -> expresionlogica
-Rule 95    operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-Rule 96    array -> ARRAY LPAREN valores_array RPAREN
-Rule 97    valores_array -> elementos_array COMA valores_array
-Rule 98    valores_array -> elementos_array
-Rule 99    valores_array -> empty
-Rule 100   elementos_array -> NUMBER
-Rule 101   elementos_array -> TEXT
-Rule 102   elementos_array -> empty
-Rule 103   elementos_array -> boolean
-Rule 104   elementos_array -> array
-Rule 105   new -> NEW FNOMBRE
-Rule 106   print -> funcion_print LPAREN argument RPAREN END
-Rule 107   print -> funcion_print argument END
-Rule 108   print -> ECHO LPAREN valores_echo RPAREN END
-Rule 109   print -> ECHO valores_echo END
-Rule 110   argument -> ID
-Rule 111   argument -> TEXT
-Rule 112   valores_echo -> argument COMA valores_echo
-Rule 113   valores_echo -> argument
-Rule 114   funcion_print -> VAR_EXPORT
-Rule 115   funcion_print -> ECHO
-Rule 116   funcion_print -> PRINT
-Rule 117   funcion_print -> PRINT_R
-Rule 118   funcion_print -> VAR_DUMP
-Rule 119   arreglos -> funcion_arreglo LPAREN ID RPAREN
-Rule 120   argumento_doble -> LPAREN ID COMA ID RPAREN
-Rule 121   funcion_argumento_doble -> ARRAY_MERGE
-Rule 122   funcion_argumento_doble -> ARRAY_SEARCH
-Rule 123   funcion_argumento_doble -> ARRAY_RAND
-Rule 124   funcion_argumento_doble -> ARRAY_CHUNK
-Rule 125   funcion_argumento_doble -> STR_SPLIT
-Rule 126   funcion_argumento_doble -> PREG_SPLIT
-Rule 127   funcion_argumento_doble -> COUNT
-Rule 128   funcion_argumento_doble -> ARRAY_PUSH
-Rule 129   funcion_argumento_doble -> SORT
-Rule 130   funcion_argumento_doble -> ASORT
-Rule 131   funcion_argumento_doble -> KSORT
-Rule 132   funcion_argumento_doble -> UNSET
-Rule 133   funcion_argumento_doble -> IMPLODE
-Rule 134   funcion_argumento_doble -> EXPLODE
-Rule 135   funcion_arreglo -> SUFFLE
-Rule 136   funcion_arreglo -> ARRAY_UNIQUE
-Rule 137   funcion_arreglo -> SIZEOF
-Rule 138   archivos -> funcion_corta
-Rule 139   archivos -> estructura_funcion
-Rule 140   funcion_corta -> FGETS LPAREN ID COMA NUMBER RPAREN
-Rule 141   estructura_funcion -> funcion_archivo LPAREN opcion RPAREN
-Rule 142   opcion -> ID
-Rule 143   opcion -> TEXT
-Rule 144   funcion_archivo -> FREAD
-Rule 145   funcion_archivo -> FSCANF
-Rule 146   funcion_archivo -> FPASSTHRU
-Rule 147   funcion_archivo -> FGETCSV
-Rule 148   funcion_archivo -> FGETC
-Rule 149   funcion_archivo -> FILE_GET_CONTENTS
-Rule 150   funcion_archivo -> READFILE
-Rule 151   funcion_archivo -> FILE
-Rule 152   funcion_archivo -> PARSE_INI_FILE
-Rule 153   clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET
-Rule 154   clase -> CLASS FNOMBRE LCORCHET
-Rule 155   clase -> declaracion RCORCHET
-Rule 156   clase -> declaracion
-Rule 157   clase -> RCORCHET
+Rule 66    comparacion -> boolean
+Rule 67    valor_comparado -> NUMBER
+Rule 68    valor_comparado -> boolean
+Rule 69    valor_comparado -> operacion_matematica
+Rule 70    valor_comparado -> ID
+Rule 71    operadorcomparacion -> IS_EQUAL
+Rule 72    operadorcomparacion -> IS_IDENTICAL
+Rule 73    operadorcomparacion -> IS_NOT_EQUAL
+Rule 74    operadorcomparacion -> IS_NOT_IDENTICAL
+Rule 75    operadorcomparacion -> IS_GREATER_OR_EQUAL
+Rule 76    operadorcomparacion -> IS_SMALLER_OR_EQUAL
+Rule 77    operadorcomparacion -> SPACESHIP
+Rule 78    operadorcomparacion -> MAYORQUE
+Rule 79    operadorcomparacion -> MENORQUE
+Rule 80    expresionlogica -> ID operadorlogico ID
+Rule 81    operadorlogico -> AND
+Rule 82    operadorlogico -> OR
+Rule 83    operadorlogico -> XOR
+Rule 84    operadorlogico -> NOT
+Rule 85    declararvariable -> ID EQUALS tipo END
+Rule 86    tipo -> boolean
+Rule 87    tipo -> NUMBER
+Rule 88    tipo -> TEXT
+Rule 89    tipo -> NULL
+Rule 90    tipo -> archivos
+Rule 91    tipo -> array
+Rule 92    tipo -> new
+Rule 93    boolean -> TRUE
+Rule 94    boolean -> FALSE
+Rule 95    boolean -> expresionlogica
+Rule 96    operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+Rule 97    array -> ARRAY LPAREN valores_array RPAREN
+Rule 98    valores_array -> elementos_array COMA valores_array
+Rule 99    valores_array -> elementos_array
+Rule 100   valores_array -> empty
+Rule 101   elementos_array -> NUMBER
+Rule 102   elementos_array -> TEXT
+Rule 103   elementos_array -> empty
+Rule 104   elementos_array -> boolean
+Rule 105   elementos_array -> array
+Rule 106   new -> NEW FNOMBRE
+Rule 107   print -> funcion_print LPAREN argument RPAREN END
+Rule 108   print -> funcion_print argument END
+Rule 109   print -> ECHO LPAREN valores_echo RPAREN END
+Rule 110   print -> ECHO valores_echo END
+Rule 111   argument -> ID
+Rule 112   argument -> TEXT
+Rule 113   argument -> operacion_matematica
+Rule 114   valores_echo -> argument COMA valores_echo
+Rule 115   valores_echo -> argument
+Rule 116   funcion_print -> VAR_EXPORT
+Rule 117   funcion_print -> ECHO
+Rule 118   funcion_print -> PRINT
+Rule 119   funcion_print -> PRINT_R
+Rule 120   funcion_print -> VAR_DUMP
+Rule 121   arreglos -> funcion_arreglo LPAREN ID RPAREN
+Rule 122   argumento_doble -> LPAREN ID COMA ID RPAREN
+Rule 123   funcion_argumento_doble -> ARRAY_MERGE
+Rule 124   funcion_argumento_doble -> ARRAY_SEARCH
+Rule 125   funcion_argumento_doble -> ARRAY_RAND
+Rule 126   funcion_argumento_doble -> ARRAY_CHUNK
+Rule 127   funcion_argumento_doble -> STR_SPLIT
+Rule 128   funcion_argumento_doble -> PREG_SPLIT
+Rule 129   funcion_argumento_doble -> COUNT
+Rule 130   funcion_argumento_doble -> ARRAY_PUSH
+Rule 131   funcion_argumento_doble -> SORT
+Rule 132   funcion_argumento_doble -> ASORT
+Rule 133   funcion_argumento_doble -> KSORT
+Rule 134   funcion_argumento_doble -> UNSET
+Rule 135   funcion_argumento_doble -> IMPLODE
+Rule 136   funcion_argumento_doble -> EXPLODE
+Rule 137   funcion_arreglo -> SUFFLE
+Rule 138   funcion_arreglo -> ARRAY_UNIQUE
+Rule 139   funcion_arreglo -> SIZEOF
+Rule 140   archivos -> funcion_corta
+Rule 141   archivos -> estructura_funcion
+Rule 142   funcion_corta -> FGETS LPAREN ID COMA NUMBER RPAREN
+Rule 143   estructura_funcion -> funcion_archivo LPAREN opcion RPAREN
+Rule 144   opcion -> ID
+Rule 145   opcion -> TEXT
+Rule 146   funcion_archivo -> FREAD
+Rule 147   funcion_archivo -> FSCANF
+Rule 148   funcion_archivo -> FPASSTHRU
+Rule 149   funcion_archivo -> FGETCSV
+Rule 150   funcion_archivo -> FGETC
+Rule 151   funcion_archivo -> FILE_GET_CONTENTS
+Rule 152   funcion_archivo -> READFILE
+Rule 153   funcion_archivo -> FILE
+Rule 154   funcion_archivo -> PARSE_INI_FILE
+Rule 155   clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET
+Rule 156   clase -> CLASS FNOMBRE LCORCHET
+Rule 157   clase -> declaracion RCORCHET
+Rule 158   clase -> declaracion
+Rule 159   clase -> RCORCHET
 
 Terminals, with rules where they appear
 
-AND                  : 80
-ARRAY                : 96
-ARRAY_CHUNK          : 124
-ARRAY_MERGE          : 121
-ARRAY_PUSH           : 128
-ARRAY_RAND           : 123
-ARRAY_SEARCH         : 122
-ARRAY_UNIQUE         : 136
+AND                  : 81
+ARRAY                : 97
+ARRAY_CHUNK          : 126
+ARRAY_MERGE          : 123
+ARRAY_PUSH           : 130
+ARRAY_RAND           : 125
+ARRAY_SEARCH         : 124
+ARRAY_UNIQUE         : 138
 AS                   : 60 61
-ASORT                : 130
+ASORT                : 132
 BREAK                : 53
-CLASS                : 153 154
+CLASS                : 155 156
 CLOSE                : 1 3 5
-COMA                 : 97 112 120 140
+COMA                 : 98 114 122 142
 CONTINUE             : 54
-COUNT                : 127
+COUNT                : 129
 DECIMAL              : 38
 DIVIDE               : 33
-ECHO                 : 108 109 115
+ECHO                 : 109 110 117
 ELSE                 : 44 45 46
 ELSEIF               : 51
-END                  : 25 28 84 95 106 107 108 109
-EQUALS               : 28 84 95
-EXPLODE              : 134
-FALSE                : 93
-FGETC                : 148
-FGETCSV              : 147
-FGETS                : 140
-FILE                 : 151
-FILE_GET_CONTENTS    : 149
-FNOMBRE              : 21 95 105 153 154
+END                  : 25 28 85 96 107 108 109 110
+EQUALS               : 28 85 96
+EXPLODE              : 136
+FALSE                : 94
+FGETC                : 150
+FGETCSV              : 149
+FGETS                : 142
+FILE                 : 153
+FILE_GET_CONTENTS    : 151
+FNOMBRE              : 21 96 106 155 156
 FOREACH              : 60 61
-FPASSTHRU            : 146
-FREAD                : 144
-FSCANF               : 145
+FPASSTHRU            : 148
+FREAD                : 146
+FSCANF               : 147
 FUNCTION             : 21
-ID                   : 23 28 37 60 60 61 61 69 79 79 84 95 110 119 120 120 140 142
+ID                   : 23 28 37 60 60 61 61 70 80 80 85 96 111 121 122 122 142 144
 IF                   : 50
-IMPLODE              : 133
-IS_EQUAL             : 70
-IS_GREATER_OR_EQUAL  : 74
-IS_IDENTICAL         : 71
-IS_NOT_EQUAL         : 72
-IS_NOT_IDENTICAL     : 73
-IS_SMALLER_OR_EQUAL  : 75
-KSORT                : 131
-LCORCHET             : 21 39 40 44 45 46 55 56 60 61 153 154
-LPAREN               : 21 39 40 55 56 60 61 95 96 106 108 119 120 140 141
-MAYORQUE             : 77
-MENORQUE             : 78
+IMPLODE              : 135
+IS_EQUAL             : 71
+IS_GREATER_OR_EQUAL  : 75
+IS_IDENTICAL         : 72
+IS_NOT_EQUAL         : 73
+IS_NOT_IDENTICAL     : 74
+IS_SMALLER_OR_EQUAL  : 76
+KSORT                : 133
+LCORCHET             : 21 39 40 44 45 46 55 56 60 61 155 156
+LPAREN               : 21 39 40 55 56 60 61 96 97 107 109 121 122 142 143
+MAYORQUE             : 78
+MENORQUE             : 79
 MINUS                : 32
 MODULO               : 35
-NEW                  : 105
-NOT                  : 83
-NULL                 : 88
-NUMBER               : 36 66 86 100 140
-OBJECT_OPERATOR      : 95
+NEW                  : 106
+NOT                  : 84
+NULL                 : 89
+NUMBER               : 36 67 87 101 142
+OBJECT_OPERATOR      : 96
 OPEN                 : 1 2 6
-OR                   : 81
-PARSE_INI_FILE       : 152
+OR                   : 82
+PARSE_INI_FILE       : 154
 PLUS                 : 31
-PREG_SPLIT           : 126
-PRINT                : 116
-PRINT_R              : 117
-RCORCHET             : 21 39 41 43 44 48 49 55 57 59 60 62 64 153 155 157
-READFILE             : 150
+PREG_SPLIT           : 128
+PRINT                : 118
+PRINT_R              : 119
+RCORCHET             : 21 39 41 43 44 48 49 55 57 59 60 62 64 155 157 159
+READFILE             : 152
 RETURN               : 25 26
-RPAREN               : 21 39 40 55 56 60 61 95 96 106 108 119 120 140 141
-SIZEOF               : 137
-SORT                 : 129
-SPACESHIP            : 76
-STR_SPLIT            : 125
-SUFFLE               : 135
-TEXT                 : 87 101 111 143
+RPAREN               : 21 39 40 55 56 60 61 96 97 107 109 121 122 142 143
+SIZEOF               : 139
+SORT                 : 131
+SPACESHIP            : 77
+STR_SPLIT            : 127
+SUFFLE               : 137
+TEXT                 : 88 102 112 145
 TIMES                : 34
-TRUE                 : 92
-UNSET                : 132
-VAR_DUMP             : 118
-VAR_EXPORT           : 114
+TRUE                 : 93
+UNSET                : 134
+VAR_DUMP             : 120
+VAR_EXPORT           : 116
 WHILE                : 55 56
-XOR                  : 82
+XOR                  : 83
 error                : 
 
 Nonterminals, with rules where they appear
 
-archivos             : 89
-argument             : 106 107 112 113
+archivos             : 90
+argument             : 107 108 114 115
 argumento_doble      : 
-argumentos           : 95
-array                : 90 104
+argumentos           : 96
+array                : 91 105
 arreglos             : 16
-boolean              : 67 85 103
+boolean              : 66 68 86 104
 clase                : 19
 comparacion          : 39 40 55 56
 control_bucle        : 55 57 58 62 63
 creacionfunciones    : 12 26
-declaracion          : 1 2 3 4 20 21 39 41 42 44 45 47 48 52 60 153 155 156
+declaracion          : 1 2 3 4 20 21 39 41 42 44 45 47 48 52 60 155 157 158
 declararvariable     : 11
-elementos_array      : 97 98
-empty                : 24 27 99 102
-estructura_funcion   : 139
+elementos_array      : 98 99
+empty                : 24 27 100 103
+estructura_funcion   : 141
 expelse              : 9
 expif                : 8 44 45 46
-expresionlogica      : 10 94
+expresionlogica      : 10 95
 expression           : 7
 foreach              : 18
-funcion_archivo      : 141
+funcion_archivo      : 143
 funcion_argumento_doble : 
-funcion_arreglo      : 119
+funcion_arreglo      : 121
 funcion_condicion    : 39 40
-funcion_corta        : 138
-funcion_print        : 106 107
-new                  : 91
-opcion               : 141
-operacion_matematica : 28 29 68
+funcion_corta        : 140
+funcion_print        : 107 108
+new                  : 92
+opcion               : 143
+operacion_matematica : 28 29 69 113
 operador_object      : 14
 operadorcomparacion  : 65
 operadores           : 29 30
-operadorlogico       : 79
+operadorlogico       : 80
 print                : 15
 programa             : 0
 returnvalores        : 13
 termino              : 25 29 30 30
-tipo                 : 84
+tipo                 : 85
 valor_comparado      : 65 65
-valores_array        : 96 97
-valores_echo         : 108 109 112
+valores_array        : 97 98
+valores_echo         : 109 110 114
 while                : 17
 
 Parsing method: LALR
@@ -329,18 +331,18 @@ state 0
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -351,22 +353,22 @@ state 0
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -458,18 +460,18 @@ state 2
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -480,22 +482,22 @@ state 2
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -557,8 +559,8 @@ state 3
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for CLOSE resolved as shift
@@ -596,10 +598,10 @@ state 3
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! $end            [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! CLOSE           [ reduce using rule 156 (clase -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! $end            [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! CLOSE           [ reduce using rule 158 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! $end            [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! CLOSE           [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! $end            [ reduce using rule 52 (control_bucle -> declaracion .) ]
@@ -752,13 +754,13 @@ state 17
 state 18
 
     (28) expression -> ID . EQUALS operacion_matematica END
-    (79) expresionlogica -> ID . operadorlogico ID
-    (84) declararvariable -> ID . EQUALS tipo END
-    (95) operador_object -> ID . EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (80) operadorlogico -> . AND
-    (81) operadorlogico -> . OR
-    (82) operadorlogico -> . XOR
-    (83) operadorlogico -> . NOT
+    (80) expresionlogica -> ID . operadorlogico ID
+    (85) declararvariable -> ID . EQUALS tipo END
+    (96) operador_object -> ID . EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (81) operadorlogico -> . AND
+    (82) operadorlogico -> . OR
+    (83) operadorlogico -> . XOR
+    (84) operadorlogico -> . NOT
 
     EQUALS          shift and go to state 46
     AND             shift and go to state 48
@@ -782,7 +784,7 @@ state 20
     (49) expelse -> RCORCHET .
     (59) while -> RCORCHET .
     (64) foreach -> RCORCHET .
-    (157) clase -> RCORCHET .
+    (159) clase -> RCORCHET .
 
   ! reduce/reduce conflict for CLOSE resolved using rule 43 (expif -> RCORCHET .)
   ! reduce/reduce conflict for RCORCHET resolved using rule 43 (expif -> RCORCHET .)
@@ -817,10 +819,10 @@ state 20
   ! RCORCHET        [ reduce using rule 64 (foreach -> RCORCHET .) ]
   ! $end            [ reduce using rule 64 (foreach -> RCORCHET .) ]
   ! ELSE            [ reduce using rule 64 (foreach -> RCORCHET .) ]
-  ! CLOSE           [ reduce using rule 157 (clase -> RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 157 (clase -> RCORCHET .) ]
-  ! $end            [ reduce using rule 157 (clase -> RCORCHET .) ]
-  ! ELSE            [ reduce using rule 157 (clase -> RCORCHET .) ]
+  ! CLOSE           [ reduce using rule 159 (clase -> RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 159 (clase -> RCORCHET .) ]
+  ! $end            [ reduce using rule 159 (clase -> RCORCHET .) ]
+  ! ELSE            [ reduce using rule 159 (clase -> RCORCHET .) ]
 
 
 state 21
@@ -859,46 +861,70 @@ state 23
 
 state 24
 
-    (106) print -> funcion_print . LPAREN argument RPAREN END
-    (107) print -> funcion_print . argument END
-    (110) argument -> . ID
-    (111) argument -> . TEXT
+    (107) print -> funcion_print . LPAREN argument RPAREN END
+    (108) print -> funcion_print . argument END
+    (111) argument -> . ID
+    (112) argument -> . TEXT
+    (113) argument -> . operacion_matematica
+    (29) operacion_matematica -> . termino operadores operacion_matematica
+    (30) operacion_matematica -> . termino operadores termino
+    (36) termino -> . NUMBER
+    (37) termino -> . ID
+    (38) termino -> . DECIMAL
 
     LPAREN          shift and go to state 59
     ID              shift and go to state 61
     TEXT            shift and go to state 62
+    NUMBER          shift and go to state 56
+    DECIMAL         shift and go to state 58
 
     argument                       shift and go to state 60
+    operacion_matematica           shift and go to state 63
+    termino                        shift and go to state 64
 
 state 25
 
-    (108) print -> ECHO . LPAREN valores_echo RPAREN END
-    (109) print -> ECHO . valores_echo END
-    (115) funcion_print -> ECHO .
-    (112) valores_echo -> . argument COMA valores_echo
-    (113) valores_echo -> . argument
-    (110) argument -> . ID
-    (111) argument -> . TEXT
+    (109) print -> ECHO . LPAREN valores_echo RPAREN END
+    (110) print -> ECHO . valores_echo END
+    (117) funcion_print -> ECHO .
+    (114) valores_echo -> . argument COMA valores_echo
+    (115) valores_echo -> . argument
+    (111) argument -> . ID
+    (112) argument -> . TEXT
+    (113) argument -> . operacion_matematica
+    (29) operacion_matematica -> . termino operadores operacion_matematica
+    (30) operacion_matematica -> . termino operadores termino
+    (36) termino -> . NUMBER
+    (37) termino -> . ID
+    (38) termino -> . DECIMAL
 
   ! shift/reduce conflict for LPAREN resolved as shift
   ! shift/reduce conflict for ID resolved as shift
   ! shift/reduce conflict for TEXT resolved as shift
-    LPAREN          shift and go to state 63
+  ! shift/reduce conflict for NUMBER resolved as shift
+  ! shift/reduce conflict for DECIMAL resolved as shift
+    LPAREN          shift and go to state 65
     ID              shift and go to state 61
     TEXT            shift and go to state 62
+    NUMBER          shift and go to state 56
+    DECIMAL         shift and go to state 58
 
-  ! LPAREN          [ reduce using rule 115 (funcion_print -> ECHO .) ]
-  ! ID              [ reduce using rule 115 (funcion_print -> ECHO .) ]
-  ! TEXT            [ reduce using rule 115 (funcion_print -> ECHO .) ]
+  ! LPAREN          [ reduce using rule 117 (funcion_print -> ECHO .) ]
+  ! ID              [ reduce using rule 117 (funcion_print -> ECHO .) ]
+  ! TEXT            [ reduce using rule 117 (funcion_print -> ECHO .) ]
+  ! NUMBER          [ reduce using rule 117 (funcion_print -> ECHO .) ]
+  ! DECIMAL         [ reduce using rule 117 (funcion_print -> ECHO .) ]
 
-    valores_echo                   shift and go to state 64
-    argument                       shift and go to state 65
+    valores_echo                   shift and go to state 66
+    argument                       shift and go to state 67
+    operacion_matematica           shift and go to state 63
+    termino                        shift and go to state 64
 
 state 26
 
-    (119) arreglos -> funcion_arreglo . LPAREN ID RPAREN
+    (121) arreglos -> funcion_arreglo . LPAREN ID RPAREN
 
-    LPAREN          shift and go to state 66
+    LPAREN          shift and go to state 68
 
 
 state 27
@@ -906,7 +932,7 @@ state 27
     (55) while -> WHILE . LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> WHILE . LPAREN comparacion RPAREN LCORCHET
 
-    LPAREN          shift and go to state 67
+    LPAREN          shift and go to state 69
 
 
 state 28
@@ -921,7 +947,7 @@ state 28
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for $end resolved using rule 58 (while -> control_bucle .)
   ! reduce/reduce conflict for ELSE resolved using rule 58 (while -> control_bucle .)
-    RCORCHET        shift and go to state 68
+    RCORCHET        shift and go to state 70
     CLOSE           reduce using rule 58 (while -> control_bucle .)
     $end            reduce using rule 58 (while -> control_bucle .)
     ELSE            reduce using rule 58 (while -> control_bucle .)
@@ -938,15 +964,15 @@ state 29
     (60) foreach -> FOREACH . LPAREN ID AS ID RPAREN LCORCHET declaracion RCORCHET
     (61) foreach -> FOREACH . LPAREN ID AS ID RPAREN LCORCHET
 
-    LPAREN          shift and go to state 69
+    LPAREN          shift and go to state 71
 
 
 state 30
 
-    (153) clase -> CLASS . FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> CLASS . FNOMBRE LCORCHET
+    (155) clase -> CLASS . FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> CLASS . FNOMBRE LCORCHET
 
-    FNOMBRE         shift and go to state 70
+    FNOMBRE         shift and go to state 72
 
 
 state 31
@@ -965,59 +991,67 @@ state 32
 
 state 33
 
-    (114) funcion_print -> VAR_EXPORT .
+    (116) funcion_print -> VAR_EXPORT .
 
-    LPAREN          reduce using rule 114 (funcion_print -> VAR_EXPORT .)
-    ID              reduce using rule 114 (funcion_print -> VAR_EXPORT .)
-    TEXT            reduce using rule 114 (funcion_print -> VAR_EXPORT .)
+    LPAREN          reduce using rule 116 (funcion_print -> VAR_EXPORT .)
+    ID              reduce using rule 116 (funcion_print -> VAR_EXPORT .)
+    TEXT            reduce using rule 116 (funcion_print -> VAR_EXPORT .)
+    NUMBER          reduce using rule 116 (funcion_print -> VAR_EXPORT .)
+    DECIMAL         reduce using rule 116 (funcion_print -> VAR_EXPORT .)
 
 
 state 34
 
-    (116) funcion_print -> PRINT .
+    (118) funcion_print -> PRINT .
 
-    LPAREN          reduce using rule 116 (funcion_print -> PRINT .)
-    ID              reduce using rule 116 (funcion_print -> PRINT .)
-    TEXT            reduce using rule 116 (funcion_print -> PRINT .)
+    LPAREN          reduce using rule 118 (funcion_print -> PRINT .)
+    ID              reduce using rule 118 (funcion_print -> PRINT .)
+    TEXT            reduce using rule 118 (funcion_print -> PRINT .)
+    NUMBER          reduce using rule 118 (funcion_print -> PRINT .)
+    DECIMAL         reduce using rule 118 (funcion_print -> PRINT .)
 
 
 state 35
 
-    (117) funcion_print -> PRINT_R .
+    (119) funcion_print -> PRINT_R .
 
-    LPAREN          reduce using rule 117 (funcion_print -> PRINT_R .)
-    ID              reduce using rule 117 (funcion_print -> PRINT_R .)
-    TEXT            reduce using rule 117 (funcion_print -> PRINT_R .)
+    LPAREN          reduce using rule 119 (funcion_print -> PRINT_R .)
+    ID              reduce using rule 119 (funcion_print -> PRINT_R .)
+    TEXT            reduce using rule 119 (funcion_print -> PRINT_R .)
+    NUMBER          reduce using rule 119 (funcion_print -> PRINT_R .)
+    DECIMAL         reduce using rule 119 (funcion_print -> PRINT_R .)
 
 
 state 36
 
-    (118) funcion_print -> VAR_DUMP .
+    (120) funcion_print -> VAR_DUMP .
 
-    LPAREN          reduce using rule 118 (funcion_print -> VAR_DUMP .)
-    ID              reduce using rule 118 (funcion_print -> VAR_DUMP .)
-    TEXT            reduce using rule 118 (funcion_print -> VAR_DUMP .)
+    LPAREN          reduce using rule 120 (funcion_print -> VAR_DUMP .)
+    ID              reduce using rule 120 (funcion_print -> VAR_DUMP .)
+    TEXT            reduce using rule 120 (funcion_print -> VAR_DUMP .)
+    NUMBER          reduce using rule 120 (funcion_print -> VAR_DUMP .)
+    DECIMAL         reduce using rule 120 (funcion_print -> VAR_DUMP .)
 
 
 state 37
 
-    (135) funcion_arreglo -> SUFFLE .
+    (137) funcion_arreglo -> SUFFLE .
 
-    LPAREN          reduce using rule 135 (funcion_arreglo -> SUFFLE .)
+    LPAREN          reduce using rule 137 (funcion_arreglo -> SUFFLE .)
 
 
 state 38
 
-    (136) funcion_arreglo -> ARRAY_UNIQUE .
+    (138) funcion_arreglo -> ARRAY_UNIQUE .
 
-    LPAREN          reduce using rule 136 (funcion_arreglo -> ARRAY_UNIQUE .)
+    LPAREN          reduce using rule 138 (funcion_arreglo -> ARRAY_UNIQUE .)
 
 
 state 39
 
-    (137) funcion_arreglo -> SIZEOF .
+    (139) funcion_arreglo -> SIZEOF .
 
-    LPAREN          reduce using rule 137 (funcion_arreglo -> SIZEOF .)
+    LPAREN          reduce using rule 139 (funcion_arreglo -> SIZEOF .)
 
 
 state 40
@@ -1049,8 +1083,8 @@ state 42
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for CLOSE resolved as shift
@@ -1072,7 +1106,7 @@ state 42
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for $end resolved using rule 2 (programa -> OPEN declaracion .)
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
-    CLOSE           shift and go to state 71
+    CLOSE           shift and go to state 73
     $end            reduce using rule 2 (programa -> OPEN declaracion .)
     ELSE            reduce using rule 20 (declaracion -> declaracion .)
     RCORCHET        shift and go to state 44
@@ -1088,10 +1122,10 @@ state 42
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! $end            [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! CLOSE           [ reduce using rule 156 (clase -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! $end            [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! CLOSE           [ reduce using rule 158 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! $end            [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! CLOSE           [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! $end            [ reduce using rule 52 (control_bucle -> declaracion .) ]
@@ -1109,7 +1143,7 @@ state 44
 
     (41) expif -> declaracion RCORCHET .
     (48) expelse -> declaracion RCORCHET .
-    (155) clase -> declaracion RCORCHET .
+    (157) clase -> declaracion RCORCHET .
 
   ! reduce/reduce conflict for CLOSE resolved using rule 41 (expif -> declaracion RCORCHET .)
   ! reduce/reduce conflict for RCORCHET resolved using rule 41 (expif -> declaracion RCORCHET .)
@@ -1128,10 +1162,10 @@ state 44
   ! RCORCHET        [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! $end            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! ELSE            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
-  ! CLOSE           [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! $end            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
+  ! CLOSE           [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! $end            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
 
 
 state 45
@@ -1140,112 +1174,112 @@ state 45
     (45) expelse -> expif ELSE . LCORCHET declaracion
     (46) expelse -> expif ELSE . LCORCHET
 
-    LCORCHET        shift and go to state 72
+    LCORCHET        shift and go to state 74
 
 
 state 46
 
     (28) expression -> ID EQUALS . operacion_matematica END
-    (84) declararvariable -> ID EQUALS . tipo END
-    (95) operador_object -> ID EQUALS . OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (85) declararvariable -> ID EQUALS . tipo END
+    (96) operador_object -> ID EQUALS . OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
     (29) operacion_matematica -> . termino operadores operacion_matematica
     (30) operacion_matematica -> . termino operadores termino
-    (85) tipo -> . boolean
-    (86) tipo -> . NUMBER
-    (87) tipo -> . TEXT
-    (88) tipo -> . NULL
-    (89) tipo -> . archivos
-    (90) tipo -> . array
-    (91) tipo -> . new
+    (86) tipo -> . boolean
+    (87) tipo -> . NUMBER
+    (88) tipo -> . TEXT
+    (89) tipo -> . NULL
+    (90) tipo -> . archivos
+    (91) tipo -> . array
+    (92) tipo -> . new
     (36) termino -> . NUMBER
     (37) termino -> . ID
     (38) termino -> . DECIMAL
-    (92) boolean -> . TRUE
-    (93) boolean -> . FALSE
-    (94) boolean -> . expresionlogica
-    (138) archivos -> . funcion_corta
-    (139) archivos -> . estructura_funcion
-    (96) array -> . ARRAY LPAREN valores_array RPAREN
-    (105) new -> . NEW FNOMBRE
-    (79) expresionlogica -> . ID operadorlogico ID
-    (140) funcion_corta -> . FGETS LPAREN ID COMA NUMBER RPAREN
-    (141) estructura_funcion -> . funcion_archivo LPAREN opcion RPAREN
-    (144) funcion_archivo -> . FREAD
-    (145) funcion_archivo -> . FSCANF
-    (146) funcion_archivo -> . FPASSTHRU
-    (147) funcion_archivo -> . FGETCSV
-    (148) funcion_archivo -> . FGETC
-    (149) funcion_archivo -> . FILE_GET_CONTENTS
-    (150) funcion_archivo -> . READFILE
-    (151) funcion_archivo -> . FILE
-    (152) funcion_archivo -> . PARSE_INI_FILE
+    (93) boolean -> . TRUE
+    (94) boolean -> . FALSE
+    (95) boolean -> . expresionlogica
+    (140) archivos -> . funcion_corta
+    (141) archivos -> . estructura_funcion
+    (97) array -> . ARRAY LPAREN valores_array RPAREN
+    (106) new -> . NEW FNOMBRE
+    (80) expresionlogica -> . ID operadorlogico ID
+    (142) funcion_corta -> . FGETS LPAREN ID COMA NUMBER RPAREN
+    (143) estructura_funcion -> . funcion_archivo LPAREN opcion RPAREN
+    (146) funcion_archivo -> . FREAD
+    (147) funcion_archivo -> . FSCANF
+    (148) funcion_archivo -> . FPASSTHRU
+    (149) funcion_archivo -> . FGETCSV
+    (150) funcion_archivo -> . FGETC
+    (151) funcion_archivo -> . FILE_GET_CONTENTS
+    (152) funcion_archivo -> . READFILE
+    (153) funcion_archivo -> . FILE
+    (154) funcion_archivo -> . PARSE_INI_FILE
 
-    OBJECT_OPERATOR shift and go to state 76
-    NUMBER          shift and go to state 79
-    TEXT            shift and go to state 80
-    NULL            shift and go to state 81
-    ID              shift and go to state 73
+    OBJECT_OPERATOR shift and go to state 78
+    NUMBER          shift and go to state 80
+    TEXT            shift and go to state 81
+    NULL            shift and go to state 82
+    ID              shift and go to state 75
     DECIMAL         shift and go to state 58
-    TRUE            shift and go to state 85
-    FALSE           shift and go to state 86
-    ARRAY           shift and go to state 90
-    NEW             shift and go to state 91
-    FGETS           shift and go to state 92
-    FREAD           shift and go to state 94
-    FSCANF          shift and go to state 95
-    FPASSTHRU       shift and go to state 96
-    FGETCSV         shift and go to state 97
-    FGETC           shift and go to state 98
-    FILE_GET_CONTENTS shift and go to state 99
-    READFILE        shift and go to state 100
-    FILE            shift and go to state 101
-    PARSE_INI_FILE  shift and go to state 102
+    TRUE            shift and go to state 86
+    FALSE           shift and go to state 87
+    ARRAY           shift and go to state 91
+    NEW             shift and go to state 92
+    FGETS           shift and go to state 93
+    FREAD           shift and go to state 95
+    FSCANF          shift and go to state 96
+    FPASSTHRU       shift and go to state 97
+    FGETCSV         shift and go to state 98
+    FGETC           shift and go to state 99
+    FILE_GET_CONTENTS shift and go to state 100
+    READFILE        shift and go to state 101
+    FILE            shift and go to state 102
+    PARSE_INI_FILE  shift and go to state 103
 
-    operacion_matematica           shift and go to state 74
-    tipo                           shift and go to state 75
-    termino                        shift and go to state 77
-    boolean                        shift and go to state 78
-    archivos                       shift and go to state 82
-    array                          shift and go to state 83
-    new                            shift and go to state 84
-    expresionlogica                shift and go to state 87
-    funcion_corta                  shift and go to state 88
-    estructura_funcion             shift and go to state 89
-    funcion_archivo                shift and go to state 93
+    operacion_matematica           shift and go to state 76
+    tipo                           shift and go to state 77
+    termino                        shift and go to state 64
+    boolean                        shift and go to state 79
+    archivos                       shift and go to state 83
+    array                          shift and go to state 84
+    new                            shift and go to state 85
+    expresionlogica                shift and go to state 88
+    funcion_corta                  shift and go to state 89
+    estructura_funcion             shift and go to state 90
+    funcion_archivo                shift and go to state 94
 
 state 47
 
-    (79) expresionlogica -> ID operadorlogico . ID
+    (80) expresionlogica -> ID operadorlogico . ID
 
-    ID              shift and go to state 103
+    ID              shift and go to state 104
 
 
 state 48
 
-    (80) operadorlogico -> AND .
+    (81) operadorlogico -> AND .
 
-    ID              reduce using rule 80 (operadorlogico -> AND .)
+    ID              reduce using rule 81 (operadorlogico -> AND .)
 
 
 state 49
 
-    (81) operadorlogico -> OR .
+    (82) operadorlogico -> OR .
 
-    ID              reduce using rule 81 (operadorlogico -> OR .)
+    ID              reduce using rule 82 (operadorlogico -> OR .)
 
 
 state 50
 
-    (82) operadorlogico -> XOR .
+    (83) operadorlogico -> XOR .
 
-    ID              reduce using rule 82 (operadorlogico -> XOR .)
+    ID              reduce using rule 83 (operadorlogico -> XOR .)
 
 
 state 51
 
-    (83) operadorlogico -> NOT .
+    (84) operadorlogico -> NOT .
 
-    ID              reduce using rule 83 (operadorlogico -> NOT .)
+    ID              reduce using rule 84 (operadorlogico -> NOT .)
 
 
 state 52
@@ -1253,45 +1287,46 @@ state 52
     (39) expif -> funcion_condicion LPAREN . comparacion RPAREN LCORCHET declaracion RCORCHET
     (40) expif -> funcion_condicion LPAREN . comparacion RPAREN LCORCHET
     (65) comparacion -> . valor_comparado operadorcomparacion valor_comparado
-    (66) valor_comparado -> . NUMBER
-    (67) valor_comparado -> . boolean
-    (68) valor_comparado -> . operacion_matematica
-    (69) valor_comparado -> . ID
-    (92) boolean -> . TRUE
-    (93) boolean -> . FALSE
-    (94) boolean -> . expresionlogica
+    (66) comparacion -> . boolean
+    (67) valor_comparado -> . NUMBER
+    (68) valor_comparado -> . boolean
+    (69) valor_comparado -> . operacion_matematica
+    (70) valor_comparado -> . ID
+    (93) boolean -> . TRUE
+    (94) boolean -> . FALSE
+    (95) boolean -> . expresionlogica
     (29) operacion_matematica -> . termino operadores operacion_matematica
     (30) operacion_matematica -> . termino operadores termino
-    (79) expresionlogica -> . ID operadorlogico ID
+    (80) expresionlogica -> . ID operadorlogico ID
     (36) termino -> . NUMBER
     (37) termino -> . ID
     (38) termino -> . DECIMAL
 
-    NUMBER          shift and go to state 106
-    ID              shift and go to state 109
-    TRUE            shift and go to state 85
-    FALSE           shift and go to state 86
+    NUMBER          shift and go to state 108
+    ID              shift and go to state 110
+    TRUE            shift and go to state 86
+    FALSE           shift and go to state 87
     DECIMAL         shift and go to state 58
 
-    comparacion                    shift and go to state 104
-    valor_comparado                shift and go to state 105
+    comparacion                    shift and go to state 105
+    valor_comparado                shift and go to state 106
     boolean                        shift and go to state 107
-    operacion_matematica           shift and go to state 108
-    expresionlogica                shift and go to state 87
-    termino                        shift and go to state 77
+    operacion_matematica           shift and go to state 109
+    expresionlogica                shift and go to state 88
+    termino                        shift and go to state 64
 
 state 53
 
     (21) creacionfunciones -> FUNCTION FNOMBRE . LPAREN RPAREN LCORCHET declaracion RCORCHET
 
-    LPAREN          shift and go to state 110
+    LPAREN          shift and go to state 111
 
 
 state 54
 
     (25) returnvalores -> RETURN termino . END
 
-    END             shift and go to state 111
+    END             shift and go to state 112
 
 
 state 55
@@ -1314,6 +1349,7 @@ state 56
     DIVIDE          reduce using rule 36 (termino -> NUMBER .)
     TIMES           reduce using rule 36 (termino -> NUMBER .)
     MODULO          reduce using rule 36 (termino -> NUMBER .)
+    COMA            reduce using rule 36 (termino -> NUMBER .)
     IS_EQUAL        reduce using rule 36 (termino -> NUMBER .)
     IS_IDENTICAL    reduce using rule 36 (termino -> NUMBER .)
     IS_NOT_EQUAL    reduce using rule 36 (termino -> NUMBER .)
@@ -1336,6 +1372,7 @@ state 57
     DIVIDE          reduce using rule 37 (termino -> ID .)
     TIMES           reduce using rule 37 (termino -> ID .)
     MODULO          reduce using rule 37 (termino -> ID .)
+    COMA            reduce using rule 37 (termino -> ID .)
     IS_EQUAL        reduce using rule 37 (termino -> ID .)
     IS_IDENTICAL    reduce using rule 37 (termino -> ID .)
     IS_NOT_EQUAL    reduce using rule 37 (termino -> ID .)
@@ -1358,6 +1395,7 @@ state 58
     DIVIDE          reduce using rule 38 (termino -> DECIMAL .)
     TIMES           reduce using rule 38 (termino -> DECIMAL .)
     MODULO          reduce using rule 38 (termino -> DECIMAL .)
+    COMA            reduce using rule 38 (termino -> DECIMAL .)
     IS_EQUAL        reduce using rule 38 (termino -> DECIMAL .)
     IS_IDENTICAL    reduce using rule 38 (termino -> DECIMAL .)
     IS_NOT_EQUAL    reduce using rule 38 (termino -> DECIMAL .)
@@ -1372,111 +1410,165 @@ state 58
 
 state 59
 
-    (106) print -> funcion_print LPAREN . argument RPAREN END
-    (110) argument -> . ID
-    (111) argument -> . TEXT
-
-    ID              shift and go to state 61
-    TEXT            shift and go to state 62
-
-    argument                       shift and go to state 112
-
-state 60
-
-    (107) print -> funcion_print argument . END
-
-    END             shift and go to state 113
-
-
-state 61
-
-    (110) argument -> ID .
-
-    END             reduce using rule 110 (argument -> ID .)
-    COMA            reduce using rule 110 (argument -> ID .)
-    RPAREN          reduce using rule 110 (argument -> ID .)
-
-
-state 62
-
-    (111) argument -> TEXT .
-
-    END             reduce using rule 111 (argument -> TEXT .)
-    COMA            reduce using rule 111 (argument -> TEXT .)
-    RPAREN          reduce using rule 111 (argument -> TEXT .)
-
-
-state 63
-
-    (108) print -> ECHO LPAREN . valores_echo RPAREN END
-    (112) valores_echo -> . argument COMA valores_echo
-    (113) valores_echo -> . argument
-    (110) argument -> . ID
-    (111) argument -> . TEXT
-
-    ID              shift and go to state 61
-    TEXT            shift and go to state 62
-
-    valores_echo                   shift and go to state 114
-    argument                       shift and go to state 65
-
-state 64
-
-    (109) print -> ECHO valores_echo . END
-
-    END             shift and go to state 115
-
-
-state 65
-
-    (112) valores_echo -> argument . COMA valores_echo
-    (113) valores_echo -> argument .
-
-    COMA            shift and go to state 116
-    END             reduce using rule 113 (valores_echo -> argument .)
-    RPAREN          reduce using rule 113 (valores_echo -> argument .)
-
-
-state 66
-
-    (119) arreglos -> funcion_arreglo LPAREN . ID RPAREN
-
-    ID              shift and go to state 117
-
-
-state 67
-
-    (55) while -> WHILE LPAREN . comparacion RPAREN LCORCHET control_bucle RCORCHET
-    (56) while -> WHILE LPAREN . comparacion RPAREN LCORCHET
-    (65) comparacion -> . valor_comparado operadorcomparacion valor_comparado
-    (66) valor_comparado -> . NUMBER
-    (67) valor_comparado -> . boolean
-    (68) valor_comparado -> . operacion_matematica
-    (69) valor_comparado -> . ID
-    (92) boolean -> . TRUE
-    (93) boolean -> . FALSE
-    (94) boolean -> . expresionlogica
+    (107) print -> funcion_print LPAREN . argument RPAREN END
+    (111) argument -> . ID
+    (112) argument -> . TEXT
+    (113) argument -> . operacion_matematica
     (29) operacion_matematica -> . termino operadores operacion_matematica
     (30) operacion_matematica -> . termino operadores termino
-    (79) expresionlogica -> . ID operadorlogico ID
     (36) termino -> . NUMBER
     (37) termino -> . ID
     (38) termino -> . DECIMAL
 
-    NUMBER          shift and go to state 106
-    ID              shift and go to state 109
-    TRUE            shift and go to state 85
-    FALSE           shift and go to state 86
+    ID              shift and go to state 61
+    TEXT            shift and go to state 62
+    NUMBER          shift and go to state 56
     DECIMAL         shift and go to state 58
 
-    comparacion                    shift and go to state 118
-    valor_comparado                shift and go to state 105
-    boolean                        shift and go to state 107
-    operacion_matematica           shift and go to state 108
-    expresionlogica                shift and go to state 87
-    termino                        shift and go to state 77
+    argument                       shift and go to state 113
+    operacion_matematica           shift and go to state 63
+    termino                        shift and go to state 64
+
+state 60
+
+    (108) print -> funcion_print argument . END
+
+    END             shift and go to state 114
+
+
+state 61
+
+    (111) argument -> ID .
+    (37) termino -> ID .
+
+    END             reduce using rule 111 (argument -> ID .)
+    COMA            reduce using rule 111 (argument -> ID .)
+    RPAREN          reduce using rule 111 (argument -> ID .)
+    PLUS            reduce using rule 37 (termino -> ID .)
+    MINUS           reduce using rule 37 (termino -> ID .)
+    DIVIDE          reduce using rule 37 (termino -> ID .)
+    TIMES           reduce using rule 37 (termino -> ID .)
+    MODULO          reduce using rule 37 (termino -> ID .)
+
+
+state 62
+
+    (112) argument -> TEXT .
+
+    END             reduce using rule 112 (argument -> TEXT .)
+    COMA            reduce using rule 112 (argument -> TEXT .)
+    RPAREN          reduce using rule 112 (argument -> TEXT .)
+
+
+state 63
+
+    (113) argument -> operacion_matematica .
+
+    END             reduce using rule 113 (argument -> operacion_matematica .)
+    COMA            reduce using rule 113 (argument -> operacion_matematica .)
+    RPAREN          reduce using rule 113 (argument -> operacion_matematica .)
+
+
+state 64
+
+    (29) operacion_matematica -> termino . operadores operacion_matematica
+    (30) operacion_matematica -> termino . operadores termino
+    (31) operadores -> . PLUS
+    (32) operadores -> . MINUS
+    (33) operadores -> . DIVIDE
+    (34) operadores -> . TIMES
+    (35) operadores -> . MODULO
+
+    PLUS            shift and go to state 116
+    MINUS           shift and go to state 117
+    DIVIDE          shift and go to state 118
+    TIMES           shift and go to state 119
+    MODULO          shift and go to state 120
+
+    operadores                     shift and go to state 115
+
+state 65
+
+    (109) print -> ECHO LPAREN . valores_echo RPAREN END
+    (114) valores_echo -> . argument COMA valores_echo
+    (115) valores_echo -> . argument
+    (111) argument -> . ID
+    (112) argument -> . TEXT
+    (113) argument -> . operacion_matematica
+    (29) operacion_matematica -> . termino operadores operacion_matematica
+    (30) operacion_matematica -> . termino operadores termino
+    (36) termino -> . NUMBER
+    (37) termino -> . ID
+    (38) termino -> . DECIMAL
+
+    ID              shift and go to state 61
+    TEXT            shift and go to state 62
+    NUMBER          shift and go to state 56
+    DECIMAL         shift and go to state 58
+
+    valores_echo                   shift and go to state 121
+    argument                       shift and go to state 67
+    operacion_matematica           shift and go to state 63
+    termino                        shift and go to state 64
+
+state 66
+
+    (110) print -> ECHO valores_echo . END
+
+    END             shift and go to state 122
+
+
+state 67
+
+    (114) valores_echo -> argument . COMA valores_echo
+    (115) valores_echo -> argument .
+
+    COMA            shift and go to state 123
+    END             reduce using rule 115 (valores_echo -> argument .)
+    RPAREN          reduce using rule 115 (valores_echo -> argument .)
+
 
 state 68
+
+    (121) arreglos -> funcion_arreglo LPAREN . ID RPAREN
+
+    ID              shift and go to state 124
+
+
+state 69
+
+    (55) while -> WHILE LPAREN . comparacion RPAREN LCORCHET control_bucle RCORCHET
+    (56) while -> WHILE LPAREN . comparacion RPAREN LCORCHET
+    (65) comparacion -> . valor_comparado operadorcomparacion valor_comparado
+    (66) comparacion -> . boolean
+    (67) valor_comparado -> . NUMBER
+    (68) valor_comparado -> . boolean
+    (69) valor_comparado -> . operacion_matematica
+    (70) valor_comparado -> . ID
+    (93) boolean -> . TRUE
+    (94) boolean -> . FALSE
+    (95) boolean -> . expresionlogica
+    (29) operacion_matematica -> . termino operadores operacion_matematica
+    (30) operacion_matematica -> . termino operadores termino
+    (80) expresionlogica -> . ID operadorlogico ID
+    (36) termino -> . NUMBER
+    (37) termino -> . ID
+    (38) termino -> . DECIMAL
+
+    NUMBER          shift and go to state 108
+    ID              shift and go to state 110
+    TRUE            shift and go to state 86
+    FALSE           shift and go to state 87
+    DECIMAL         shift and go to state 58
+
+    comparacion                    shift and go to state 125
+    valor_comparado                shift and go to state 106
+    boolean                        shift and go to state 107
+    operacion_matematica           shift and go to state 109
+    expresionlogica                shift and go to state 88
+    termino                        shift and go to state 64
+
+state 70
 
     (57) while -> control_bucle RCORCHET .
     (62) foreach -> control_bucle RCORCHET .
@@ -1496,30 +1588,30 @@ state 68
   ! ELSE            [ reduce using rule 62 (foreach -> control_bucle RCORCHET .) ]
 
 
-state 69
+state 71
 
     (60) foreach -> FOREACH LPAREN . ID AS ID RPAREN LCORCHET declaracion RCORCHET
     (61) foreach -> FOREACH LPAREN . ID AS ID RPAREN LCORCHET
 
-    ID              shift and go to state 119
+    ID              shift and go to state 126
 
 
-state 70
+state 72
 
-    (153) clase -> CLASS FNOMBRE . LCORCHET declaracion RCORCHET
-    (154) clase -> CLASS FNOMBRE . LCORCHET
+    (155) clase -> CLASS FNOMBRE . LCORCHET declaracion RCORCHET
+    (156) clase -> CLASS FNOMBRE . LCORCHET
 
-    LCORCHET        shift and go to state 120
+    LCORCHET        shift and go to state 127
 
 
-state 71
+state 73
 
     (1) programa -> OPEN declaracion CLOSE .
 
     $end            reduce using rule 1 (programa -> OPEN declaracion CLOSE .)
 
 
-state 72
+state 74
 
     (44) expelse -> expif ELSE LCORCHET . declaracion RCORCHET
     (45) expelse -> expif ELSE LCORCHET . declaracion
@@ -1550,18 +1642,18 @@ state 72
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -1572,22 +1664,22 @@ state 72
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -1627,7 +1719,7 @@ state 72
   ! RCORCHET        [ reduce using rule 22 (empty -> .) ]
 
     expif                          shift and go to state 6
-    declaracion                    shift and go to state 121
+    declaracion                    shift and go to state 128
     expression                     shift and go to state 5
     expelse                        shift and go to state 7
     expresionlogica                shift and go to state 8
@@ -1646,14 +1738,14 @@ state 72
     funcion_arreglo                shift and go to state 26
     control_bucle                  shift and go to state 28
 
-state 73
+state 75
 
     (37) termino -> ID .
-    (79) expresionlogica -> ID . operadorlogico ID
-    (80) operadorlogico -> . AND
-    (81) operadorlogico -> . OR
-    (82) operadorlogico -> . XOR
-    (83) operadorlogico -> . NOT
+    (80) expresionlogica -> ID . operadorlogico ID
+    (81) operadorlogico -> . AND
+    (82) operadorlogico -> . OR
+    (83) operadorlogico -> . XOR
+    (84) operadorlogico -> . NOT
 
     PLUS            reduce using rule 37 (termino -> ID .)
     MINUS           reduce using rule 37 (termino -> ID .)
@@ -1667,58 +1759,40 @@ state 73
 
     operadorlogico                 shift and go to state 47
 
-state 74
+state 76
 
     (28) expression -> ID EQUALS operacion_matematica . END
 
-    END             shift and go to state 122
-
-
-state 75
-
-    (84) declararvariable -> ID EQUALS tipo . END
-
-    END             shift and go to state 123
-
-
-state 76
-
-    (95) operador_object -> ID EQUALS OBJECT_OPERATOR . FNOMBRE LPAREN argumentos RPAREN END
-
-    FNOMBRE         shift and go to state 124
+    END             shift and go to state 129
 
 
 state 77
 
-    (29) operacion_matematica -> termino . operadores operacion_matematica
-    (30) operacion_matematica -> termino . operadores termino
-    (31) operadores -> . PLUS
-    (32) operadores -> . MINUS
-    (33) operadores -> . DIVIDE
-    (34) operadores -> . TIMES
-    (35) operadores -> . MODULO
+    (85) declararvariable -> ID EQUALS tipo . END
 
-    PLUS            shift and go to state 126
-    MINUS           shift and go to state 127
-    DIVIDE          shift and go to state 128
-    TIMES           shift and go to state 129
-    MODULO          shift and go to state 130
+    END             shift and go to state 130
 
-    operadores                     shift and go to state 125
 
 state 78
 
-    (85) tipo -> boolean .
+    (96) operador_object -> ID EQUALS OBJECT_OPERATOR . FNOMBRE LPAREN argumentos RPAREN END
 
-    END             reduce using rule 85 (tipo -> boolean .)
+    FNOMBRE         shift and go to state 131
 
 
 state 79
 
-    (86) tipo -> NUMBER .
+    (86) tipo -> boolean .
+
+    END             reduce using rule 86 (tipo -> boolean .)
+
+
+state 80
+
+    (87) tipo -> NUMBER .
     (36) termino -> NUMBER .
 
-    END             reduce using rule 86 (tipo -> NUMBER .)
+    END             reduce using rule 87 (tipo -> NUMBER .)
     PLUS            reduce using rule 36 (termino -> NUMBER .)
     MINUS           reduce using rule 36 (termino -> NUMBER .)
     DIVIDE          reduce using rule 36 (termino -> NUMBER .)
@@ -1726,270 +1800,287 @@ state 79
     MODULO          reduce using rule 36 (termino -> NUMBER .)
 
 
-state 80
-
-    (87) tipo -> TEXT .
-
-    END             reduce using rule 87 (tipo -> TEXT .)
-
-
 state 81
 
-    (88) tipo -> NULL .
+    (88) tipo -> TEXT .
 
-    END             reduce using rule 88 (tipo -> NULL .)
+    END             reduce using rule 88 (tipo -> TEXT .)
 
 
 state 82
 
-    (89) tipo -> archivos .
+    (89) tipo -> NULL .
 
-    END             reduce using rule 89 (tipo -> archivos .)
+    END             reduce using rule 89 (tipo -> NULL .)
 
 
 state 83
 
-    (90) tipo -> array .
+    (90) tipo -> archivos .
 
-    END             reduce using rule 90 (tipo -> array .)
+    END             reduce using rule 90 (tipo -> archivos .)
 
 
 state 84
 
-    (91) tipo -> new .
+    (91) tipo -> array .
 
-    END             reduce using rule 91 (tipo -> new .)
+    END             reduce using rule 91 (tipo -> array .)
 
 
 state 85
 
-    (92) boolean -> TRUE .
+    (92) tipo -> new .
 
-    END             reduce using rule 92 (boolean -> TRUE .)
-    IS_EQUAL        reduce using rule 92 (boolean -> TRUE .)
-    IS_IDENTICAL    reduce using rule 92 (boolean -> TRUE .)
-    IS_NOT_EQUAL    reduce using rule 92 (boolean -> TRUE .)
-    IS_NOT_IDENTICAL reduce using rule 92 (boolean -> TRUE .)
-    IS_GREATER_OR_EQUAL reduce using rule 92 (boolean -> TRUE .)
-    IS_SMALLER_OR_EQUAL reduce using rule 92 (boolean -> TRUE .)
-    SPACESHIP       reduce using rule 92 (boolean -> TRUE .)
-    MAYORQUE        reduce using rule 92 (boolean -> TRUE .)
-    MENORQUE        reduce using rule 92 (boolean -> TRUE .)
-    COMA            reduce using rule 92 (boolean -> TRUE .)
-    RPAREN          reduce using rule 92 (boolean -> TRUE .)
+    END             reduce using rule 92 (tipo -> new .)
 
 
 state 86
 
-    (93) boolean -> FALSE .
+    (93) boolean -> TRUE .
 
-    END             reduce using rule 93 (boolean -> FALSE .)
-    IS_EQUAL        reduce using rule 93 (boolean -> FALSE .)
-    IS_IDENTICAL    reduce using rule 93 (boolean -> FALSE .)
-    IS_NOT_EQUAL    reduce using rule 93 (boolean -> FALSE .)
-    IS_NOT_IDENTICAL reduce using rule 93 (boolean -> FALSE .)
-    IS_GREATER_OR_EQUAL reduce using rule 93 (boolean -> FALSE .)
-    IS_SMALLER_OR_EQUAL reduce using rule 93 (boolean -> FALSE .)
-    SPACESHIP       reduce using rule 93 (boolean -> FALSE .)
-    MAYORQUE        reduce using rule 93 (boolean -> FALSE .)
-    MENORQUE        reduce using rule 93 (boolean -> FALSE .)
-    COMA            reduce using rule 93 (boolean -> FALSE .)
-    RPAREN          reduce using rule 93 (boolean -> FALSE .)
+    END             reduce using rule 93 (boolean -> TRUE .)
+    RPAREN          reduce using rule 93 (boolean -> TRUE .)
+    IS_EQUAL        reduce using rule 93 (boolean -> TRUE .)
+    IS_IDENTICAL    reduce using rule 93 (boolean -> TRUE .)
+    IS_NOT_EQUAL    reduce using rule 93 (boolean -> TRUE .)
+    IS_NOT_IDENTICAL reduce using rule 93 (boolean -> TRUE .)
+    IS_GREATER_OR_EQUAL reduce using rule 93 (boolean -> TRUE .)
+    IS_SMALLER_OR_EQUAL reduce using rule 93 (boolean -> TRUE .)
+    SPACESHIP       reduce using rule 93 (boolean -> TRUE .)
+    MAYORQUE        reduce using rule 93 (boolean -> TRUE .)
+    MENORQUE        reduce using rule 93 (boolean -> TRUE .)
+    COMA            reduce using rule 93 (boolean -> TRUE .)
 
 
 state 87
 
-    (94) boolean -> expresionlogica .
+    (94) boolean -> FALSE .
 
-    END             reduce using rule 94 (boolean -> expresionlogica .)
-    IS_EQUAL        reduce using rule 94 (boolean -> expresionlogica .)
-    IS_IDENTICAL    reduce using rule 94 (boolean -> expresionlogica .)
-    IS_NOT_EQUAL    reduce using rule 94 (boolean -> expresionlogica .)
-    IS_NOT_IDENTICAL reduce using rule 94 (boolean -> expresionlogica .)
-    IS_GREATER_OR_EQUAL reduce using rule 94 (boolean -> expresionlogica .)
-    IS_SMALLER_OR_EQUAL reduce using rule 94 (boolean -> expresionlogica .)
-    SPACESHIP       reduce using rule 94 (boolean -> expresionlogica .)
-    MAYORQUE        reduce using rule 94 (boolean -> expresionlogica .)
-    MENORQUE        reduce using rule 94 (boolean -> expresionlogica .)
-    COMA            reduce using rule 94 (boolean -> expresionlogica .)
-    RPAREN          reduce using rule 94 (boolean -> expresionlogica .)
+    END             reduce using rule 94 (boolean -> FALSE .)
+    RPAREN          reduce using rule 94 (boolean -> FALSE .)
+    IS_EQUAL        reduce using rule 94 (boolean -> FALSE .)
+    IS_IDENTICAL    reduce using rule 94 (boolean -> FALSE .)
+    IS_NOT_EQUAL    reduce using rule 94 (boolean -> FALSE .)
+    IS_NOT_IDENTICAL reduce using rule 94 (boolean -> FALSE .)
+    IS_GREATER_OR_EQUAL reduce using rule 94 (boolean -> FALSE .)
+    IS_SMALLER_OR_EQUAL reduce using rule 94 (boolean -> FALSE .)
+    SPACESHIP       reduce using rule 94 (boolean -> FALSE .)
+    MAYORQUE        reduce using rule 94 (boolean -> FALSE .)
+    MENORQUE        reduce using rule 94 (boolean -> FALSE .)
+    COMA            reduce using rule 94 (boolean -> FALSE .)
 
 
 state 88
 
-    (138) archivos -> funcion_corta .
+    (95) boolean -> expresionlogica .
 
-    END             reduce using rule 138 (archivos -> funcion_corta .)
+    END             reduce using rule 95 (boolean -> expresionlogica .)
+    RPAREN          reduce using rule 95 (boolean -> expresionlogica .)
+    IS_EQUAL        reduce using rule 95 (boolean -> expresionlogica .)
+    IS_IDENTICAL    reduce using rule 95 (boolean -> expresionlogica .)
+    IS_NOT_EQUAL    reduce using rule 95 (boolean -> expresionlogica .)
+    IS_NOT_IDENTICAL reduce using rule 95 (boolean -> expresionlogica .)
+    IS_GREATER_OR_EQUAL reduce using rule 95 (boolean -> expresionlogica .)
+    IS_SMALLER_OR_EQUAL reduce using rule 95 (boolean -> expresionlogica .)
+    SPACESHIP       reduce using rule 95 (boolean -> expresionlogica .)
+    MAYORQUE        reduce using rule 95 (boolean -> expresionlogica .)
+    MENORQUE        reduce using rule 95 (boolean -> expresionlogica .)
+    COMA            reduce using rule 95 (boolean -> expresionlogica .)
 
 
 state 89
 
-    (139) archivos -> estructura_funcion .
+    (140) archivos -> funcion_corta .
 
-    END             reduce using rule 139 (archivos -> estructura_funcion .)
+    END             reduce using rule 140 (archivos -> funcion_corta .)
 
 
 state 90
 
-    (96) array -> ARRAY . LPAREN valores_array RPAREN
+    (141) archivos -> estructura_funcion .
 
-    LPAREN          shift and go to state 131
+    END             reduce using rule 141 (archivos -> estructura_funcion .)
 
 
 state 91
 
-    (105) new -> NEW . FNOMBRE
+    (97) array -> ARRAY . LPAREN valores_array RPAREN
 
-    FNOMBRE         shift and go to state 132
+    LPAREN          shift and go to state 132
 
 
 state 92
 
-    (140) funcion_corta -> FGETS . LPAREN ID COMA NUMBER RPAREN
+    (106) new -> NEW . FNOMBRE
 
-    LPAREN          shift and go to state 133
+    FNOMBRE         shift and go to state 133
 
 
 state 93
 
-    (141) estructura_funcion -> funcion_archivo . LPAREN opcion RPAREN
+    (142) funcion_corta -> FGETS . LPAREN ID COMA NUMBER RPAREN
 
     LPAREN          shift and go to state 134
 
 
 state 94
 
-    (144) funcion_archivo -> FREAD .
+    (143) estructura_funcion -> funcion_archivo . LPAREN opcion RPAREN
 
-    LPAREN          reduce using rule 144 (funcion_archivo -> FREAD .)
+    LPAREN          shift and go to state 135
 
 
 state 95
 
-    (145) funcion_archivo -> FSCANF .
+    (146) funcion_archivo -> FREAD .
 
-    LPAREN          reduce using rule 145 (funcion_archivo -> FSCANF .)
+    LPAREN          reduce using rule 146 (funcion_archivo -> FREAD .)
 
 
 state 96
 
-    (146) funcion_archivo -> FPASSTHRU .
+    (147) funcion_archivo -> FSCANF .
 
-    LPAREN          reduce using rule 146 (funcion_archivo -> FPASSTHRU .)
+    LPAREN          reduce using rule 147 (funcion_archivo -> FSCANF .)
 
 
 state 97
 
-    (147) funcion_archivo -> FGETCSV .
+    (148) funcion_archivo -> FPASSTHRU .
 
-    LPAREN          reduce using rule 147 (funcion_archivo -> FGETCSV .)
+    LPAREN          reduce using rule 148 (funcion_archivo -> FPASSTHRU .)
 
 
 state 98
 
-    (148) funcion_archivo -> FGETC .
+    (149) funcion_archivo -> FGETCSV .
 
-    LPAREN          reduce using rule 148 (funcion_archivo -> FGETC .)
+    LPAREN          reduce using rule 149 (funcion_archivo -> FGETCSV .)
 
 
 state 99
 
-    (149) funcion_archivo -> FILE_GET_CONTENTS .
+    (150) funcion_archivo -> FGETC .
 
-    LPAREN          reduce using rule 149 (funcion_archivo -> FILE_GET_CONTENTS .)
+    LPAREN          reduce using rule 150 (funcion_archivo -> FGETC .)
 
 
 state 100
 
-    (150) funcion_archivo -> READFILE .
+    (151) funcion_archivo -> FILE_GET_CONTENTS .
 
-    LPAREN          reduce using rule 150 (funcion_archivo -> READFILE .)
+    LPAREN          reduce using rule 151 (funcion_archivo -> FILE_GET_CONTENTS .)
 
 
 state 101
 
-    (151) funcion_archivo -> FILE .
+    (152) funcion_archivo -> READFILE .
 
-    LPAREN          reduce using rule 151 (funcion_archivo -> FILE .)
+    LPAREN          reduce using rule 152 (funcion_archivo -> READFILE .)
 
 
 state 102
 
-    (152) funcion_archivo -> PARSE_INI_FILE .
+    (153) funcion_archivo -> FILE .
 
-    LPAREN          reduce using rule 152 (funcion_archivo -> PARSE_INI_FILE .)
+    LPAREN          reduce using rule 153 (funcion_archivo -> FILE .)
 
 
 state 103
 
-    (79) expresionlogica -> ID operadorlogico ID .
+    (154) funcion_archivo -> PARSE_INI_FILE .
 
-    CLOSE           reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    RCORCHET        reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    $end            reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    ELSE            reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    END             reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    IS_EQUAL        reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    IS_IDENTICAL    reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    IS_NOT_EQUAL    reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    IS_NOT_IDENTICAL reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    IS_GREATER_OR_EQUAL reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    IS_SMALLER_OR_EQUAL reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    SPACESHIP       reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    MAYORQUE        reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    MENORQUE        reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    COMA            reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
-    RPAREN          reduce using rule 79 (expresionlogica -> ID operadorlogico ID .)
+    LPAREN          reduce using rule 154 (funcion_archivo -> PARSE_INI_FILE .)
 
 
 state 104
 
-    (39) expif -> funcion_condicion LPAREN comparacion . RPAREN LCORCHET declaracion RCORCHET
-    (40) expif -> funcion_condicion LPAREN comparacion . RPAREN LCORCHET
+    (80) expresionlogica -> ID operadorlogico ID .
 
-    RPAREN          shift and go to state 135
+    CLOSE           reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    RCORCHET        reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    $end            reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    ELSE            reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    END             reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    RPAREN          reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    IS_EQUAL        reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    IS_IDENTICAL    reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    IS_NOT_EQUAL    reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    IS_NOT_IDENTICAL reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    IS_GREATER_OR_EQUAL reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    IS_SMALLER_OR_EQUAL reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    SPACESHIP       reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    MAYORQUE        reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    MENORQUE        reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
+    COMA            reduce using rule 80 (expresionlogica -> ID operadorlogico ID .)
 
 
 state 105
 
-    (65) comparacion -> valor_comparado . operadorcomparacion valor_comparado
-    (70) operadorcomparacion -> . IS_EQUAL
-    (71) operadorcomparacion -> . IS_IDENTICAL
-    (72) operadorcomparacion -> . IS_NOT_EQUAL
-    (73) operadorcomparacion -> . IS_NOT_IDENTICAL
-    (74) operadorcomparacion -> . IS_GREATER_OR_EQUAL
-    (75) operadorcomparacion -> . IS_SMALLER_OR_EQUAL
-    (76) operadorcomparacion -> . SPACESHIP
-    (77) operadorcomparacion -> . MAYORQUE
-    (78) operadorcomparacion -> . MENORQUE
+    (39) expif -> funcion_condicion LPAREN comparacion . RPAREN LCORCHET declaracion RCORCHET
+    (40) expif -> funcion_condicion LPAREN comparacion . RPAREN LCORCHET
 
-    IS_EQUAL        shift and go to state 137
-    IS_IDENTICAL    shift and go to state 138
-    IS_NOT_EQUAL    shift and go to state 139
-    IS_NOT_IDENTICAL shift and go to state 140
-    IS_GREATER_OR_EQUAL shift and go to state 141
-    IS_SMALLER_OR_EQUAL shift and go to state 142
-    SPACESHIP       shift and go to state 143
-    MAYORQUE        shift and go to state 144
-    MENORQUE        shift and go to state 145
+    RPAREN          shift and go to state 136
 
-    operadorcomparacion            shift and go to state 136
 
 state 106
 
-    (66) valor_comparado -> NUMBER .
+    (65) comparacion -> valor_comparado . operadorcomparacion valor_comparado
+    (71) operadorcomparacion -> . IS_EQUAL
+    (72) operadorcomparacion -> . IS_IDENTICAL
+    (73) operadorcomparacion -> . IS_NOT_EQUAL
+    (74) operadorcomparacion -> . IS_NOT_IDENTICAL
+    (75) operadorcomparacion -> . IS_GREATER_OR_EQUAL
+    (76) operadorcomparacion -> . IS_SMALLER_OR_EQUAL
+    (77) operadorcomparacion -> . SPACESHIP
+    (78) operadorcomparacion -> . MAYORQUE
+    (79) operadorcomparacion -> . MENORQUE
+
+    IS_EQUAL        shift and go to state 138
+    IS_IDENTICAL    shift and go to state 139
+    IS_NOT_EQUAL    shift and go to state 140
+    IS_NOT_IDENTICAL shift and go to state 141
+    IS_GREATER_OR_EQUAL shift and go to state 142
+    IS_SMALLER_OR_EQUAL shift and go to state 143
+    SPACESHIP       shift and go to state 144
+    MAYORQUE        shift and go to state 145
+    MENORQUE        shift and go to state 146
+
+    operadorcomparacion            shift and go to state 137
+
+state 107
+
+    (66) comparacion -> boolean .
+    (68) valor_comparado -> boolean .
+
+    RPAREN          reduce using rule 66 (comparacion -> boolean .)
+    IS_EQUAL        reduce using rule 68 (valor_comparado -> boolean .)
+    IS_IDENTICAL    reduce using rule 68 (valor_comparado -> boolean .)
+    IS_NOT_EQUAL    reduce using rule 68 (valor_comparado -> boolean .)
+    IS_NOT_IDENTICAL reduce using rule 68 (valor_comparado -> boolean .)
+    IS_GREATER_OR_EQUAL reduce using rule 68 (valor_comparado -> boolean .)
+    IS_SMALLER_OR_EQUAL reduce using rule 68 (valor_comparado -> boolean .)
+    SPACESHIP       reduce using rule 68 (valor_comparado -> boolean .)
+    MAYORQUE        reduce using rule 68 (valor_comparado -> boolean .)
+    MENORQUE        reduce using rule 68 (valor_comparado -> boolean .)
+
+
+state 108
+
+    (67) valor_comparado -> NUMBER .
     (36) termino -> NUMBER .
 
-    IS_EQUAL        reduce using rule 66 (valor_comparado -> NUMBER .)
-    IS_IDENTICAL    reduce using rule 66 (valor_comparado -> NUMBER .)
-    IS_NOT_EQUAL    reduce using rule 66 (valor_comparado -> NUMBER .)
-    IS_NOT_IDENTICAL reduce using rule 66 (valor_comparado -> NUMBER .)
-    IS_GREATER_OR_EQUAL reduce using rule 66 (valor_comparado -> NUMBER .)
-    IS_SMALLER_OR_EQUAL reduce using rule 66 (valor_comparado -> NUMBER .)
-    SPACESHIP       reduce using rule 66 (valor_comparado -> NUMBER .)
-    MAYORQUE        reduce using rule 66 (valor_comparado -> NUMBER .)
-    MENORQUE        reduce using rule 66 (valor_comparado -> NUMBER .)
-    RPAREN          reduce using rule 66 (valor_comparado -> NUMBER .)
+    IS_EQUAL        reduce using rule 67 (valor_comparado -> NUMBER .)
+    IS_IDENTICAL    reduce using rule 67 (valor_comparado -> NUMBER .)
+    IS_NOT_EQUAL    reduce using rule 67 (valor_comparado -> NUMBER .)
+    IS_NOT_IDENTICAL reduce using rule 67 (valor_comparado -> NUMBER .)
+    IS_GREATER_OR_EQUAL reduce using rule 67 (valor_comparado -> NUMBER .)
+    IS_SMALLER_OR_EQUAL reduce using rule 67 (valor_comparado -> NUMBER .)
+    SPACESHIP       reduce using rule 67 (valor_comparado -> NUMBER .)
+    MAYORQUE        reduce using rule 67 (valor_comparado -> NUMBER .)
+    MENORQUE        reduce using rule 67 (valor_comparado -> NUMBER .)
+    RPAREN          reduce using rule 67 (valor_comparado -> NUMBER .)
     PLUS            reduce using rule 36 (termino -> NUMBER .)
     MINUS           reduce using rule 36 (termino -> NUMBER .)
     DIVIDE          reduce using rule 36 (termino -> NUMBER .)
@@ -1997,58 +2088,42 @@ state 106
     MODULO          reduce using rule 36 (termino -> NUMBER .)
 
 
-state 107
-
-    (67) valor_comparado -> boolean .
-
-    IS_EQUAL        reduce using rule 67 (valor_comparado -> boolean .)
-    IS_IDENTICAL    reduce using rule 67 (valor_comparado -> boolean .)
-    IS_NOT_EQUAL    reduce using rule 67 (valor_comparado -> boolean .)
-    IS_NOT_IDENTICAL reduce using rule 67 (valor_comparado -> boolean .)
-    IS_GREATER_OR_EQUAL reduce using rule 67 (valor_comparado -> boolean .)
-    IS_SMALLER_OR_EQUAL reduce using rule 67 (valor_comparado -> boolean .)
-    SPACESHIP       reduce using rule 67 (valor_comparado -> boolean .)
-    MAYORQUE        reduce using rule 67 (valor_comparado -> boolean .)
-    MENORQUE        reduce using rule 67 (valor_comparado -> boolean .)
-    RPAREN          reduce using rule 67 (valor_comparado -> boolean .)
-
-
-state 108
-
-    (68) valor_comparado -> operacion_matematica .
-
-    IS_EQUAL        reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    IS_IDENTICAL    reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    IS_NOT_EQUAL    reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    IS_NOT_IDENTICAL reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    IS_GREATER_OR_EQUAL reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    IS_SMALLER_OR_EQUAL reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    SPACESHIP       reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    MAYORQUE        reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    MENORQUE        reduce using rule 68 (valor_comparado -> operacion_matematica .)
-    RPAREN          reduce using rule 68 (valor_comparado -> operacion_matematica .)
-
-
 state 109
 
-    (69) valor_comparado -> ID .
-    (79) expresionlogica -> ID . operadorlogico ID
-    (37) termino -> ID .
-    (80) operadorlogico -> . AND
-    (81) operadorlogico -> . OR
-    (82) operadorlogico -> . XOR
-    (83) operadorlogico -> . NOT
+    (69) valor_comparado -> operacion_matematica .
 
-    IS_EQUAL        reduce using rule 69 (valor_comparado -> ID .)
-    IS_IDENTICAL    reduce using rule 69 (valor_comparado -> ID .)
-    IS_NOT_EQUAL    reduce using rule 69 (valor_comparado -> ID .)
-    IS_NOT_IDENTICAL reduce using rule 69 (valor_comparado -> ID .)
-    IS_GREATER_OR_EQUAL reduce using rule 69 (valor_comparado -> ID .)
-    IS_SMALLER_OR_EQUAL reduce using rule 69 (valor_comparado -> ID .)
-    SPACESHIP       reduce using rule 69 (valor_comparado -> ID .)
-    MAYORQUE        reduce using rule 69 (valor_comparado -> ID .)
-    MENORQUE        reduce using rule 69 (valor_comparado -> ID .)
-    RPAREN          reduce using rule 69 (valor_comparado -> ID .)
+    IS_EQUAL        reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    IS_IDENTICAL    reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    IS_NOT_EQUAL    reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    IS_NOT_IDENTICAL reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    IS_GREATER_OR_EQUAL reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    IS_SMALLER_OR_EQUAL reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    SPACESHIP       reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    MAYORQUE        reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    MENORQUE        reduce using rule 69 (valor_comparado -> operacion_matematica .)
+    RPAREN          reduce using rule 69 (valor_comparado -> operacion_matematica .)
+
+
+state 110
+
+    (70) valor_comparado -> ID .
+    (80) expresionlogica -> ID . operadorlogico ID
+    (37) termino -> ID .
+    (81) operadorlogico -> . AND
+    (82) operadorlogico -> . OR
+    (83) operadorlogico -> . XOR
+    (84) operadorlogico -> . NOT
+
+    IS_EQUAL        reduce using rule 70 (valor_comparado -> ID .)
+    IS_IDENTICAL    reduce using rule 70 (valor_comparado -> ID .)
+    IS_NOT_EQUAL    reduce using rule 70 (valor_comparado -> ID .)
+    IS_NOT_IDENTICAL reduce using rule 70 (valor_comparado -> ID .)
+    IS_GREATER_OR_EQUAL reduce using rule 70 (valor_comparado -> ID .)
+    IS_SMALLER_OR_EQUAL reduce using rule 70 (valor_comparado -> ID .)
+    SPACESHIP       reduce using rule 70 (valor_comparado -> ID .)
+    MAYORQUE        reduce using rule 70 (valor_comparado -> ID .)
+    MENORQUE        reduce using rule 70 (valor_comparado -> ID .)
+    RPAREN          reduce using rule 70 (valor_comparado -> ID .)
     PLUS            reduce using rule 37 (termino -> ID .)
     MINUS           reduce using rule 37 (termino -> ID .)
     DIVIDE          reduce using rule 37 (termino -> ID .)
@@ -2061,14 +2136,14 @@ state 109
 
     operadorlogico                 shift and go to state 47
 
-state 110
+state 111
 
     (21) creacionfunciones -> FUNCTION FNOMBRE LPAREN . RPAREN LCORCHET declaracion RCORCHET
 
-    RPAREN          shift and go to state 146
+    RPAREN          shift and go to state 147
 
 
-state 111
+state 112
 
     (25) returnvalores -> RETURN termino END .
 
@@ -2078,81 +2153,153 @@ state 111
     ELSE            reduce using rule 25 (returnvalores -> RETURN termino END .)
 
 
-state 112
-
-    (106) print -> funcion_print LPAREN argument . RPAREN END
-
-    RPAREN          shift and go to state 147
-
-
 state 113
 
-    (107) print -> funcion_print argument END .
-
-    CLOSE           reduce using rule 107 (print -> funcion_print argument END .)
-    RCORCHET        reduce using rule 107 (print -> funcion_print argument END .)
-    $end            reduce using rule 107 (print -> funcion_print argument END .)
-    ELSE            reduce using rule 107 (print -> funcion_print argument END .)
-
-
-state 114
-
-    (108) print -> ECHO LPAREN valores_echo . RPAREN END
+    (107) print -> funcion_print LPAREN argument . RPAREN END
 
     RPAREN          shift and go to state 148
 
 
+state 114
+
+    (108) print -> funcion_print argument END .
+
+    CLOSE           reduce using rule 108 (print -> funcion_print argument END .)
+    RCORCHET        reduce using rule 108 (print -> funcion_print argument END .)
+    $end            reduce using rule 108 (print -> funcion_print argument END .)
+    ELSE            reduce using rule 108 (print -> funcion_print argument END .)
+
+
 state 115
 
-    (109) print -> ECHO valores_echo END .
+    (29) operacion_matematica -> termino operadores . operacion_matematica
+    (30) operacion_matematica -> termino operadores . termino
+    (29) operacion_matematica -> . termino operadores operacion_matematica
+    (30) operacion_matematica -> . termino operadores termino
+    (36) termino -> . NUMBER
+    (37) termino -> . ID
+    (38) termino -> . DECIMAL
 
-    CLOSE           reduce using rule 109 (print -> ECHO valores_echo END .)
-    RCORCHET        reduce using rule 109 (print -> ECHO valores_echo END .)
-    $end            reduce using rule 109 (print -> ECHO valores_echo END .)
-    ELSE            reduce using rule 109 (print -> ECHO valores_echo END .)
+    NUMBER          shift and go to state 56
+    ID              shift and go to state 57
+    DECIMAL         shift and go to state 58
 
+    termino                        shift and go to state 149
+    operacion_matematica           shift and go to state 150
 
 state 116
 
-    (112) valores_echo -> argument COMA . valores_echo
-    (112) valores_echo -> . argument COMA valores_echo
-    (113) valores_echo -> . argument
-    (110) argument -> . ID
-    (111) argument -> . TEXT
+    (31) operadores -> PLUS .
 
-    ID              shift and go to state 61
-    TEXT            shift and go to state 62
+    NUMBER          reduce using rule 31 (operadores -> PLUS .)
+    ID              reduce using rule 31 (operadores -> PLUS .)
+    DECIMAL         reduce using rule 31 (operadores -> PLUS .)
 
-    argument                       shift and go to state 65
-    valores_echo                   shift and go to state 149
 
 state 117
 
-    (119) arreglos -> funcion_arreglo LPAREN ID . RPAREN
+    (32) operadores -> MINUS .
 
-    RPAREN          shift and go to state 150
+    NUMBER          reduce using rule 32 (operadores -> MINUS .)
+    ID              reduce using rule 32 (operadores -> MINUS .)
+    DECIMAL         reduce using rule 32 (operadores -> MINUS .)
 
 
 state 118
 
-    (55) while -> WHILE LPAREN comparacion . RPAREN LCORCHET control_bucle RCORCHET
-    (56) while -> WHILE LPAREN comparacion . RPAREN LCORCHET
+    (33) operadores -> DIVIDE .
 
-    RPAREN          shift and go to state 151
+    NUMBER          reduce using rule 33 (operadores -> DIVIDE .)
+    ID              reduce using rule 33 (operadores -> DIVIDE .)
+    DECIMAL         reduce using rule 33 (operadores -> DIVIDE .)
 
 
 state 119
 
-    (60) foreach -> FOREACH LPAREN ID . AS ID RPAREN LCORCHET declaracion RCORCHET
-    (61) foreach -> FOREACH LPAREN ID . AS ID RPAREN LCORCHET
+    (34) operadores -> TIMES .
 
-    AS              shift and go to state 152
+    NUMBER          reduce using rule 34 (operadores -> TIMES .)
+    ID              reduce using rule 34 (operadores -> TIMES .)
+    DECIMAL         reduce using rule 34 (operadores -> TIMES .)
 
 
 state 120
 
-    (153) clase -> CLASS FNOMBRE LCORCHET . declaracion RCORCHET
-    (154) clase -> CLASS FNOMBRE LCORCHET .
+    (35) operadores -> MODULO .
+
+    NUMBER          reduce using rule 35 (operadores -> MODULO .)
+    ID              reduce using rule 35 (operadores -> MODULO .)
+    DECIMAL         reduce using rule 35 (operadores -> MODULO .)
+
+
+state 121
+
+    (109) print -> ECHO LPAREN valores_echo . RPAREN END
+
+    RPAREN          shift and go to state 151
+
+
+state 122
+
+    (110) print -> ECHO valores_echo END .
+
+    CLOSE           reduce using rule 110 (print -> ECHO valores_echo END .)
+    RCORCHET        reduce using rule 110 (print -> ECHO valores_echo END .)
+    $end            reduce using rule 110 (print -> ECHO valores_echo END .)
+    ELSE            reduce using rule 110 (print -> ECHO valores_echo END .)
+
+
+state 123
+
+    (114) valores_echo -> argument COMA . valores_echo
+    (114) valores_echo -> . argument COMA valores_echo
+    (115) valores_echo -> . argument
+    (111) argument -> . ID
+    (112) argument -> . TEXT
+    (113) argument -> . operacion_matematica
+    (29) operacion_matematica -> . termino operadores operacion_matematica
+    (30) operacion_matematica -> . termino operadores termino
+    (36) termino -> . NUMBER
+    (37) termino -> . ID
+    (38) termino -> . DECIMAL
+
+    ID              shift and go to state 61
+    TEXT            shift and go to state 62
+    NUMBER          shift and go to state 56
+    DECIMAL         shift and go to state 58
+
+    argument                       shift and go to state 67
+    valores_echo                   shift and go to state 152
+    operacion_matematica           shift and go to state 63
+    termino                        shift and go to state 64
+
+state 124
+
+    (121) arreglos -> funcion_arreglo LPAREN ID . RPAREN
+
+    RPAREN          shift and go to state 153
+
+
+state 125
+
+    (55) while -> WHILE LPAREN comparacion . RPAREN LCORCHET control_bucle RCORCHET
+    (56) while -> WHILE LPAREN comparacion . RPAREN LCORCHET
+
+    RPAREN          shift and go to state 154
+
+
+state 126
+
+    (60) foreach -> FOREACH LPAREN ID . AS ID RPAREN LCORCHET declaracion RCORCHET
+    (61) foreach -> FOREACH LPAREN ID . AS ID RPAREN LCORCHET
+
+    AS              shift and go to state 155
+
+
+state 127
+
+    (155) clase -> CLASS FNOMBRE LCORCHET . declaracion RCORCHET
+    (156) clase -> CLASS FNOMBRE LCORCHET .
     (7) declaracion -> . expression
     (8) declaracion -> . expif
     (9) declaracion -> . expelse
@@ -2179,18 +2326,18 @@ state 120
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -2201,22 +2348,22 @@ state 120
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -2224,8 +2371,8 @@ state 120
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for ELSE resolved using rule 22 (empty -> .)
-    CLOSE           reduce using rule 154 (clase -> CLASS FNOMBRE LCORCHET .)
-    $end            reduce using rule 154 (clase -> CLASS FNOMBRE LCORCHET .)
+    CLOSE           reduce using rule 156 (clase -> CLASS FNOMBRE LCORCHET .)
+    $end            reduce using rule 156 (clase -> CLASS FNOMBRE LCORCHET .)
     ID              shift and go to state 18
     RCORCHET        shift and go to state 20
     FUNCTION        shift and go to state 21
@@ -2247,11 +2394,11 @@ state 120
     BREAK           shift and go to state 40
     CONTINUE        shift and go to state 41
 
-  ! RCORCHET        [ reduce using rule 154 (clase -> CLASS FNOMBRE LCORCHET .) ]
-  ! ELSE            [ reduce using rule 154 (clase -> CLASS FNOMBRE LCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 156 (clase -> CLASS FNOMBRE LCORCHET .) ]
+  ! ELSE            [ reduce using rule 156 (clase -> CLASS FNOMBRE LCORCHET .) ]
   ! RCORCHET        [ reduce using rule 22 (empty -> .) ]
 
-    declaracion                    shift and go to state 153
+    declaracion                    shift and go to state 156
     expression                     shift and go to state 5
     expif                          shift and go to state 6
     expelse                        shift and go to state 7
@@ -2271,7 +2418,7 @@ state 120
     funcion_arreglo                shift and go to state 26
     control_bucle                  shift and go to state 28
 
-state 121
+state 128
 
     (44) expelse -> expif ELSE LCORCHET declaracion . RCORCHET
     (45) expelse -> expif ELSE LCORCHET declaracion .
@@ -2280,8 +2427,8 @@ state 121
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for RCORCHET resolved as shift
@@ -2305,7 +2452,7 @@ state 121
   ! reduce/reduce conflict for CLOSE resolved using rule 20 (declaracion -> declaracion .)
   ! reduce/reduce conflict for $end resolved using rule 20 (declaracion -> declaracion .)
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
-    RCORCHET        shift and go to state 154
+    RCORCHET        shift and go to state 157
     CLOSE           reduce using rule 20 (declaracion -> declaracion .)
     $end            reduce using rule 20 (declaracion -> declaracion .)
     ELSE            reduce using rule 20 (declaracion -> declaracion .)
@@ -2323,17 +2470,17 @@ state 121
   ! CLOSE           [ reduce using rule 47 (expelse -> declaracion .) ]
   ! $end            [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! CLOSE           [ reduce using rule 156 (clase -> declaracion .) ]
-  ! $end            [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! CLOSE           [ reduce using rule 158 (clase -> declaracion .) ]
+  ! $end            [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! CLOSE           [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! $end            [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! ELSE            [ reduce using rule 52 (control_bucle -> declaracion .) ]
 
 
-state 122
+state 129
 
     (28) expression -> ID EQUALS operacion_matematica END .
 
@@ -2343,345 +2490,332 @@ state 122
     ELSE            reduce using rule 28 (expression -> ID EQUALS operacion_matematica END .)
 
 
-state 123
-
-    (84) declararvariable -> ID EQUALS tipo END .
-
-    CLOSE           reduce using rule 84 (declararvariable -> ID EQUALS tipo END .)
-    RCORCHET        reduce using rule 84 (declararvariable -> ID EQUALS tipo END .)
-    $end            reduce using rule 84 (declararvariable -> ID EQUALS tipo END .)
-    ELSE            reduce using rule 84 (declararvariable -> ID EQUALS tipo END .)
-
-
-state 124
-
-    (95) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE . LPAREN argumentos RPAREN END
-
-    LPAREN          shift and go to state 155
-
-
-state 125
-
-    (29) operacion_matematica -> termino operadores . operacion_matematica
-    (30) operacion_matematica -> termino operadores . termino
-    (29) operacion_matematica -> . termino operadores operacion_matematica
-    (30) operacion_matematica -> . termino operadores termino
-    (36) termino -> . NUMBER
-    (37) termino -> . ID
-    (38) termino -> . DECIMAL
-
-    NUMBER          shift and go to state 56
-    ID              shift and go to state 57
-    DECIMAL         shift and go to state 58
-
-    termino                        shift and go to state 156
-    operacion_matematica           shift and go to state 157
-
-state 126
-
-    (31) operadores -> PLUS .
-
-    NUMBER          reduce using rule 31 (operadores -> PLUS .)
-    ID              reduce using rule 31 (operadores -> PLUS .)
-    DECIMAL         reduce using rule 31 (operadores -> PLUS .)
-
-
-state 127
-
-    (32) operadores -> MINUS .
-
-    NUMBER          reduce using rule 32 (operadores -> MINUS .)
-    ID              reduce using rule 32 (operadores -> MINUS .)
-    DECIMAL         reduce using rule 32 (operadores -> MINUS .)
-
-
-state 128
-
-    (33) operadores -> DIVIDE .
-
-    NUMBER          reduce using rule 33 (operadores -> DIVIDE .)
-    ID              reduce using rule 33 (operadores -> DIVIDE .)
-    DECIMAL         reduce using rule 33 (operadores -> DIVIDE .)
-
-
-state 129
-
-    (34) operadores -> TIMES .
-
-    NUMBER          reduce using rule 34 (operadores -> TIMES .)
-    ID              reduce using rule 34 (operadores -> TIMES .)
-    DECIMAL         reduce using rule 34 (operadores -> TIMES .)
-
-
 state 130
 
-    (35) operadores -> MODULO .
+    (85) declararvariable -> ID EQUALS tipo END .
 
-    NUMBER          reduce using rule 35 (operadores -> MODULO .)
-    ID              reduce using rule 35 (operadores -> MODULO .)
-    DECIMAL         reduce using rule 35 (operadores -> MODULO .)
+    CLOSE           reduce using rule 85 (declararvariable -> ID EQUALS tipo END .)
+    RCORCHET        reduce using rule 85 (declararvariable -> ID EQUALS tipo END .)
+    $end            reduce using rule 85 (declararvariable -> ID EQUALS tipo END .)
+    ELSE            reduce using rule 85 (declararvariable -> ID EQUALS tipo END .)
 
 
 state 131
 
-    (96) array -> ARRAY LPAREN . valores_array RPAREN
-    (97) valores_array -> . elementos_array COMA valores_array
-    (98) valores_array -> . elementos_array
-    (99) valores_array -> . empty
-    (100) elementos_array -> . NUMBER
-    (101) elementos_array -> . TEXT
-    (102) elementos_array -> . empty
-    (103) elementos_array -> . boolean
-    (104) elementos_array -> . array
-    (22) empty -> .
-    (92) boolean -> . TRUE
-    (93) boolean -> . FALSE
-    (94) boolean -> . expresionlogica
-    (96) array -> . ARRAY LPAREN valores_array RPAREN
-    (79) expresionlogica -> . ID operadorlogico ID
+    (96) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE . LPAREN argumentos RPAREN END
 
-    NUMBER          shift and go to state 161
-    TEXT            shift and go to state 162
-    RPAREN          reduce using rule 22 (empty -> .)
-    COMA            reduce using rule 22 (empty -> .)
-    TRUE            shift and go to state 85
-    FALSE           shift and go to state 86
-    ARRAY           shift and go to state 90
-    ID              shift and go to state 165
+    LPAREN          shift and go to state 158
 
-    valores_array                  shift and go to state 158
-    elementos_array                shift and go to state 159
-    empty                          shift and go to state 160
-    boolean                        shift and go to state 163
-    array                          shift and go to state 164
-    expresionlogica                shift and go to state 87
 
 state 132
 
-    (105) new -> NEW FNOMBRE .
+    (97) array -> ARRAY LPAREN . valores_array RPAREN
+    (98) valores_array -> . elementos_array COMA valores_array
+    (99) valores_array -> . elementos_array
+    (100) valores_array -> . empty
+    (101) elementos_array -> . NUMBER
+    (102) elementos_array -> . TEXT
+    (103) elementos_array -> . empty
+    (104) elementos_array -> . boolean
+    (105) elementos_array -> . array
+    (22) empty -> .
+    (93) boolean -> . TRUE
+    (94) boolean -> . FALSE
+    (95) boolean -> . expresionlogica
+    (97) array -> . ARRAY LPAREN valores_array RPAREN
+    (80) expresionlogica -> . ID operadorlogico ID
 
-    END             reduce using rule 105 (new -> NEW FNOMBRE .)
+    NUMBER          shift and go to state 162
+    TEXT            shift and go to state 163
+    RPAREN          reduce using rule 22 (empty -> .)
+    COMA            reduce using rule 22 (empty -> .)
+    TRUE            shift and go to state 86
+    FALSE           shift and go to state 87
+    ARRAY           shift and go to state 91
+    ID              shift and go to state 166
 
+    valores_array                  shift and go to state 159
+    elementos_array                shift and go to state 160
+    empty                          shift and go to state 161
+    boolean                        shift and go to state 164
+    array                          shift and go to state 165
+    expresionlogica                shift and go to state 88
 
 state 133
 
-    (140) funcion_corta -> FGETS LPAREN . ID COMA NUMBER RPAREN
+    (106) new -> NEW FNOMBRE .
 
-    ID              shift and go to state 166
+    END             reduce using rule 106 (new -> NEW FNOMBRE .)
 
 
 state 134
 
-    (141) estructura_funcion -> funcion_archivo LPAREN . opcion RPAREN
-    (142) opcion -> . ID
-    (143) opcion -> . TEXT
+    (142) funcion_corta -> FGETS LPAREN . ID COMA NUMBER RPAREN
 
-    ID              shift and go to state 168
-    TEXT            shift and go to state 169
+    ID              shift and go to state 167
 
-    opcion                         shift and go to state 167
 
 state 135
+
+    (143) estructura_funcion -> funcion_archivo LPAREN . opcion RPAREN
+    (144) opcion -> . ID
+    (145) opcion -> . TEXT
+
+    ID              shift and go to state 169
+    TEXT            shift and go to state 170
+
+    opcion                         shift and go to state 168
+
+state 136
 
     (39) expif -> funcion_condicion LPAREN comparacion RPAREN . LCORCHET declaracion RCORCHET
     (40) expif -> funcion_condicion LPAREN comparacion RPAREN . LCORCHET
 
-    LCORCHET        shift and go to state 170
+    LCORCHET        shift and go to state 171
 
 
-state 136
+state 137
 
     (65) comparacion -> valor_comparado operadorcomparacion . valor_comparado
-    (66) valor_comparado -> . NUMBER
-    (67) valor_comparado -> . boolean
-    (68) valor_comparado -> . operacion_matematica
-    (69) valor_comparado -> . ID
-    (92) boolean -> . TRUE
-    (93) boolean -> . FALSE
-    (94) boolean -> . expresionlogica
+    (67) valor_comparado -> . NUMBER
+    (68) valor_comparado -> . boolean
+    (69) valor_comparado -> . operacion_matematica
+    (70) valor_comparado -> . ID
+    (93) boolean -> . TRUE
+    (94) boolean -> . FALSE
+    (95) boolean -> . expresionlogica
     (29) operacion_matematica -> . termino operadores operacion_matematica
     (30) operacion_matematica -> . termino operadores termino
-    (79) expresionlogica -> . ID operadorlogico ID
+    (80) expresionlogica -> . ID operadorlogico ID
     (36) termino -> . NUMBER
     (37) termino -> . ID
     (38) termino -> . DECIMAL
 
-    NUMBER          shift and go to state 106
-    ID              shift and go to state 109
-    TRUE            shift and go to state 85
-    FALSE           shift and go to state 86
+    NUMBER          shift and go to state 108
+    ID              shift and go to state 110
+    TRUE            shift and go to state 86
+    FALSE           shift and go to state 87
     DECIMAL         shift and go to state 58
 
-    valor_comparado                shift and go to state 171
-    boolean                        shift and go to state 107
-    operacion_matematica           shift and go to state 108
-    expresionlogica                shift and go to state 87
-    termino                        shift and go to state 77
-
-state 137
-
-    (70) operadorcomparacion -> IS_EQUAL .
-
-    NUMBER          reduce using rule 70 (operadorcomparacion -> IS_EQUAL .)
-    ID              reduce using rule 70 (operadorcomparacion -> IS_EQUAL .)
-    TRUE            reduce using rule 70 (operadorcomparacion -> IS_EQUAL .)
-    FALSE           reduce using rule 70 (operadorcomparacion -> IS_EQUAL .)
-    DECIMAL         reduce using rule 70 (operadorcomparacion -> IS_EQUAL .)
-
+    valor_comparado                shift and go to state 172
+    boolean                        shift and go to state 173
+    operacion_matematica           shift and go to state 109
+    expresionlogica                shift and go to state 88
+    termino                        shift and go to state 64
 
 state 138
 
-    (71) operadorcomparacion -> IS_IDENTICAL .
+    (71) operadorcomparacion -> IS_EQUAL .
 
-    NUMBER          reduce using rule 71 (operadorcomparacion -> IS_IDENTICAL .)
-    ID              reduce using rule 71 (operadorcomparacion -> IS_IDENTICAL .)
-    TRUE            reduce using rule 71 (operadorcomparacion -> IS_IDENTICAL .)
-    FALSE           reduce using rule 71 (operadorcomparacion -> IS_IDENTICAL .)
-    DECIMAL         reduce using rule 71 (operadorcomparacion -> IS_IDENTICAL .)
+    NUMBER          reduce using rule 71 (operadorcomparacion -> IS_EQUAL .)
+    ID              reduce using rule 71 (operadorcomparacion -> IS_EQUAL .)
+    TRUE            reduce using rule 71 (operadorcomparacion -> IS_EQUAL .)
+    FALSE           reduce using rule 71 (operadorcomparacion -> IS_EQUAL .)
+    DECIMAL         reduce using rule 71 (operadorcomparacion -> IS_EQUAL .)
 
 
 state 139
 
-    (72) operadorcomparacion -> IS_NOT_EQUAL .
+    (72) operadorcomparacion -> IS_IDENTICAL .
 
-    NUMBER          reduce using rule 72 (operadorcomparacion -> IS_NOT_EQUAL .)
-    ID              reduce using rule 72 (operadorcomparacion -> IS_NOT_EQUAL .)
-    TRUE            reduce using rule 72 (operadorcomparacion -> IS_NOT_EQUAL .)
-    FALSE           reduce using rule 72 (operadorcomparacion -> IS_NOT_EQUAL .)
-    DECIMAL         reduce using rule 72 (operadorcomparacion -> IS_NOT_EQUAL .)
+    NUMBER          reduce using rule 72 (operadorcomparacion -> IS_IDENTICAL .)
+    ID              reduce using rule 72 (operadorcomparacion -> IS_IDENTICAL .)
+    TRUE            reduce using rule 72 (operadorcomparacion -> IS_IDENTICAL .)
+    FALSE           reduce using rule 72 (operadorcomparacion -> IS_IDENTICAL .)
+    DECIMAL         reduce using rule 72 (operadorcomparacion -> IS_IDENTICAL .)
 
 
 state 140
 
-    (73) operadorcomparacion -> IS_NOT_IDENTICAL .
+    (73) operadorcomparacion -> IS_NOT_EQUAL .
 
-    NUMBER          reduce using rule 73 (operadorcomparacion -> IS_NOT_IDENTICAL .)
-    ID              reduce using rule 73 (operadorcomparacion -> IS_NOT_IDENTICAL .)
-    TRUE            reduce using rule 73 (operadorcomparacion -> IS_NOT_IDENTICAL .)
-    FALSE           reduce using rule 73 (operadorcomparacion -> IS_NOT_IDENTICAL .)
-    DECIMAL         reduce using rule 73 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+    NUMBER          reduce using rule 73 (operadorcomparacion -> IS_NOT_EQUAL .)
+    ID              reduce using rule 73 (operadorcomparacion -> IS_NOT_EQUAL .)
+    TRUE            reduce using rule 73 (operadorcomparacion -> IS_NOT_EQUAL .)
+    FALSE           reduce using rule 73 (operadorcomparacion -> IS_NOT_EQUAL .)
+    DECIMAL         reduce using rule 73 (operadorcomparacion -> IS_NOT_EQUAL .)
 
 
 state 141
 
-    (74) operadorcomparacion -> IS_GREATER_OR_EQUAL .
+    (74) operadorcomparacion -> IS_NOT_IDENTICAL .
 
-    NUMBER          reduce using rule 74 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
-    ID              reduce using rule 74 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
-    TRUE            reduce using rule 74 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
-    FALSE           reduce using rule 74 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
-    DECIMAL         reduce using rule 74 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+    NUMBER          reduce using rule 74 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+    ID              reduce using rule 74 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+    TRUE            reduce using rule 74 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+    FALSE           reduce using rule 74 (operadorcomparacion -> IS_NOT_IDENTICAL .)
+    DECIMAL         reduce using rule 74 (operadorcomparacion -> IS_NOT_IDENTICAL .)
 
 
 state 142
 
-    (75) operadorcomparacion -> IS_SMALLER_OR_EQUAL .
+    (75) operadorcomparacion -> IS_GREATER_OR_EQUAL .
 
-    NUMBER          reduce using rule 75 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
-    ID              reduce using rule 75 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
-    TRUE            reduce using rule 75 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
-    FALSE           reduce using rule 75 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
-    DECIMAL         reduce using rule 75 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+    NUMBER          reduce using rule 75 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+    ID              reduce using rule 75 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+    TRUE            reduce using rule 75 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+    FALSE           reduce using rule 75 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
+    DECIMAL         reduce using rule 75 (operadorcomparacion -> IS_GREATER_OR_EQUAL .)
 
 
 state 143
 
-    (76) operadorcomparacion -> SPACESHIP .
+    (76) operadorcomparacion -> IS_SMALLER_OR_EQUAL .
 
-    NUMBER          reduce using rule 76 (operadorcomparacion -> SPACESHIP .)
-    ID              reduce using rule 76 (operadorcomparacion -> SPACESHIP .)
-    TRUE            reduce using rule 76 (operadorcomparacion -> SPACESHIP .)
-    FALSE           reduce using rule 76 (operadorcomparacion -> SPACESHIP .)
-    DECIMAL         reduce using rule 76 (operadorcomparacion -> SPACESHIP .)
+    NUMBER          reduce using rule 76 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+    ID              reduce using rule 76 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+    TRUE            reduce using rule 76 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+    FALSE           reduce using rule 76 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
+    DECIMAL         reduce using rule 76 (operadorcomparacion -> IS_SMALLER_OR_EQUAL .)
 
 
 state 144
 
-    (77) operadorcomparacion -> MAYORQUE .
+    (77) operadorcomparacion -> SPACESHIP .
 
-    NUMBER          reduce using rule 77 (operadorcomparacion -> MAYORQUE .)
-    ID              reduce using rule 77 (operadorcomparacion -> MAYORQUE .)
-    TRUE            reduce using rule 77 (operadorcomparacion -> MAYORQUE .)
-    FALSE           reduce using rule 77 (operadorcomparacion -> MAYORQUE .)
-    DECIMAL         reduce using rule 77 (operadorcomparacion -> MAYORQUE .)
+    NUMBER          reduce using rule 77 (operadorcomparacion -> SPACESHIP .)
+    ID              reduce using rule 77 (operadorcomparacion -> SPACESHIP .)
+    TRUE            reduce using rule 77 (operadorcomparacion -> SPACESHIP .)
+    FALSE           reduce using rule 77 (operadorcomparacion -> SPACESHIP .)
+    DECIMAL         reduce using rule 77 (operadorcomparacion -> SPACESHIP .)
 
 
 state 145
 
-    (78) operadorcomparacion -> MENORQUE .
+    (78) operadorcomparacion -> MAYORQUE .
 
-    NUMBER          reduce using rule 78 (operadorcomparacion -> MENORQUE .)
-    ID              reduce using rule 78 (operadorcomparacion -> MENORQUE .)
-    TRUE            reduce using rule 78 (operadorcomparacion -> MENORQUE .)
-    FALSE           reduce using rule 78 (operadorcomparacion -> MENORQUE .)
-    DECIMAL         reduce using rule 78 (operadorcomparacion -> MENORQUE .)
+    NUMBER          reduce using rule 78 (operadorcomparacion -> MAYORQUE .)
+    ID              reduce using rule 78 (operadorcomparacion -> MAYORQUE .)
+    TRUE            reduce using rule 78 (operadorcomparacion -> MAYORQUE .)
+    FALSE           reduce using rule 78 (operadorcomparacion -> MAYORQUE .)
+    DECIMAL         reduce using rule 78 (operadorcomparacion -> MAYORQUE .)
 
 
 state 146
 
-    (21) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN . LCORCHET declaracion RCORCHET
+    (79) operadorcomparacion -> MENORQUE .
 
-    LCORCHET        shift and go to state 172
+    NUMBER          reduce using rule 79 (operadorcomparacion -> MENORQUE .)
+    ID              reduce using rule 79 (operadorcomparacion -> MENORQUE .)
+    TRUE            reduce using rule 79 (operadorcomparacion -> MENORQUE .)
+    FALSE           reduce using rule 79 (operadorcomparacion -> MENORQUE .)
+    DECIMAL         reduce using rule 79 (operadorcomparacion -> MENORQUE .)
 
 
 state 147
 
-    (106) print -> funcion_print LPAREN argument RPAREN . END
+    (21) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN . LCORCHET declaracion RCORCHET
 
-    END             shift and go to state 173
+    LCORCHET        shift and go to state 174
 
 
 state 148
 
-    (108) print -> ECHO LPAREN valores_echo RPAREN . END
+    (107) print -> funcion_print LPAREN argument RPAREN . END
 
-    END             shift and go to state 174
+    END             shift and go to state 175
 
 
 state 149
 
-    (112) valores_echo -> argument COMA valores_echo .
+    (30) operacion_matematica -> termino operadores termino .
+    (29) operacion_matematica -> termino . operadores operacion_matematica
+    (30) operacion_matematica -> termino . operadores termino
+    (31) operadores -> . PLUS
+    (32) operadores -> . MINUS
+    (33) operadores -> . DIVIDE
+    (34) operadores -> . TIMES
+    (35) operadores -> . MODULO
 
-    END             reduce using rule 112 (valores_echo -> argument COMA valores_echo .)
-    RPAREN          reduce using rule 112 (valores_echo -> argument COMA valores_echo .)
+    END             reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    COMA            reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    IS_EQUAL        reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    IS_IDENTICAL    reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    IS_NOT_EQUAL    reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    IS_NOT_IDENTICAL reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    IS_GREATER_OR_EQUAL reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    IS_SMALLER_OR_EQUAL reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    SPACESHIP       reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    MAYORQUE        reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    MENORQUE        reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    RPAREN          reduce using rule 30 (operacion_matematica -> termino operadores termino .)
+    PLUS            shift and go to state 116
+    MINUS           shift and go to state 117
+    DIVIDE          shift and go to state 118
+    TIMES           shift and go to state 119
+    MODULO          shift and go to state 120
 
+    operadores                     shift and go to state 115
 
 state 150
 
-    (119) arreglos -> funcion_arreglo LPAREN ID RPAREN .
+    (29) operacion_matematica -> termino operadores operacion_matematica .
 
-    CLOSE           reduce using rule 119 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
-    RCORCHET        reduce using rule 119 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
-    $end            reduce using rule 119 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
-    ELSE            reduce using rule 119 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
+    END             reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    COMA            reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    IS_EQUAL        reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    IS_IDENTICAL    reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    IS_NOT_EQUAL    reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    IS_NOT_IDENTICAL reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    IS_GREATER_OR_EQUAL reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    IS_SMALLER_OR_EQUAL reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    SPACESHIP       reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    MAYORQUE        reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    MENORQUE        reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+    RPAREN          reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
 
 
 state 151
 
-    (55) while -> WHILE LPAREN comparacion RPAREN . LCORCHET control_bucle RCORCHET
-    (56) while -> WHILE LPAREN comparacion RPAREN . LCORCHET
+    (109) print -> ECHO LPAREN valores_echo RPAREN . END
 
-    LCORCHET        shift and go to state 175
+    END             shift and go to state 176
 
 
 state 152
 
-    (60) foreach -> FOREACH LPAREN ID AS . ID RPAREN LCORCHET declaracion RCORCHET
-    (61) foreach -> FOREACH LPAREN ID AS . ID RPAREN LCORCHET
+    (114) valores_echo -> argument COMA valores_echo .
 
-    ID              shift and go to state 176
+    END             reduce using rule 114 (valores_echo -> argument COMA valores_echo .)
+    RPAREN          reduce using rule 114 (valores_echo -> argument COMA valores_echo .)
 
 
 state 153
 
-    (153) clase -> CLASS FNOMBRE LCORCHET declaracion . RCORCHET
+    (121) arreglos -> funcion_arreglo LPAREN ID RPAREN .
+
+    CLOSE           reduce using rule 121 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
+    RCORCHET        reduce using rule 121 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
+    $end            reduce using rule 121 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
+    ELSE            reduce using rule 121 (arreglos -> funcion_arreglo LPAREN ID RPAREN .)
+
+
+state 154
+
+    (55) while -> WHILE LPAREN comparacion RPAREN . LCORCHET control_bucle RCORCHET
+    (56) while -> WHILE LPAREN comparacion RPAREN . LCORCHET
+
+    LCORCHET        shift and go to state 177
+
+
+state 155
+
+    (60) foreach -> FOREACH LPAREN ID AS . ID RPAREN LCORCHET declaracion RCORCHET
+    (61) foreach -> FOREACH LPAREN ID AS . ID RPAREN LCORCHET
+
+    ID              shift and go to state 178
+
+
+state 156
+
+    (155) clase -> CLASS FNOMBRE LCORCHET declaracion . RCORCHET
     (20) declaracion -> declaracion .
     (41) expif -> declaracion . RCORCHET
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for RCORCHET resolved as shift
@@ -2693,7 +2827,7 @@ state 153
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
-    RCORCHET        shift and go to state 177
+    RCORCHET        shift and go to state 179
     ELSE            reduce using rule 20 (declaracion -> declaracion .)
 
   ! RCORCHET        [ reduce using rule 20 (declaracion -> declaracion .) ]
@@ -2701,18 +2835,18 @@ state 153
   ! ELSE            [ reduce using rule 42 (expif -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! ELSE            [ reduce using rule 52 (control_bucle -> declaracion .) ]
 
 
-state 154
+state 157
 
     (44) expelse -> expif ELSE LCORCHET declaracion RCORCHET .
     (41) expif -> declaracion RCORCHET .
     (48) expelse -> declaracion RCORCHET .
-    (155) clase -> declaracion RCORCHET .
+    (157) clase -> declaracion RCORCHET .
 
   ! reduce/reduce conflict for RCORCHET resolved using rule 41 (expif -> declaracion RCORCHET .)
   ! reduce/reduce conflict for CLOSE resolved using rule 41 (expif -> declaracion RCORCHET .)
@@ -2739,139 +2873,92 @@ state 154
   ! CLOSE           [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! $end            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! ELSE            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! CLOSE           [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! $end            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-
-
-state 155
-
-    (95) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN . argumentos RPAREN END
-    (23) argumentos -> . ID
-    (24) argumentos -> . empty
-    (22) empty -> .
-
-    ID              shift and go to state 178
-    RPAREN          reduce using rule 22 (empty -> .)
-
-    argumentos                     shift and go to state 179
-    empty                          shift and go to state 180
-
-state 156
-
-    (30) operacion_matematica -> termino operadores termino .
-    (29) operacion_matematica -> termino . operadores operacion_matematica
-    (30) operacion_matematica -> termino . operadores termino
-    (31) operadores -> . PLUS
-    (32) operadores -> . MINUS
-    (33) operadores -> . DIVIDE
-    (34) operadores -> . TIMES
-    (35) operadores -> . MODULO
-
-    END             reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    IS_EQUAL        reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    IS_IDENTICAL    reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    IS_NOT_EQUAL    reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    IS_NOT_IDENTICAL reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    IS_GREATER_OR_EQUAL reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    IS_SMALLER_OR_EQUAL reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    SPACESHIP       reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    MAYORQUE        reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    MENORQUE        reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    RPAREN          reduce using rule 30 (operacion_matematica -> termino operadores termino .)
-    PLUS            shift and go to state 126
-    MINUS           shift and go to state 127
-    DIVIDE          shift and go to state 128
-    TIMES           shift and go to state 129
-    MODULO          shift and go to state 130
-
-    operadores                     shift and go to state 125
-
-state 157
-
-    (29) operacion_matematica -> termino operadores operacion_matematica .
-
-    END             reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    IS_EQUAL        reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    IS_IDENTICAL    reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    IS_NOT_EQUAL    reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    IS_NOT_IDENTICAL reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    IS_GREATER_OR_EQUAL reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    IS_SMALLER_OR_EQUAL reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    SPACESHIP       reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    MAYORQUE        reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    MENORQUE        reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
-    RPAREN          reduce using rule 29 (operacion_matematica -> termino operadores operacion_matematica .)
+  ! RCORCHET        [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! CLOSE           [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! $end            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
 
 
 state 158
 
-    (96) array -> ARRAY LPAREN valores_array . RPAREN
+    (96) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN . argumentos RPAREN END
+    (23) argumentos -> . ID
+    (24) argumentos -> . empty
+    (22) empty -> .
 
-    RPAREN          shift and go to state 181
+    ID              shift and go to state 180
+    RPAREN          reduce using rule 22 (empty -> .)
 
+    argumentos                     shift and go to state 181
+    empty                          shift and go to state 182
 
 state 159
 
-    (97) valores_array -> elementos_array . COMA valores_array
-    (98) valores_array -> elementos_array .
+    (97) array -> ARRAY LPAREN valores_array . RPAREN
 
-    COMA            shift and go to state 182
-    RPAREN          reduce using rule 98 (valores_array -> elementos_array .)
+    RPAREN          shift and go to state 183
 
 
 state 160
 
-    (99) valores_array -> empty .
-    (102) elementos_array -> empty .
+    (98) valores_array -> elementos_array . COMA valores_array
+    (99) valores_array -> elementos_array .
 
-  ! reduce/reduce conflict for RPAREN resolved using rule 99 (valores_array -> empty .)
-    RPAREN          reduce using rule 99 (valores_array -> empty .)
-    COMA            reduce using rule 102 (elementos_array -> empty .)
-
-  ! RPAREN          [ reduce using rule 102 (elementos_array -> empty .) ]
+    COMA            shift and go to state 184
+    RPAREN          reduce using rule 99 (valores_array -> elementos_array .)
 
 
 state 161
 
-    (100) elementos_array -> NUMBER .
+    (100) valores_array -> empty .
+    (103) elementos_array -> empty .
 
-    COMA            reduce using rule 100 (elementos_array -> NUMBER .)
-    RPAREN          reduce using rule 100 (elementos_array -> NUMBER .)
+  ! reduce/reduce conflict for RPAREN resolved using rule 100 (valores_array -> empty .)
+    RPAREN          reduce using rule 100 (valores_array -> empty .)
+    COMA            reduce using rule 103 (elementos_array -> empty .)
+
+  ! RPAREN          [ reduce using rule 103 (elementos_array -> empty .) ]
 
 
 state 162
 
-    (101) elementos_array -> TEXT .
+    (101) elementos_array -> NUMBER .
 
-    COMA            reduce using rule 101 (elementos_array -> TEXT .)
-    RPAREN          reduce using rule 101 (elementos_array -> TEXT .)
+    COMA            reduce using rule 101 (elementos_array -> NUMBER .)
+    RPAREN          reduce using rule 101 (elementos_array -> NUMBER .)
 
 
 state 163
 
-    (103) elementos_array -> boolean .
+    (102) elementos_array -> TEXT .
 
-    COMA            reduce using rule 103 (elementos_array -> boolean .)
-    RPAREN          reduce using rule 103 (elementos_array -> boolean .)
+    COMA            reduce using rule 102 (elementos_array -> TEXT .)
+    RPAREN          reduce using rule 102 (elementos_array -> TEXT .)
 
 
 state 164
 
-    (104) elementos_array -> array .
+    (104) elementos_array -> boolean .
 
-    COMA            reduce using rule 104 (elementos_array -> array .)
-    RPAREN          reduce using rule 104 (elementos_array -> array .)
+    COMA            reduce using rule 104 (elementos_array -> boolean .)
+    RPAREN          reduce using rule 104 (elementos_array -> boolean .)
 
 
 state 165
 
-    (79) expresionlogica -> ID . operadorlogico ID
-    (80) operadorlogico -> . AND
-    (81) operadorlogico -> . OR
-    (82) operadorlogico -> . XOR
-    (83) operadorlogico -> . NOT
+    (105) elementos_array -> array .
+
+    COMA            reduce using rule 105 (elementos_array -> array .)
+    RPAREN          reduce using rule 105 (elementos_array -> array .)
+
+
+state 166
+
+    (80) expresionlogica -> ID . operadorlogico ID
+    (81) operadorlogico -> . AND
+    (82) operadorlogico -> . OR
+    (83) operadorlogico -> . XOR
+    (84) operadorlogico -> . NOT
 
     AND             shift and go to state 48
     OR              shift and go to state 49
@@ -2880,35 +2967,35 @@ state 165
 
     operadorlogico                 shift and go to state 47
 
-state 166
-
-    (140) funcion_corta -> FGETS LPAREN ID . COMA NUMBER RPAREN
-
-    COMA            shift and go to state 183
-
-
 state 167
 
-    (141) estructura_funcion -> funcion_archivo LPAREN opcion . RPAREN
+    (142) funcion_corta -> FGETS LPAREN ID . COMA NUMBER RPAREN
 
-    RPAREN          shift and go to state 184
+    COMA            shift and go to state 185
 
 
 state 168
 
-    (142) opcion -> ID .
+    (143) estructura_funcion -> funcion_archivo LPAREN opcion . RPAREN
 
-    RPAREN          reduce using rule 142 (opcion -> ID .)
+    RPAREN          shift and go to state 186
 
 
 state 169
 
-    (143) opcion -> TEXT .
+    (144) opcion -> ID .
 
-    RPAREN          reduce using rule 143 (opcion -> TEXT .)
+    RPAREN          reduce using rule 144 (opcion -> ID .)
 
 
 state 170
+
+    (145) opcion -> TEXT .
+
+    RPAREN          reduce using rule 145 (opcion -> TEXT .)
+
+
+state 171
 
     (39) expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET . declaracion RCORCHET
     (40) expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET .
@@ -2938,18 +3025,18 @@ state 170
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -2960,22 +3047,22 @@ state 170
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -3011,7 +3098,7 @@ state 170
   ! RCORCHET        [ reduce using rule 22 (empty -> .) ]
 
     funcion_condicion              shift and go to state 19
-    declaracion                    shift and go to state 185
+    declaracion                    shift and go to state 187
     expression                     shift and go to state 5
     expif                          shift and go to state 6
     expelse                        shift and go to state 7
@@ -3030,14 +3117,21 @@ state 170
     funcion_arreglo                shift and go to state 26
     control_bucle                  shift and go to state 28
 
-state 171
+state 172
 
     (65) comparacion -> valor_comparado operadorcomparacion valor_comparado .
 
     RPAREN          reduce using rule 65 (comparacion -> valor_comparado operadorcomparacion valor_comparado .)
 
 
-state 172
+state 173
+
+    (68) valor_comparado -> boolean .
+
+    RPAREN          reduce using rule 68 (valor_comparado -> boolean .)
+
+
+state 174
 
     (21) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET . declaracion RCORCHET
     (7) declaracion -> . expression
@@ -3066,18 +3160,18 @@ state 172
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -3088,22 +3182,22 @@ state 172
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -3132,7 +3226,7 @@ state 172
 
   ! RCORCHET        [ reduce using rule 22 (empty -> .) ]
 
-    declaracion                    shift and go to state 186
+    declaracion                    shift and go to state 188
     expression                     shift and go to state 5
     expif                          shift and go to state 6
     expelse                        shift and go to state 7
@@ -3152,27 +3246,27 @@ state 172
     funcion_arreglo                shift and go to state 26
     control_bucle                  shift and go to state 28
 
-state 173
-
-    (106) print -> funcion_print LPAREN argument RPAREN END .
-
-    CLOSE           reduce using rule 106 (print -> funcion_print LPAREN argument RPAREN END .)
-    RCORCHET        reduce using rule 106 (print -> funcion_print LPAREN argument RPAREN END .)
-    $end            reduce using rule 106 (print -> funcion_print LPAREN argument RPAREN END .)
-    ELSE            reduce using rule 106 (print -> funcion_print LPAREN argument RPAREN END .)
-
-
-state 174
-
-    (108) print -> ECHO LPAREN valores_echo RPAREN END .
-
-    CLOSE           reduce using rule 108 (print -> ECHO LPAREN valores_echo RPAREN END .)
-    RCORCHET        reduce using rule 108 (print -> ECHO LPAREN valores_echo RPAREN END .)
-    $end            reduce using rule 108 (print -> ECHO LPAREN valores_echo RPAREN END .)
-    ELSE            reduce using rule 108 (print -> ECHO LPAREN valores_echo RPAREN END .)
-
-
 state 175
+
+    (107) print -> funcion_print LPAREN argument RPAREN END .
+
+    CLOSE           reduce using rule 107 (print -> funcion_print LPAREN argument RPAREN END .)
+    RCORCHET        reduce using rule 107 (print -> funcion_print LPAREN argument RPAREN END .)
+    $end            reduce using rule 107 (print -> funcion_print LPAREN argument RPAREN END .)
+    ELSE            reduce using rule 107 (print -> funcion_print LPAREN argument RPAREN END .)
+
+
+state 176
+
+    (109) print -> ECHO LPAREN valores_echo RPAREN END .
+
+    CLOSE           reduce using rule 109 (print -> ECHO LPAREN valores_echo RPAREN END .)
+    RCORCHET        reduce using rule 109 (print -> ECHO LPAREN valores_echo RPAREN END .)
+    $end            reduce using rule 109 (print -> ECHO LPAREN valores_echo RPAREN END .)
+    ELSE            reduce using rule 109 (print -> ECHO LPAREN valores_echo RPAREN END .)
+
+
+state 177
 
     (55) while -> WHILE LPAREN comparacion RPAREN LCORCHET . control_bucle RCORCHET
     (56) while -> WHILE LPAREN comparacion RPAREN LCORCHET .
@@ -3205,18 +3299,18 @@ state 175
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -3227,22 +3321,22 @@ state 175
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
 
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! shift/reduce conflict for RCORCHET resolved as shift
@@ -3274,8 +3368,8 @@ state 175
   ! ELSE            [ reduce using rule 56 (while -> WHILE LPAREN comparacion RPAREN LCORCHET .) ]
   ! RCORCHET        [ reduce using rule 22 (empty -> .) ]
 
-    control_bucle                  shift and go to state 187
-    declaracion                    shift and go to state 188
+    control_bucle                  shift and go to state 189
+    declaracion                    shift and go to state 190
     expression                     shift and go to state 5
     expif                          shift and go to state 6
     expelse                        shift and go to state 7
@@ -3294,20 +3388,20 @@ state 175
     funcion_print                  shift and go to state 24
     funcion_arreglo                shift and go to state 26
 
-state 176
+state 178
 
     (60) foreach -> FOREACH LPAREN ID AS ID . RPAREN LCORCHET declaracion RCORCHET
     (61) foreach -> FOREACH LPAREN ID AS ID . RPAREN LCORCHET
 
-    RPAREN          shift and go to state 189
+    RPAREN          shift and go to state 191
 
 
-state 177
+state 179
 
-    (153) clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .
+    (155) clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .
     (41) expif -> declaracion RCORCHET .
     (48) expelse -> declaracion RCORCHET .
-    (155) clase -> declaracion RCORCHET .
+    (157) clase -> declaracion RCORCHET .
 
   ! reduce/reduce conflict for RCORCHET resolved using rule 41 (expif -> declaracion RCORCHET .)
   ! reduce/reduce conflict for ELSE resolved using rule 41 (expif -> declaracion RCORCHET .)
@@ -3315,98 +3409,98 @@ state 177
   ! reduce/reduce conflict for ELSE resolved using rule 41 (expif -> declaracion RCORCHET .)
   ! reduce/reduce conflict for RCORCHET resolved using rule 41 (expif -> declaracion RCORCHET .)
   ! reduce/reduce conflict for ELSE resolved using rule 41 (expif -> declaracion RCORCHET .)
-    CLOSE           reduce using rule 153 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .)
-    $end            reduce using rule 153 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .)
+    CLOSE           reduce using rule 155 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .)
+    $end            reduce using rule 155 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .)
     RCORCHET        reduce using rule 41 (expif -> declaracion RCORCHET .)
     ELSE            reduce using rule 41 (expif -> declaracion RCORCHET .)
 
-  ! RCORCHET        [ reduce using rule 153 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 153 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 155 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 155 (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET .) ]
   ! RCORCHET        [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! ELSE            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
 
 
-state 178
+state 180
 
     (23) argumentos -> ID .
 
     RPAREN          reduce using rule 23 (argumentos -> ID .)
 
 
-state 179
+state 181
 
-    (95) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos . RPAREN END
+    (96) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos . RPAREN END
 
-    RPAREN          shift and go to state 190
+    RPAREN          shift and go to state 192
 
 
-state 180
+state 182
 
     (24) argumentos -> empty .
 
     RPAREN          reduce using rule 24 (argumentos -> empty .)
 
 
-state 181
-
-    (96) array -> ARRAY LPAREN valores_array RPAREN .
-
-    END             reduce using rule 96 (array -> ARRAY LPAREN valores_array RPAREN .)
-    COMA            reduce using rule 96 (array -> ARRAY LPAREN valores_array RPAREN .)
-    RPAREN          reduce using rule 96 (array -> ARRAY LPAREN valores_array RPAREN .)
-
-
-state 182
-
-    (97) valores_array -> elementos_array COMA . valores_array
-    (97) valores_array -> . elementos_array COMA valores_array
-    (98) valores_array -> . elementos_array
-    (99) valores_array -> . empty
-    (100) elementos_array -> . NUMBER
-    (101) elementos_array -> . TEXT
-    (102) elementos_array -> . empty
-    (103) elementos_array -> . boolean
-    (104) elementos_array -> . array
-    (22) empty -> .
-    (92) boolean -> . TRUE
-    (93) boolean -> . FALSE
-    (94) boolean -> . expresionlogica
-    (96) array -> . ARRAY LPAREN valores_array RPAREN
-    (79) expresionlogica -> . ID operadorlogico ID
-
-    NUMBER          shift and go to state 161
-    TEXT            shift and go to state 162
-    RPAREN          reduce using rule 22 (empty -> .)
-    COMA            reduce using rule 22 (empty -> .)
-    TRUE            shift and go to state 85
-    FALSE           shift and go to state 86
-    ARRAY           shift and go to state 90
-    ID              shift and go to state 165
-
-    elementos_array                shift and go to state 159
-    valores_array                  shift and go to state 191
-    empty                          shift and go to state 160
-    boolean                        shift and go to state 163
-    array                          shift and go to state 164
-    expresionlogica                shift and go to state 87
-
 state 183
 
-    (140) funcion_corta -> FGETS LPAREN ID COMA . NUMBER RPAREN
+    (97) array -> ARRAY LPAREN valores_array RPAREN .
 
-    NUMBER          shift and go to state 192
+    END             reduce using rule 97 (array -> ARRAY LPAREN valores_array RPAREN .)
+    COMA            reduce using rule 97 (array -> ARRAY LPAREN valores_array RPAREN .)
+    RPAREN          reduce using rule 97 (array -> ARRAY LPAREN valores_array RPAREN .)
 
 
 state 184
 
-    (141) estructura_funcion -> funcion_archivo LPAREN opcion RPAREN .
+    (98) valores_array -> elementos_array COMA . valores_array
+    (98) valores_array -> . elementos_array COMA valores_array
+    (99) valores_array -> . elementos_array
+    (100) valores_array -> . empty
+    (101) elementos_array -> . NUMBER
+    (102) elementos_array -> . TEXT
+    (103) elementos_array -> . empty
+    (104) elementos_array -> . boolean
+    (105) elementos_array -> . array
+    (22) empty -> .
+    (93) boolean -> . TRUE
+    (94) boolean -> . FALSE
+    (95) boolean -> . expresionlogica
+    (97) array -> . ARRAY LPAREN valores_array RPAREN
+    (80) expresionlogica -> . ID operadorlogico ID
 
-    END             reduce using rule 141 (estructura_funcion -> funcion_archivo LPAREN opcion RPAREN .)
+    NUMBER          shift and go to state 162
+    TEXT            shift and go to state 163
+    RPAREN          reduce using rule 22 (empty -> .)
+    COMA            reduce using rule 22 (empty -> .)
+    TRUE            shift and go to state 86
+    FALSE           shift and go to state 87
+    ARRAY           shift and go to state 91
+    ID              shift and go to state 166
 
+    elementos_array                shift and go to state 160
+    valores_array                  shift and go to state 193
+    empty                          shift and go to state 161
+    boolean                        shift and go to state 164
+    array                          shift and go to state 165
+    expresionlogica                shift and go to state 88
 
 state 185
+
+    (142) funcion_corta -> FGETS LPAREN ID COMA . NUMBER RPAREN
+
+    NUMBER          shift and go to state 194
+
+
+state 186
+
+    (143) estructura_funcion -> funcion_archivo LPAREN opcion RPAREN .
+
+    END             reduce using rule 143 (estructura_funcion -> funcion_archivo LPAREN opcion RPAREN .)
+
+
+state 187
 
     (39) expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion . RCORCHET
     (20) declaracion -> declaracion .
@@ -3414,8 +3508,8 @@ state 185
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for RCORCHET resolved as shift
@@ -3427,7 +3521,7 @@ state 185
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
-    RCORCHET        shift and go to state 193
+    RCORCHET        shift and go to state 195
     ELSE            reduce using rule 20 (declaracion -> declaracion .)
 
   ! RCORCHET        [ reduce using rule 20 (declaracion -> declaracion .) ]
@@ -3435,13 +3529,13 @@ state 185
   ! ELSE            [ reduce using rule 42 (expif -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! ELSE            [ reduce using rule 52 (control_bucle -> declaracion .) ]
 
 
-state 186
+state 188
 
     (21) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion . RCORCHET
     (20) declaracion -> declaracion .
@@ -3449,8 +3543,8 @@ state 186
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for RCORCHET resolved as shift
@@ -3462,7 +3556,7 @@ state 186
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
-    RCORCHET        shift and go to state 194
+    RCORCHET        shift and go to state 196
     ELSE            reduce using rule 20 (declaracion -> declaracion .)
 
   ! RCORCHET        [ reduce using rule 20 (declaracion -> declaracion .) ]
@@ -3470,13 +3564,13 @@ state 186
   ! ELSE            [ reduce using rule 42 (expif -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! ELSE            [ reduce using rule 52 (control_bucle -> declaracion .) ]
 
 
-state 187
+state 189
 
     (55) while -> WHILE LPAREN comparacion RPAREN LCORCHET control_bucle . RCORCHET
     (57) while -> control_bucle . RCORCHET
@@ -3487,7 +3581,7 @@ state 187
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for ELSE resolved using rule 58 (while -> control_bucle .)
-    RCORCHET        shift and go to state 195
+    RCORCHET        shift and go to state 197
     ELSE            reduce using rule 58 (while -> control_bucle .)
 
   ! RCORCHET        [ reduce using rule 58 (while -> control_bucle .) ]
@@ -3495,7 +3589,7 @@ state 187
   ! ELSE            [ reduce using rule 63 (foreach -> control_bucle .) ]
 
 
-state 188
+state 190
 
     (52) control_bucle -> declaracion .
     (20) declaracion -> declaracion .
@@ -3503,8 +3597,8 @@ state 188
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
 
   ! reduce/reduce conflict for RCORCHET resolved using rule 20 (declaracion -> declaracion .)
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
@@ -3525,45 +3619,45 @@ state 188
   ! ELSE            [ reduce using rule 42 (expif -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
-
-
-state 189
-
-    (60) foreach -> FOREACH LPAREN ID AS ID RPAREN . LCORCHET declaracion RCORCHET
-    (61) foreach -> FOREACH LPAREN ID AS ID RPAREN . LCORCHET
-
-    LCORCHET        shift and go to state 196
-
-
-state 190
-
-    (95) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN . END
-
-    END             shift and go to state 197
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
 
 
 state 191
 
-    (97) valores_array -> elementos_array COMA valores_array .
+    (60) foreach -> FOREACH LPAREN ID AS ID RPAREN . LCORCHET declaracion RCORCHET
+    (61) foreach -> FOREACH LPAREN ID AS ID RPAREN . LCORCHET
 
-    RPAREN          reduce using rule 97 (valores_array -> elementos_array COMA valores_array .)
+    LCORCHET        shift and go to state 198
 
 
 state 192
 
-    (140) funcion_corta -> FGETS LPAREN ID COMA NUMBER . RPAREN
+    (96) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN . END
 
-    RPAREN          shift and go to state 198
+    END             shift and go to state 199
 
 
 state 193
 
+    (98) valores_array -> elementos_array COMA valores_array .
+
+    RPAREN          reduce using rule 98 (valores_array -> elementos_array COMA valores_array .)
+
+
+state 194
+
+    (142) funcion_corta -> FGETS LPAREN ID COMA NUMBER . RPAREN
+
+    RPAREN          shift and go to state 200
+
+
+state 195
+
     (39) expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET .
     (41) expif -> declaracion RCORCHET .
     (48) expelse -> declaracion RCORCHET .
-    (155) clase -> declaracion RCORCHET .
+    (157) clase -> declaracion RCORCHET .
 
   ! reduce/reduce conflict for RCORCHET resolved using rule 39 (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET .)
   ! reduce/reduce conflict for ELSE resolved using rule 39 (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET .)
@@ -3580,16 +3674,16 @@ state 193
   ! ELSE            [ reduce using rule 41 (expif -> declaracion RCORCHET .) ]
   ! RCORCHET        [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! ELSE            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
 
 
-state 194
+state 196
 
     (21) creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET .
     (41) expif -> declaracion RCORCHET .
     (48) expelse -> declaracion RCORCHET .
-    (155) clase -> declaracion RCORCHET .
+    (157) clase -> declaracion RCORCHET .
 
   ! reduce/reduce conflict for RCORCHET resolved using rule 21 (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET .)
   ! reduce/reduce conflict for ELSE resolved using rule 21 (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET .)
@@ -3606,11 +3700,11 @@ state 194
   ! ELSE            [ reduce using rule 41 (expif -> declaracion RCORCHET .) ]
   ! RCORCHET        [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! ELSE            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
 
 
-state 195
+state 197
 
     (55) while -> WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET .
     (57) while -> control_bucle RCORCHET .
@@ -3631,7 +3725,7 @@ state 195
   ! ELSE            [ reduce using rule 62 (foreach -> control_bucle RCORCHET .) ]
 
 
-state 196
+state 198
 
     (60) foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET . declaracion RCORCHET
     (61) foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET .
@@ -3661,18 +3755,18 @@ state 196
     (47) expelse -> . declaracion
     (48) expelse -> . declaracion RCORCHET
     (49) expelse -> . RCORCHET
-    (79) expresionlogica -> . ID operadorlogico ID
-    (84) declararvariable -> . ID EQUALS tipo END
+    (80) expresionlogica -> . ID operadorlogico ID
+    (85) declararvariable -> . ID EQUALS tipo END
     (21) creacionfunciones -> . FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
     (25) returnvalores -> . RETURN termino END
     (26) returnvalores -> . RETURN creacionfunciones
     (27) returnvalores -> . empty
-    (95) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
-    (106) print -> . funcion_print LPAREN argument RPAREN END
-    (107) print -> . funcion_print argument END
-    (108) print -> . ECHO LPAREN valores_echo RPAREN END
-    (109) print -> . ECHO valores_echo END
-    (119) arreglos -> . funcion_arreglo LPAREN ID RPAREN
+    (96) operador_object -> . ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END
+    (107) print -> . funcion_print LPAREN argument RPAREN END
+    (108) print -> . funcion_print argument END
+    (109) print -> . ECHO LPAREN valores_echo RPAREN END
+    (110) print -> . ECHO valores_echo END
+    (121) arreglos -> . funcion_arreglo LPAREN ID RPAREN
     (55) while -> . WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET
     (56) while -> . WHILE LPAREN comparacion RPAREN LCORCHET
     (57) while -> . control_bucle RCORCHET
@@ -3683,22 +3777,22 @@ state 196
     (62) foreach -> . control_bucle RCORCHET
     (63) foreach -> . control_bucle
     (64) foreach -> . RCORCHET
-    (153) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
-    (154) clase -> . CLASS FNOMBRE LCORCHET
-    (155) clase -> . declaracion RCORCHET
-    (156) clase -> . declaracion
-    (157) clase -> . RCORCHET
+    (155) clase -> . CLASS FNOMBRE LCORCHET declaracion RCORCHET
+    (156) clase -> . CLASS FNOMBRE LCORCHET
+    (157) clase -> . declaracion RCORCHET
+    (158) clase -> . declaracion
+    (159) clase -> . RCORCHET
     (50) funcion_condicion -> . IF
     (51) funcion_condicion -> . ELSEIF
     (22) empty -> .
-    (114) funcion_print -> . VAR_EXPORT
-    (115) funcion_print -> . ECHO
-    (116) funcion_print -> . PRINT
-    (117) funcion_print -> . PRINT_R
-    (118) funcion_print -> . VAR_DUMP
-    (135) funcion_arreglo -> . SUFFLE
-    (136) funcion_arreglo -> . ARRAY_UNIQUE
-    (137) funcion_arreglo -> . SIZEOF
+    (116) funcion_print -> . VAR_EXPORT
+    (117) funcion_print -> . ECHO
+    (118) funcion_print -> . PRINT
+    (119) funcion_print -> . PRINT_R
+    (120) funcion_print -> . VAR_DUMP
+    (137) funcion_arreglo -> . SUFFLE
+    (138) funcion_arreglo -> . ARRAY_UNIQUE
+    (139) funcion_arreglo -> . SIZEOF
     (52) control_bucle -> . declaracion
     (53) control_bucle -> . BREAK
     (54) control_bucle -> . CONTINUE
@@ -3733,7 +3827,7 @@ state 196
   ! ELSE            [ reduce using rule 61 (foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET .) ]
   ! RCORCHET        [ reduce using rule 22 (empty -> .) ]
 
-    declaracion                    shift and go to state 199
+    declaracion                    shift and go to state 201
     expression                     shift and go to state 5
     expif                          shift and go to state 6
     expelse                        shift and go to state 7
@@ -3753,24 +3847,24 @@ state 196
     funcion_arreglo                shift and go to state 26
     control_bucle                  shift and go to state 28
 
-state 197
-
-    (95) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .
-
-    CLOSE           reduce using rule 95 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
-    RCORCHET        reduce using rule 95 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
-    $end            reduce using rule 95 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
-    ELSE            reduce using rule 95 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
-
-
-state 198
-
-    (140) funcion_corta -> FGETS LPAREN ID COMA NUMBER RPAREN .
-
-    END             reduce using rule 140 (funcion_corta -> FGETS LPAREN ID COMA NUMBER RPAREN .)
-
-
 state 199
+
+    (96) operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .
+
+    CLOSE           reduce using rule 96 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
+    RCORCHET        reduce using rule 96 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
+    $end            reduce using rule 96 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
+    ELSE            reduce using rule 96 (operador_object -> ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END .)
+
+
+state 200
+
+    (142) funcion_corta -> FGETS LPAREN ID COMA NUMBER RPAREN .
+
+    END             reduce using rule 142 (funcion_corta -> FGETS LPAREN ID COMA NUMBER RPAREN .)
+
+
+state 201
 
     (60) foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET declaracion . RCORCHET
     (20) declaracion -> declaracion .
@@ -3778,8 +3872,8 @@ state 199
     (42) expif -> declaracion .
     (47) expelse -> declaracion .
     (48) expelse -> declaracion . RCORCHET
-    (155) clase -> declaracion . RCORCHET
-    (156) clase -> declaracion .
+    (157) clase -> declaracion . RCORCHET
+    (158) clase -> declaracion .
     (52) control_bucle -> declaracion .
 
   ! shift/reduce conflict for RCORCHET resolved as shift
@@ -3791,7 +3885,7 @@ state 199
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
   ! shift/reduce conflict for RCORCHET resolved as shift
   ! reduce/reduce conflict for ELSE resolved using rule 20 (declaracion -> declaracion .)
-    RCORCHET        shift and go to state 200
+    RCORCHET        shift and go to state 202
     ELSE            reduce using rule 20 (declaracion -> declaracion .)
 
   ! RCORCHET        [ reduce using rule 20 (declaracion -> declaracion .) ]
@@ -3799,18 +3893,18 @@ state 199
   ! ELSE            [ reduce using rule 42 (expif -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 47 (expelse -> declaracion .) ]
   ! ELSE            [ reduce using rule 47 (expelse -> declaracion .) ]
-  ! RCORCHET        [ reduce using rule 156 (clase -> declaracion .) ]
-  ! ELSE            [ reduce using rule 156 (clase -> declaracion .) ]
+  ! RCORCHET        [ reduce using rule 158 (clase -> declaracion .) ]
+  ! ELSE            [ reduce using rule 158 (clase -> declaracion .) ]
   ! RCORCHET        [ reduce using rule 52 (control_bucle -> declaracion .) ]
   ! ELSE            [ reduce using rule 52 (control_bucle -> declaracion .) ]
 
 
-state 200
+state 202
 
     (60) foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET declaracion RCORCHET .
     (41) expif -> declaracion RCORCHET .
     (48) expelse -> declaracion RCORCHET .
-    (155) clase -> declaracion RCORCHET .
+    (157) clase -> declaracion RCORCHET .
 
   ! reduce/reduce conflict for RCORCHET resolved using rule 41 (expif -> declaracion RCORCHET .)
   ! reduce/reduce conflict for ELSE resolved using rule 41 (expif -> declaracion RCORCHET .)
@@ -3827,8 +3921,8 @@ state 200
   ! ELSE            [ reduce using rule 60 (foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET declaracion RCORCHET .) ]
   ! RCORCHET        [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
   ! ELSE            [ reduce using rule 48 (expelse -> declaracion RCORCHET .) ]
-  ! RCORCHET        [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
-  ! ELSE            [ reduce using rule 155 (clase -> declaracion RCORCHET .) ]
+  ! RCORCHET        [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
+  ! ELSE            [ reduce using rule 157 (clase -> declaracion RCORCHET .) ]
 
 WARNING: 
 WARNING: Conflicts:
@@ -3850,6 +3944,8 @@ WARNING: shift/reduce conflict for ELSE in state 6 resolved as shift
 WARNING: shift/reduce conflict for LPAREN in state 25 resolved as shift
 WARNING: shift/reduce conflict for ID in state 25 resolved as shift
 WARNING: shift/reduce conflict for TEXT in state 25 resolved as shift
+WARNING: shift/reduce conflict for NUMBER in state 25 resolved as shift
+WARNING: shift/reduce conflict for DECIMAL in state 25 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 28 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 28 resolved as shift
 WARNING: shift/reduce conflict for CLOSE in state 42 resolved as shift
@@ -3862,49 +3958,49 @@ WARNING: shift/reduce conflict for CLOSE in state 42 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 42 resolved as shift
 WARNING: shift/reduce conflict for CLOSE in state 42 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 42 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 72 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 72 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 120 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 120 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 121 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 121 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 121 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 121 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 121 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 121 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 153 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 153 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 153 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 153 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 153 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 170 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 170 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 172 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 175 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 175 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 185 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 185 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 185 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 185 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 185 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 186 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 186 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 186 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 186 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 186 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 74 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 74 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 127 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 127 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 128 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 128 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 128 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 128 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 128 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 128 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 156 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 156 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 156 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 156 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 156 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 171 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 171 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 174 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 177 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 177 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 187 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 187 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 187 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 187 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 187 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 188 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 188 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 188 resolved as shift
 WARNING: shift/reduce conflict for RCORCHET in state 188 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 196 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 196 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 199 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 199 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 199 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 199 resolved as shift
-WARNING: shift/reduce conflict for RCORCHET in state 199 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 188 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 189 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 189 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 190 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 190 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 190 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 190 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 198 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 198 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 201 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 201 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 201 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 201 resolved as shift
+WARNING: shift/reduce conflict for RCORCHET in state 201 resolved as shift
 WARNING: reduce/reduce conflict in state 2 resolved using rule (programa -> OPEN)
 WARNING: rejected rule (empty -> <empty>) in state 2
 WARNING: reduce/reduce conflict in state 3 resolved using rule (programa -> declaracion)
@@ -3957,106 +4053,106 @@ WARNING: reduce/reduce conflict in state 44 resolved using rule (expif -> declar
 WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 44
 WARNING: reduce/reduce conflict in state 44 resolved using rule (expif -> declaracion RCORCHET)
 WARNING: rejected rule (clase -> declaracion RCORCHET) in state 44
-WARNING: reduce/reduce conflict in state 68 resolved using rule (while -> control_bucle RCORCHET)
-WARNING: rejected rule (foreach -> control_bucle RCORCHET) in state 68
-WARNING: reduce/reduce conflict in state 72 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (expelse -> expif ELSE LCORCHET) in state 72
-WARNING: reduce/reduce conflict in state 120 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (clase -> CLASS FNOMBRE LCORCHET) in state 120
-WARNING: reduce/reduce conflict in state 121 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expelse -> expif ELSE LCORCHET declaracion) in state 121
-WARNING: reduce/reduce conflict in state 121 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expif -> declaracion) in state 121
-WARNING: reduce/reduce conflict in state 121 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expelse -> declaracion) in state 121
-WARNING: reduce/reduce conflict in state 121 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (clase -> declaracion) in state 121
-WARNING: reduce/reduce conflict in state 121 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (control_bucle -> declaracion) in state 121
-WARNING: reduce/reduce conflict in state 153 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expif -> declaracion) in state 153
-WARNING: reduce/reduce conflict in state 153 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expelse -> declaracion) in state 153
-WARNING: reduce/reduce conflict in state 153 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (clase -> declaracion) in state 153
-WARNING: reduce/reduce conflict in state 153 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (control_bucle -> declaracion) in state 153
-WARNING: reduce/reduce conflict in state 154 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (expelse -> expif ELSE LCORCHET declaracion RCORCHET) in state 154
-WARNING: reduce/reduce conflict in state 154 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 154
-WARNING: reduce/reduce conflict in state 154 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (clase -> declaracion RCORCHET) in state 154
-WARNING: reduce/reduce conflict in state 160 resolved using rule (valores_array -> empty)
-WARNING: rejected rule (elementos_array -> empty) in state 160
-WARNING: reduce/reduce conflict in state 170 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET) in state 170
-WARNING: reduce/reduce conflict in state 175 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (while -> WHILE LPAREN comparacion RPAREN LCORCHET) in state 175
-WARNING: reduce/reduce conflict in state 177 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET) in state 177
-WARNING: reduce/reduce conflict in state 177 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 177
-WARNING: reduce/reduce conflict in state 177 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (clase -> declaracion RCORCHET) in state 177
-WARNING: reduce/reduce conflict in state 185 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expif -> declaracion) in state 185
-WARNING: reduce/reduce conflict in state 185 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expelse -> declaracion) in state 185
-WARNING: reduce/reduce conflict in state 185 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (clase -> declaracion) in state 185
-WARNING: reduce/reduce conflict in state 185 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (control_bucle -> declaracion) in state 185
-WARNING: reduce/reduce conflict in state 186 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expif -> declaracion) in state 186
-WARNING: reduce/reduce conflict in state 186 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expelse -> declaracion) in state 186
-WARNING: reduce/reduce conflict in state 186 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (clase -> declaracion) in state 186
-WARNING: reduce/reduce conflict in state 186 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (control_bucle -> declaracion) in state 186
-WARNING: reduce/reduce conflict in state 187 resolved using rule (while -> control_bucle)
-WARNING: rejected rule (foreach -> control_bucle) in state 187
-WARNING: reduce/reduce conflict in state 188 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (control_bucle -> declaracion) in state 188
+WARNING: reduce/reduce conflict in state 70 resolved using rule (while -> control_bucle RCORCHET)
+WARNING: rejected rule (foreach -> control_bucle RCORCHET) in state 70
+WARNING: reduce/reduce conflict in state 74 resolved using rule (empty -> <empty>)
+WARNING: rejected rule (expelse -> expif ELSE LCORCHET) in state 74
+WARNING: reduce/reduce conflict in state 127 resolved using rule (empty -> <empty>)
+WARNING: rejected rule (clase -> CLASS FNOMBRE LCORCHET) in state 127
+WARNING: reduce/reduce conflict in state 128 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expelse -> expif ELSE LCORCHET declaracion) in state 128
+WARNING: reduce/reduce conflict in state 128 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expif -> declaracion) in state 128
+WARNING: reduce/reduce conflict in state 128 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expelse -> declaracion) in state 128
+WARNING: reduce/reduce conflict in state 128 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (clase -> declaracion) in state 128
+WARNING: reduce/reduce conflict in state 128 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (control_bucle -> declaracion) in state 128
+WARNING: reduce/reduce conflict in state 156 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expif -> declaracion) in state 156
+WARNING: reduce/reduce conflict in state 156 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expelse -> declaracion) in state 156
+WARNING: reduce/reduce conflict in state 156 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (clase -> declaracion) in state 156
+WARNING: reduce/reduce conflict in state 156 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (control_bucle -> declaracion) in state 156
+WARNING: reduce/reduce conflict in state 157 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (expelse -> expif ELSE LCORCHET declaracion RCORCHET) in state 157
+WARNING: reduce/reduce conflict in state 157 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 157
+WARNING: reduce/reduce conflict in state 157 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (clase -> declaracion RCORCHET) in state 157
+WARNING: reduce/reduce conflict in state 161 resolved using rule (valores_array -> empty)
+WARNING: rejected rule (elementos_array -> empty) in state 161
+WARNING: reduce/reduce conflict in state 171 resolved using rule (empty -> <empty>)
+WARNING: rejected rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET) in state 171
+WARNING: reduce/reduce conflict in state 177 resolved using rule (empty -> <empty>)
+WARNING: rejected rule (while -> WHILE LPAREN comparacion RPAREN LCORCHET) in state 177
+WARNING: reduce/reduce conflict in state 179 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (clase -> CLASS FNOMBRE LCORCHET declaracion RCORCHET) in state 179
+WARNING: reduce/reduce conflict in state 179 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 179
+WARNING: reduce/reduce conflict in state 179 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (clase -> declaracion RCORCHET) in state 179
+WARNING: reduce/reduce conflict in state 187 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expif -> declaracion) in state 187
+WARNING: reduce/reduce conflict in state 187 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expelse -> declaracion) in state 187
+WARNING: reduce/reduce conflict in state 187 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (clase -> declaracion) in state 187
+WARNING: reduce/reduce conflict in state 187 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (control_bucle -> declaracion) in state 187
 WARNING: reduce/reduce conflict in state 188 resolved using rule (declaracion -> declaracion)
 WARNING: rejected rule (expif -> declaracion) in state 188
 WARNING: reduce/reduce conflict in state 188 resolved using rule (declaracion -> declaracion)
 WARNING: rejected rule (expelse -> declaracion) in state 188
 WARNING: reduce/reduce conflict in state 188 resolved using rule (declaracion -> declaracion)
 WARNING: rejected rule (clase -> declaracion) in state 188
-WARNING: reduce/reduce conflict in state 193 resolved using rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET)
-WARNING: rejected rule (expif -> declaracion RCORCHET) in state 193
-WARNING: reduce/reduce conflict in state 193 resolved using rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET)
-WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 193
-WARNING: reduce/reduce conflict in state 193 resolved using rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET)
-WARNING: rejected rule (clase -> declaracion RCORCHET) in state 193
-WARNING: reduce/reduce conflict in state 194 resolved using rule (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET)
-WARNING: rejected rule (expif -> declaracion RCORCHET) in state 194
-WARNING: reduce/reduce conflict in state 194 resolved using rule (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET)
-WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 194
-WARNING: reduce/reduce conflict in state 194 resolved using rule (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET)
-WARNING: rejected rule (clase -> declaracion RCORCHET) in state 194
-WARNING: reduce/reduce conflict in state 195 resolved using rule (while -> WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET)
-WARNING: rejected rule (while -> control_bucle RCORCHET) in state 195
-WARNING: reduce/reduce conflict in state 195 resolved using rule (while -> WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET)
-WARNING: rejected rule (foreach -> control_bucle RCORCHET) in state 195
-WARNING: reduce/reduce conflict in state 196 resolved using rule (empty -> <empty>)
-WARNING: rejected rule (foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET) in state 196
-WARNING: reduce/reduce conflict in state 199 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expif -> declaracion) in state 199
-WARNING: reduce/reduce conflict in state 199 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (expelse -> declaracion) in state 199
-WARNING: reduce/reduce conflict in state 199 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (clase -> declaracion) in state 199
-WARNING: reduce/reduce conflict in state 199 resolved using rule (declaracion -> declaracion)
-WARNING: rejected rule (control_bucle -> declaracion) in state 199
-WARNING: reduce/reduce conflict in state 200 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET declaracion RCORCHET) in state 200
-WARNING: reduce/reduce conflict in state 200 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 200
-WARNING: reduce/reduce conflict in state 200 resolved using rule (expif -> declaracion RCORCHET)
-WARNING: rejected rule (clase -> declaracion RCORCHET) in state 200
+WARNING: reduce/reduce conflict in state 188 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (control_bucle -> declaracion) in state 188
+WARNING: reduce/reduce conflict in state 189 resolved using rule (while -> control_bucle)
+WARNING: rejected rule (foreach -> control_bucle) in state 189
+WARNING: reduce/reduce conflict in state 190 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (control_bucle -> declaracion) in state 190
+WARNING: reduce/reduce conflict in state 190 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expif -> declaracion) in state 190
+WARNING: reduce/reduce conflict in state 190 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expelse -> declaracion) in state 190
+WARNING: reduce/reduce conflict in state 190 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (clase -> declaracion) in state 190
+WARNING: reduce/reduce conflict in state 195 resolved using rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET)
+WARNING: rejected rule (expif -> declaracion RCORCHET) in state 195
+WARNING: reduce/reduce conflict in state 195 resolved using rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET)
+WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 195
+WARNING: reduce/reduce conflict in state 195 resolved using rule (expif -> funcion_condicion LPAREN comparacion RPAREN LCORCHET declaracion RCORCHET)
+WARNING: rejected rule (clase -> declaracion RCORCHET) in state 195
+WARNING: reduce/reduce conflict in state 196 resolved using rule (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET)
+WARNING: rejected rule (expif -> declaracion RCORCHET) in state 196
+WARNING: reduce/reduce conflict in state 196 resolved using rule (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET)
+WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 196
+WARNING: reduce/reduce conflict in state 196 resolved using rule (creacionfunciones -> FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET)
+WARNING: rejected rule (clase -> declaracion RCORCHET) in state 196
+WARNING: reduce/reduce conflict in state 197 resolved using rule (while -> WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET)
+WARNING: rejected rule (while -> control_bucle RCORCHET) in state 197
+WARNING: reduce/reduce conflict in state 197 resolved using rule (while -> WHILE LPAREN comparacion RPAREN LCORCHET control_bucle RCORCHET)
+WARNING: rejected rule (foreach -> control_bucle RCORCHET) in state 197
+WARNING: reduce/reduce conflict in state 198 resolved using rule (empty -> <empty>)
+WARNING: rejected rule (foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET) in state 198
+WARNING: reduce/reduce conflict in state 201 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expif -> declaracion) in state 201
+WARNING: reduce/reduce conflict in state 201 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (expelse -> declaracion) in state 201
+WARNING: reduce/reduce conflict in state 201 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (clase -> declaracion) in state 201
+WARNING: reduce/reduce conflict in state 201 resolved using rule (declaracion -> declaracion)
+WARNING: rejected rule (control_bucle -> declaracion) in state 201
+WARNING: reduce/reduce conflict in state 202 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (foreach -> FOREACH LPAREN ID AS ID RPAREN LCORCHET declaracion RCORCHET) in state 202
+WARNING: reduce/reduce conflict in state 202 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (expelse -> declaracion RCORCHET) in state 202
+WARNING: reduce/reduce conflict in state 202 resolved using rule (expif -> declaracion RCORCHET)
+WARNING: rejected rule (clase -> declaracion RCORCHET) in state 202
 WARNING: Rule (expif -> declaracion) is never reduced
 WARNING: Rule (expelse -> declaracion) is never reduced
 WARNING: Rule (clase -> declaracion) is never reduced

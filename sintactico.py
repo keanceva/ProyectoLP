@@ -114,7 +114,8 @@ def p_foreach(p):
 
 #MARIA CAMILA NAVARRO
 def p_comparacion(p):
-    'comparacion : valor_comparado operadorcomparacion valor_comparado'
+    '''comparacion : valor_comparado operadorcomparacion valor_comparado
+                    | boolean'''
 
 def p_valor_comparado(p):
     '''valor_comparado : NUMBER
@@ -132,7 +133,7 @@ def p_operadorcomparacion(p):
                             | IS_SMALLER_OR_EQUAL
                             | SPACESHIP
                             | MAYORQUE
-                            | MENORQUE '''
+                            | MENORQUE'''
 
 '''
 #KEVIN CEVALLOS
@@ -210,7 +211,8 @@ def p_print(p):
 
 def p_argument(p):
     '''argument : ID
-                    | TEXT'''
+                    | TEXT
+                    | operacion_matematica'''
 
 def p_valores_echo(p):
     ''' valores_echo : argument COMA valores_echo
