@@ -57,7 +57,6 @@ def p_expression_math(p):
 def p_operacion_matematica(p):
     '''operacion_matematica :  termino operadores operacion_matematica
                                 | termino operadores termino
-                                
     '''
 #KEVIN CEVALLOS
 def p_operadores(p):
@@ -115,7 +114,13 @@ def p_foreach(p):
 
 #MARIA CAMILA NAVARRO
 def p_comparacion(p):
-    'comparacion : termino operadorcomparacion termino'
+    'comparacion : valor_comparado operadorcomparacion valor_comparado'
+
+def p_valor_comparado(p):
+    '''valor_comparado : NUMBER
+                        | boolean
+                        | operacion_matematica
+                        | ID'''
 
 #MARIA CAMILA NAVARRO
 def p_operadorcomparacion(p):
@@ -221,31 +226,46 @@ def p_funcion_print(p):
 def p_arreglos(p):
     'arreglos : funcion_arreglo LPAREN ID RPAREN'
 
+def p_argumento_doble(p):
+    '''argumento_doble : LPAREN ID COMA ID RPAREN'''
+
+def p_funcion_argumento_doble(p):
+    '''funcion_argumento_doble :   ARRAY_MERGE
+                                    | ARRAY_SEARCH
+                                    | ARRAY_RAND
+                                    | ARRAY_CHUNK
+                                    | STR_SPLIT
+                                    | PREG_SPLIT
+                                     | COUNT
+                                     | ARRAY_PUSH
+                                     | SORT
+                                     | ASORT
+                                     | KSORT
+                                     | UNSET
+                                     | IMPLODE
+                                    | EXPLODE '''
+
 def p_funcion_arreglo(p):
     '''funcion_arreglo :  SUFFLE
-                        | ARRAY_MERGE
-                        | ARRAY_SEARCH
-                        | ARRAY_RAND
-                        | ARRAY_CHUNK
-                        | STR_SPLIT
-                        | PREG_SPLIT
                         | ARRAY_UNIQUE
-                         | COUNT
-                         | SIZEOF
-                         | ARRAY_PUSH
-                         | SORT
-                         | ASORT
-                         | KSORT
-                         | UNSET
-                         | IMPLODE
-                        | EXPLODE'''
+                         | SIZEOF '''
 
 def p_archivos(p):
-    'archivos : funcion_archivo LPAREN TEXT COMA TEXT RPAREN'
+    '''archivos : funcion_corta
+                    | estructura_funcion'''
+
+def p_funcion_corta(p):
+    'funcion_corta : FGETS LPAREN ID COMA NUMBER RPAREN'
+
+def p_estructura_funcion(p):
+    'estructura_funcion : funcion_archivo LPAREN opcion RPAREN'
+
+def p_opcion(p):
+    '''opcion : ID
+                | TEXT'''
 
 def p_funcion_archivo(p):
-    '''funcion_archivo : FGETS
-                    | FREAD
+    '''funcion_archivo :  FREAD
                     | FSCANF
                     | FPASSTHRU
                     | FGETCSV
