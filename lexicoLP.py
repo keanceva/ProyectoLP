@@ -101,6 +101,9 @@ tokens =(
     #Cadena de texto
     'TEXT',
     'SLINEA',
+    'NUMERPLUS',
+    'PALAPLUS',
+
 
      #Operadores Comparación
      'MAYORQUE',
@@ -137,6 +140,10 @@ t_LPAREN=r'\('
 t_RPAREN=r'\)'
 t_END = r';'
 t_TEXT = r'".*"'
+t_SLINEA= r'\n'
+t_NUMERPLUS=r'\d(, \d)*'
+t_PALAPLUS=r'".*"(, ".*")*'
+
 
 #t_PEIROT = r'\.'
 t_OPEN = r'<\?php'
@@ -367,8 +374,8 @@ def analizar(dato):
 
 archivo= open("archivo.txt")
 for linea in archivo:
-    print(">>"+linea)
-    analizar(linea)
+    #print(">>"+linea)
+    #analizar(linea)
     if len(linea)==0:
         break
 def ImprimirAnalizar(dato):

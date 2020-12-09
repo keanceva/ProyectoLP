@@ -17,7 +17,7 @@ def Analizar():
 def Sintactico():
     dato= text()
     resultado= prueba_sintactica(dato)
-    print (resultado)
+
     return resultado
 
 
@@ -36,12 +36,12 @@ def Ventana_3():
         etiqueta3 = tk.Label(ventana3, text="No hay errores")
         etiqueta3.pack(side=tk.TOP)
     else:
-        cont=1
+
         for i in resultado:
-            linea="En la línea " + str(cont) +"-->"+ i
+            linea="En la línea " + i
             etiqueta3 = tk.Label(ventana3, text =linea)
             etiqueta3.pack(side=tk.TOP)
-            cont = cont+1
+
 
 
 ventana =tk.Tk()

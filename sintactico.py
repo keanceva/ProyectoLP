@@ -2,6 +2,7 @@ import ply.yacc as yacc
 #from past.builtins import raw_input
 import lexicoLP
 
+
 from lexicoLP import tokens
 
 resultado_gramatica = []
@@ -143,7 +144,11 @@ def p_operador_object(p):
     'operador_object : ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END'
 
 def p_array(p):
-    'array : ARRAY LPAREN termino RPAREN '
+    '''array : ARRAY LPAREN termino RPAREN
+                | LPAREN NUMERPLUS COMA PALAPLUS RPAREN
+                | LPAREN PALAPLUS COMA NUMERPLUS RPAREN
+                | LPAREN NUMERPLUS RPAREN
+                | LPAREN PALAPLUS RPAREN'''
 
 def p_new(p):
     'new : NEW FNOMBRE '
@@ -249,15 +254,27 @@ def ImprimirSintactico(dato):
         return(result)
 
 def prueba_sintactica(data):
-    global resultado_gramatica
+    #global resultado_gramatica
     resultado_gramatica.clear()
-    print(data.split("\n"))
+    linea=1
+    contador=len(resultado_gramatica)
     for item in data.split("\n"):
+
         if item:
             gram = parser.parse(item)
-            if gram:
-                resultado_gramatica.append(str(gram))
+            if (contador<len(resultado_gramatica)):
+                resultado_gramatica[-1]= str(linea)+"--> "+resultado_gramatica[-1]
+                contador=len(resultado_gramatica)
+
+            #if gram:
+                #print("entra")
+                #print(linea)
+                #resultado_gramatica.append(linea)
+                #str(gram))
+
         else: print("Dato vacío")
+
+        linea+=1
 
     print("Resultado: ", resultado_gramatica)
     return resultado_gramatica
