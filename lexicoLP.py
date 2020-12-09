@@ -350,7 +350,7 @@ def t_ARRAY_UNIQUE(t):
 
 #Nombre de funciones
 def t_FNOMBRE(t):
-    r'([a-z]|[A-Z])([a-zA-Z0-9_]+)?'
+    r'(!(or|and|xor|\!)[a-z]|[A-Z])([a-zA-Z0-9_]+)?'
     return t
 
 def t_error(t):

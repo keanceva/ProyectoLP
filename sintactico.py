@@ -165,7 +165,8 @@ def p_tipo(p):
 #JOFFRE RAMIREZ
 def p_boolean(p):
     '''boolean : TRUE
-                | FALSE'''
+                | FALSE
+                | expresionlogica'''
 
 def p_operador_object(p):
     'operador_object : ID EQUALS OBJECT_OPERATOR FNOMBRE LPAREN argumentos RPAREN END'
