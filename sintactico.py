@@ -35,7 +35,11 @@ def p_declaracion(p):
 #JOFFRE RAMIREZ
 
 def p_creacionfunciones(p):
-    '''creacionfunciones : FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET '''
+    '''creacionfunciones : FUNCTION FNOMBRE LPAREN RPAREN LCORCHET declaracion RCORCHET
+                            | FUNCTION FNOMBRE LPAREN RPAREN LCORCHET
+                            | declaracion RCORCHET
+                            | declaracion
+                            | RCORCHET'''
 
 def p_empty(p):
     'empty : '
@@ -352,7 +356,7 @@ def prueba_sintactica(data):
 #<?php echo("Hello wordl"); ?>
 #<?php echo($var); ?>
 #<?php $a = array(1);?>
-#<?php function nombre_de_la_funcion(){ echo ("Hola mundo");}?>
+#<?php function holamundo(){ echo ("Hola mundo");}?>
 #<?php if ($x > $y) { echo ("$x es mayor que $y"); } ?>
 #<?php if ($x > $y) { echo ("$x es mayor que $y");} else {echo ("$y es mayor que $x");} ?>
 #<?php foreach ($array as $valor) { $valor = $valor * 2;} ?>
