@@ -184,12 +184,17 @@ def p_valores_array(p):
                           | elementos_array
                           | empty
       '''
+
+def p_flecha_array(p):
+    'flecha_array : elementos_array FLECHA elementos_array'
+
 def p_elementos_array(p):
     '''elementos_array : NUMBER
                           | TEXT
                           | empty
                           | boolean
                           | array
+                          | flecha_array
     '''
 
 def p_new(p):

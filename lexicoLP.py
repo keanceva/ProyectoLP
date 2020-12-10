@@ -86,6 +86,7 @@ tokens =(
     'OPEN',
     'CLOSE',
     'END',
+    'FLECHA',
 
     #Variable
     'ID',
@@ -137,6 +138,7 @@ t_LPAREN=r'\('
 t_RPAREN=r'\)'
 t_END = r';'
 t_TEXT = r'".*"'
+t_FLECHA = r'=>'
 
 
 #t_PEIROT = r'\.'
