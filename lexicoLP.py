@@ -44,7 +44,7 @@ reserved = {
     'ksort': 'KSORT',
     'unset': 'UNSET',
     'var_export': 'VAR_EXPORT',
-    'shuffle': 'SUFFLE',
+    'shuffle': 'SHUFFLE',
     'array_merge': 'ARRAY_MERGE',
     'array_search': 'ARRAY_SEARCH',
     'array_rand': 'ARRAY_RAND',

@@ -26,7 +26,7 @@ def p_declaracion(p):
                         | returnvalores
                         | operador_object
                         | print
-                        | arreglos
+                        | arreglos END
                         | while
                         | foreach
                         | clase
@@ -259,7 +259,7 @@ def p_funcion_argumento_doble(p):
                                     | EXPLODE '''
 
 def p_funcion_arreglo(p):
-    '''funcion_arreglo :  SUFFLE
+    '''funcion_arreglo :  SHUFFLE
                         | ARRAY_UNIQUE
                          | SIZEOF '''
 
